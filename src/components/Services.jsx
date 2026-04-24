@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const services = [
   {
@@ -9,6 +10,7 @@ const services = [
     icon: '🚗',
     status: 'active',
     statusLabel: 'Available Now',
+    route: '/car-wash'
   },
   {
     title: 'Doorstep Bike Wash',
@@ -18,6 +20,7 @@ const services = [
     icon: '🏍️',
     status: 'active',
     statusLabel: 'Available Now',
+    route: '/bike-wash'
   },
   {
     title: 'Vehicle PUC Service',
@@ -27,6 +30,7 @@ const services = [
     icon: '📋',
     status: 'coming-soon',
     statusLabel: 'Coming Soon',
+    route: '/puc-service'
   },
   {
     title: 'Home Cleaning',
@@ -36,6 +40,7 @@ const services = [
     icon: '🏠',
     status: 'coming-soon',
     statusLabel: 'Coming Soon',
+    route: '/home-cleaning'
   },
 ];
 
@@ -59,10 +64,11 @@ export default function Services() {
 
         <div className="services-grid">
           {services.map((service, index) => (
-            <div
+            <Link
+              to={service.route}
               className={`service-card animate-on-scroll ${service.status === 'coming-soon' ? 'coming-soon-card' : ''}`}
               key={index}
-              style={{ animationDelay: `${index * 0.1}s` }}
+              style={{ animationDelay: `${index * 0.1}s`, textDecoration: 'none', color: 'inherit' }}
             >
               <div className="service-card-image">
                 {service.image ? (
@@ -92,11 +98,11 @@ export default function Services() {
                 <p>{service.description}</p>
               </div>
               {service.status === 'coming-soon' && (
-                <div className="service-card-overlay">
-                  <div className="coming-soon-text">🚀 Coming Soon</div>
-                </div>
+               <div className="service-card-overlay">
+                 <div className="coming-soon-text">🚀 Coming Soon</div>
+               </div>
               )}
-            </div>
+            </Link>
           ))}
         </div>
       </div>
