@@ -74,7 +74,7 @@ export default function PartnerWithUs() {
                 </svg>
                 Join Our Network
               </span>
-              <h2 className="section-title">Partner With <span style={{ color: 'var(--sky-500)' }}>ShineUp</span></h2>
+              <h2 className="section-title">Partner With <span className="text-gradient">ShineUp</span></h2>
               <p className="section-subtitle">
                 Are you an individual car/bike washer or a wash service center? Join our growing network of service providers. Boost your income, enjoy flexible hours, and get access to modern tools.
               </p>

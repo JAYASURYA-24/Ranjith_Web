@@ -44,7 +44,7 @@ export default function HowItWorks() {
             </svg>
             Simple Process
           </span>
-          <h2 className="section-title">How It Works</h2>
+          <h2 className="section-title">How It <span className="text-gradient">Works</span></h2>
           <p className="section-subtitle">
             Getting your vehicle cleaned has never been easier. Just four simple steps to a sparkling clean ride.
           </p>

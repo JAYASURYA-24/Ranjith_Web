@@ -45,7 +45,7 @@ export default function WhyChooseUs() {
             </svg>
             Why ShineUp
           </span>
-          <h2 className="section-title">Why Thousands Trust ShineUp</h2>
+          <h2 className="section-title">Why Thousands <span className="text-gradient">Trust ShineUp</span></h2>
           <p className="section-subtitle">
             We're not just another cleaning service. Here's what makes us the preferred choice for doorstep vehicle care.
           </p>

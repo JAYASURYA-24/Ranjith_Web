@@ -36,7 +36,7 @@ export default function Testimonials() {
             </svg>
             Testimonials
           </span>
-          <h2 className="section-title">What Our Customers Say</h2>
+          <h2 className="section-title">What Our <span className="text-gradient">Customers Say</span></h2>
           <p className="section-subtitle">
             Don't just take our word for it. Here's what our happy customers have to say about their ShineUp experience.
           </p>

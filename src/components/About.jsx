@@ -18,7 +18,7 @@ export default function About() {
             </svg>
             About ShineUp
           </span>
-          <h2 className="section-title">Redefining Vehicle Care,<br />One Doorstep at a Time</h2>
+          <h2 className="section-title">Redefining <span className="text-gradient">Vehicle Care,</span><br />One Doorstep at a Time</h2>
           <p className="about-text">
             ShineUp was born from a simple idea — what if professional car care came to you?
             Founded by a team of automotive enthusiasts, we set out to eliminate the hassle of

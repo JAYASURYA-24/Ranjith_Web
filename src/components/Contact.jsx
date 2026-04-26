@@ -12,7 +12,7 @@ export default function Contact() {
             </svg>
             Get in Touch
           </span>
-          <h2 className="section-title">Contact Us</h2>
+          <h2 className="section-title">Contact <span className="text-gradient">Us</span></h2>
           <p className="section-subtitle">
             Have a question or need assistance? We'd love to hear from you. Reach out through any of the channels below.
           </p>

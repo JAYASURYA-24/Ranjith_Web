@@ -56,7 +56,7 @@ export default function Services() {
             </svg>
             Our Services
           </span>
-          <h2 className="section-title">What We Offer</h2>
+          <h2 className="section-title">What We <span className="text-gradient">Offer</span></h2>
           <p className="section-subtitle">
             From sparkling car washes to comprehensive bike care — all delivered to your doorstep with professional-grade equipment and eco-friendly products.
           </p>
