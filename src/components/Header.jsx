@@ -30,13 +30,11 @@ export default function Header({ theme, toggleTheme }) {
           <a href="/#about" onClick={handleNavClick}>About Us</a>
           
           <div className="nav-dropdown-wrapper">
-            <a href="/#services" className="nav-dropdown-trigger" onClick={(e) => {
+            <a className="nav-dropdown-trigger" onClick={(e) => {
+              e.preventDefault();
               if (window.innerWidth <= 768) {
-                e.preventDefault();
                 const parent = e.currentTarget.parentElement;
                 parent.classList.toggle('mobile-dropdown-open');
-              } else {
-                handleNavClick();
               }
             }}>
               Services <span className="dropdown-arrow">▼</span>
