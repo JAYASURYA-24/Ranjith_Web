@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -7,22 +7,11 @@ import CarWashPage from './pages/CarWashPage';
 import BikeWashPage from './pages/BikeWashPage';
 import PUCPage from './pages/PUCPage';
 import HomeCleanPage from './pages/HomeCleanPage';
+import TermsPage from './pages/TermsPage';
+import PrivacyPage from './pages/PrivacyPage';
 
 function App() {
-  const [theme, setTheme] = useState(() => {
-    const saved = localStorage.getItem('shineup-theme');
-    return saved || 'dark';
-  });
-
-  useEffect(() => {
-    document.documentElement.setAttribute('data-theme', theme);
-    localStorage.setItem('shineup-theme', theme);
-  }, [theme]);
-
-  const toggleTheme = () => {
-    setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'));
-  };
-
+  // Theme logic removed - dark mode is now default
   useEffect(() => {
     // Intersection Observer for scroll animations
     const observer = new IntersectionObserver(
@@ -57,7 +46,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Header theme={theme} toggleTheme={toggleTheme} />
+      <Header />
       <main>
         <Routes>
           <Route path="/" element={<HomePage />} />
@@ -65,6 +54,8 @@ function App() {
           <Route path="/bike-wash" element={<BikeWashPage />} />
           <Route path="/puc-service" element={<PUCPage />} />
           <Route path="/home-cleaning" element={<HomeCleanPage />} />
+          <Route path="/terms" element={<TermsPage />} />
+          <Route path="/privacy" element={<PrivacyPage />} />
         </Routes>
       </main>
       <Footer />

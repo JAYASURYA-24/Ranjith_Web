@@ -1,13 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import carWashImg from '../assets/images/services/car-wash.webp';
+import bikeWashImg from '../assets/images/services/bike-wash.webp';
+import pucImg from '../assets/images/services/puc-verify.webp';
+import homeImg from '../assets/images/services/home-wash.webp';
 
 const services = [
   {
     title: 'Doorstep Car Wash',
     description: 'Premium foam wash, interior vacuuming, dashboard polish, and tyre shine — all at your doorstep with eco-friendly products.',
-    image: '/car-wash.png',
-    iconClass: 'blue',
-    icon: '🚗',
+    image: carWashImg,
     status: 'active',
     statusLabel: 'Available Now',
     route: '/car-wash'
@@ -15,9 +17,7 @@ const services = [
   {
     title: 'Doorstep Bike Wash',
     description: 'Complete bike cleaning with foam wash, chain lubrication, alloy cleaning, and polish to keep your ride looking brand new.',
-    image: '/bike-wash.png',
-    iconClass: 'green',
-    icon: '🏍️',
+    image: bikeWashImg,
     status: 'active',
     statusLabel: 'Available Now',
     route: '/bike-wash'
@@ -25,9 +25,7 @@ const services = [
   {
     title: 'Vehicle PUC Service',
     description: 'Get your Pollution Under Control certificate renewed at your doorstep. No queues, no hassle — fully compliant testing.',
-    image: '/puc-service.png',
-    iconClass: 'orange',
-    icon: '📋',
+    image: pucImg,
     status: 'coming-soon',
     statusLabel: 'Coming Soon',
     route: '/puc-service'
@@ -35,9 +33,7 @@ const services = [
   {
     title: 'Home Cleaning',
     description: 'Professional deep cleaning for your home — living rooms, kitchens, bathrooms, and more with trained cleaning experts.',
-    image: null,
-    iconClass: 'purple',
-    icon: '🏠',
+    image: homeImg,
     status: 'coming-soon',
     statusLabel: 'Coming Soon',
     route: '/home-cleaning'
@@ -51,8 +47,8 @@ export default function Services() {
         <div className="section-header animate-on-scroll">
           <span className="section-badge">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-              <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
-              <path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/>
+              <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+              <path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16" />
             </svg>
             Our Services
           </span>
@@ -83,7 +79,9 @@ export default function Services() {
                     justifyContent: 'center',
                     fontSize: '3.5rem'
                   }}>
-                    {service.icon}
+                    <span style={{ fontSize: '1.5rem', fontWeight: 'bold', color: '#0369a1', textAlign: 'center', padding: '0 20px' }}>
+                      {service.title}
+                    </span>
                   </div>
                 )}
                 <span className={`service-card-badge ${service.status}`}>
@@ -91,16 +89,14 @@ export default function Services() {
                 </span>
               </div>
               <div className="service-card-body">
-                <div className={`service-card-icon ${service.iconClass}`}>
-                  {service.icon}
-                </div>
+
                 <h3>{service.title}</h3>
                 <p>{service.description}</p>
               </div>
               {service.status === 'coming-soon' && (
-               <div className="service-card-overlay">
-                 <div className="coming-soon-text">🚀 Coming Soon</div>
-               </div>
+                <div className="service-card-overlay">
+                  {/* <div className="coming-soon-text">Coming Soon</div> */}
+                </div>
               )}
             </Link>
           ))}

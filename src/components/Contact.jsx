@@ -40,7 +40,7 @@ export default function Contact() {
             </div>
             <div className="contact-card-content">
               <h4>Email</h4>
-              <p>hello@shineup.in</p>
+              <p>hello@ReShine.in</p>
             </div>
           </div>
 

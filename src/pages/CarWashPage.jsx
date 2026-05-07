@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
 import BeforeAfterSlider from '../components/BeforeAfterSlider';
+import carBefore from '../assets/images/services/before_car.webp';
+import carAfter from '../assets/images/services/after_car.webp';
 
 export default function CarWashPage() {
   useEffect(() => {
@@ -23,18 +25,18 @@ export default function CarWashPage() {
 
         <div className="service-demo animate-on-scroll">
           <h2 className="text-center section-title" style={{ fontSize: '2rem', marginBottom: '3rem' }}>See the Transformation</h2>
-          <BeforeAfterSlider 
-            beforeImage="/before_car.png" 
-            afterImage="/after_car.png" 
-            beforeLabel="Dusty & Pre-wash Foam" 
-            afterLabel="Sparkling Clean"
+          <BeforeAfterSlider
+            beforeImage={carBefore}
+            afterImage={carAfter}
+            beforeLabel="Before"
+            afterLabel="After"
           />
         </div>
 
         <div className="service-details animate-on-scroll">
           <div className="detail-card glass-card">
             <h3>
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 11 12 14 22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" /></svg>
               What's Included
             </h3>
             <ul>
@@ -48,7 +50,7 @@ export default function CarWashPage() {
           </div>
           <div className="detail-card glass-card">
             <h3>
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><path d="m9 12 2 2 4-4" /></svg>
               Why Choose Our Car Wash
             </h3>
             <p style={{ lineHeight: '1.8' }}>

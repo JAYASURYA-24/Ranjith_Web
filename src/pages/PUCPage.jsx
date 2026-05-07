@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
 import BeforeAfterSlider from '../components/BeforeAfterSlider';
+import pucBefore from '../assets/images/services/before_puc.webp';
+import pucAfter from '../assets/images/services/after_puc.webp';
 
 export default function PUCPage() {
   useEffect(() => {
@@ -12,7 +14,7 @@ export default function PUCPage() {
         <div className="service-page-header animate-on-scroll">
           <div style={{ display: 'flex', justifyContent: 'center', marginTop: '1rem' }}>
             <span className="section-badge" style={{ color: '#f59e0b', borderColor: 'rgba(245, 158, 11, 0.3)', background: 'rgba(245, 158, 11, 0.1)' }}>
-              🚀 Coming Soon
+              Coming Soon
             </span>
           </div>
           <h1 className="section-title">Doorstep PUC Certificate</h1>
@@ -23,11 +25,11 @@ export default function PUCPage() {
 
         <div className="service-demo animate-on-scroll">
           <h2 className="text-center section-title" style={{ fontSize: '2rem', marginBottom: '3rem' }}>Cleaner Emissions, Greener Earth</h2>
-          <BeforeAfterSlider 
-            beforeImage="/before_puc.png" 
-            afterImage="/after_puc.png" 
-            beforeLabel="Harmful Emissions" 
-            afterLabel="Passed & Certified"
+          <BeforeAfterSlider
+            beforeImage={pucBefore}
+            afterImage={pucAfter}
+            beforeLabel="Before"
+            afterLabel="After"
           />
         </div>
 
@@ -38,20 +40,20 @@ export default function PUCPage() {
               Leave your email to be the first to book our doorstep PUC service and get an exclusive launch discount.
             </p>
             <form onSubmit={(e) => e.preventDefault()} style={{ display: 'flex', gap: '12px', marginTop: '2.5rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-              <input 
-                type="email" 
-                placeholder="Enter your email address" 
-                style={{ 
-                  padding: '14px 20px', 
-                  borderRadius: 'var(--radius-full)', 
-                  border: '1px solid var(--gray-200)', 
-                  background: 'var(--gray-50)', 
-                  color: 'var(--gray-900)', 
-                  outline: 'none', 
-                  flex: '1', 
+              <input
+                type="email"
+                placeholder="Enter your email address"
+                style={{
+                  padding: '14px 20px',
+                  borderRadius: 'var(--radius-full)',
+                  border: '1px solid var(--gray-200)',
+                  background: 'var(--gray-50)',
+                  color: 'var(--gray-900)',
+                  outline: 'none',
+                  flex: '1',
                   minWidth: '260px',
                   fontSize: '0.95rem'
-                }} 
+                }}
               />
               <button type="submit" className="btn btn-primary">Notify Me</button>
             </form>
