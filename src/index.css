@@ -2179,7 +2179,11 @@ ol {
   }
 
   .partner-benefits {
-    align-items: center;
+    align-items: flex-start;
+  }
+
+  .partner-benefit-item .benefit-text {
+    text-align: left;
   }
 
   .partner-cta {

@@ -60,10 +60,10 @@ export default function WhyChooseUs() {
         <div className="why-grid">
           {reasons.map((reason, index) => (
             <div className="why-card animate-on-scroll" key={index} style={{ animationDelay: `${index * 0.1}s` }}>
-              <div className="why-card-icon" style={{ display: 'flex', justifyContent: 'center', marginBottom: '16px' }}>
-                <img src={reason.icon} alt={reason.title} style={{ width: '80px', height: '80px', objectFit: 'contain' }} loading="lazy" />
+              <div className="why-card-icon" style={{ background: 'transparent', boxShadow: 'none' }}>
+                <img src={reason.icon} alt={reason.title} style={{ width: '100%', height: '100%', objectFit: 'contain' }} loading="lazy" />
               </div>
-              <div style={{ textAlign: 'center' }}>
+              <div className="why-card-text" style={{ textAlign: 'left' }}>
                 <h3>{reason.title}</h3>
                 <p>{reason.description}</p>
               </div>
