@@ -11,7 +11,7 @@ export default function Footer() {
         <div className="footer-grid">
           <div className="footer-brand">
             <Link to="/" className="logo" aria-label="ReShine Home" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-              <div className="logo-icon">R</div>
+
               <span>Re<span className="logo-highlight">Shine</span></span>
             </Link>
             <p>
@@ -46,11 +46,11 @@ export default function Footer() {
           <div className="footer-col">
             <h4>Quick Links</h4>
             <ul>
-              <li><Link to="/#about">About Us</Link></li>
+              <li><Link to="/about">About Us</Link></li>
               <li><Link to="/#services">Services</Link></li>
               <li><Link to="/#how-it-works">How It Works</Link></li>
               <li><Link to="/#testimonials">Reviews</Link></li>
-              <li><Link to="/#contact">Contact</Link></li>
+              <li><Link to="/contact">Contact</Link></li>
             </ul>
           </div>
 

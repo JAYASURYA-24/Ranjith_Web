@@ -9,6 +9,9 @@ import PUCPage from './pages/PUCPage';
 import HomeCleanPage from './pages/HomeCleanPage';
 import TermsPage from './pages/TermsPage';
 import PrivacyPage from './pages/PrivacyPage';
+import PartnerPage from './pages/PartnerPage';
+import ContactPage from './pages/ContactPage';
+import AboutPage from './pages/AboutPage';
 
 function App() {
   // Theme logic removed - dark mode is now default
@@ -56,6 +59,9 @@ function App() {
           <Route path="/home-cleaning" element={<HomeCleanPage />} />
           <Route path="/terms" element={<TermsPage />} />
           <Route path="/privacy" element={<PrivacyPage />} />
+          <Route path="/partner" element={<PartnerPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/about" element={<AboutPage />} />
         </Routes>
       </main>
       <Footer />

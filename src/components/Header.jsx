@@ -27,13 +27,13 @@ export default function Header() {
     <header className={`header ${scrolled ? 'scrolled' : ''}`} id="header">
       <div className="header-container header-inner">
         <Link to="/" className="logo" aria-label="ReShine Home" onClick={handleTopClick}>
-          <div className="logo-icon">R</div>
+
           <span>Re<span className="logo-highlight">Shine</span></span>
         </Link>
 
         <nav className={`nav-links ${menuOpen ? 'open' : ''}`} id="nav-main" role="navigation" aria-label="Main navigation">
           <Link to="/" onClick={handleTopClick}>Home</Link>
-          <Link to="/#about" onClick={handleNavClick}>About Us</Link>
+          <Link to="/about" onClick={handleNavClick}>About Us</Link>
 
           <div className="nav-dropdown-wrapper">
             <a className="nav-dropdown-trigger" onClick={(e) => {
@@ -60,16 +60,16 @@ export default function Header() {
                 <span className="dropdown-tag">Soon</span>
               </Link>
               <Link to="/home-cleaning" onClick={handleNavClick}>
-
                 <span className="dropdown-label">Home Cleaning</span>
                 <span className="dropdown-tag">Soon</span>
               </Link>
             </div>
           </div>
 
-          <Link to="/#how-it-works" onClick={handleNavClick}>Process</Link>
-          <Link to="/#testimonials" onClick={handleNavClick}>Reviews</Link>
-          <Link to="/#contact" onClick={handleNavClick}>Contact</Link>
+          <Link to="/partner" onClick={handleNavClick}>PartnerApp</Link>
+
+
+          <Link to="/contact" onClick={handleNavClick}>Contact</Link>
 
           {/* Theme toggle removed */}
 
