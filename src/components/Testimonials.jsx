@@ -20,7 +20,7 @@ const testimonials = [
     location: 'Hyderabad',
     initials: 'AP',
     rating: 5,
-    text: 'Got my bike washed through ReShine and I\'m impressed! They cleaned every detail perfectly — chain, alloys, engine area. The bike looks showroom fresh. Great value for money.',
+    text: 'Got my bike washed through ReShine and I\'m impressed! They cleaned every detail perfectly - chain, alloys, engine area. The bike looks showroom fresh. Great value for money.',
   },
 
 ];
@@ -59,7 +59,7 @@ export default function Testimonials() {
         <div className="section-header animate-on-scroll">
           <span className="section-badge">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
+              <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" />
             </svg>
             Testimonials
           </span>

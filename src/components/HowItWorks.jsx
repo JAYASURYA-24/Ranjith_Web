@@ -28,7 +28,7 @@ const steps = [
     ),
     image: step2,
     title: 'Choose Service',
-    description: 'Select from our range of services — car wash, bike wash, and more. Pick a convenient time slot.',
+    description: 'Select from our range of services - car wash, bike wash, and more. Pick a convenient time slot.',
   },
   {
     number: '03',

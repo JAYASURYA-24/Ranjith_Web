@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { handlePartnerAppDownload } from '../utils/appLinks';
 import partnerMain from '../assets/images/partner-with-us/partner-with-us.webp';
 import step1Img from '../assets/images/partner-with-us/Partner_Step_1.webp';
 import step2Img from '../assets/images/partner-with-us/Partner_Step_2.webp';
@@ -49,7 +50,7 @@ const partnerSteps = [
     ),
     image: step1Img,
     title: 'DOWNLOAD THE APP',
-    description: 'Get the ShineUp Partner app from Google Play or App Store and create your account.',
+    description: 'Get the ReShine Partner app from Google Play or App Store and create your account.',
   },
   {
     number: '02',
@@ -139,8 +140,6 @@ const partnerFeatures = [
 ];
 
 export default function PartnerWithUs() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
   return (
     <>
       <section className="partner-with-us" id="partner" aria-label="Partner With Us">
@@ -170,17 +169,6 @@ export default function PartnerWithUs() {
                 ))}
               </div>
 
-              <button
-                className="btn-primary partner-cta"
-                style={{ marginTop: '35px' }}
-                onClick={() => setIsModalOpen(true)}
-              >
-                Become a Partner Today
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
-              </button>
             </div>
 
             <div className="partner-visual animate-on-scroll">
@@ -249,60 +237,23 @@ export default function PartnerWithUs() {
                 </div>
               ))}
             </div>
+
+            <div style={{ display: 'flex', justifyContent: 'center', marginTop: '40px' }}>
+              <button
+                className="btn-primary partner-cta"
+                onClick={handlePartnerAppDownload}
+              >
+                Become a Partner Today
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </button>
+            </div>
           </div>
 
         </div>
       </section>
-
-      {/* Partner Registration Modal */}
-      {isModalOpen && (
-        <div className="partner-modal-overlay">
-          <div className="partner-modal">
-            <button className="close-modal-btn" onClick={() => setIsModalOpen(false)}>
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <line x1="18" y1="6" x2="6" y2="18"></line>
-                <line x1="6" y1="6" x2="18" y2="18"></line>
-              </svg>
-            </button>
-            <div className="modal-header">
-              <h3>Join ReShine Partner</h3>
-              <p>Fill out the form below and our team will contact you shortly.</p>
-            </div>
-            <form className="partner-form" onSubmit={(e) => { e.preventDefault(); setIsModalOpen(false); alert('Application Submitted Successfully!'); }}>
-              <div className="form-group">
-                <label>Full Name</label>
-                <input type="text" placeholder="Enter your name" required />
-              </div>
-              <div className="form-group">
-                <label>Mobile Number</label>
-                <input type="tel" placeholder="Enter 10-digit number" pattern="[0-9]{10}" required />
-              </div>
-              <div className="form-group">
-                <label>Location</label>
-                <input type="text" placeholder="E.g. Jayanagar, Bengaluru" required />
-              </div>
-              <div className="form-group">
-                <label>Pincode</label>
-                <input type="text" placeholder="E.g. 560011" pattern="[0-9]{6}" required />
-              </div>
-              <div className="form-group">
-                <label>Services You Provide</label>
-                <div className="custom-select-wrapper">
-                  <select required>
-                    <option value="">Select Service</option>
-                    <option value="car_wash">Car Wash Only</option>
-                    <option value="bike_wash">Bike Wash Only</option>
-                    <option value="both">Both Car & Bike Wash</option>
-                  </select>
-                </div>
-              </div>
-              <button type="submit" className="btn-primary" style={{ width: '100%', justifyContent: 'center', marginTop: '10px' }}>
-                Submit Application
-              </button>
-            </form>
-          </div>
-        </div>
-      )}
     </>
   );
 }

@@ -55,9 +55,6 @@ export default function BikeWashPage() {
             <p style={{ lineHeight: '1.8' }}>
               Motorcycles have intricate parts exposed to harsh weather and road conditions. We use specialized brushes to reach tight spots around the engine and suspension, followed by applying premium protectants to safeguard plastic, metal, and rubber components.
             </p>
-            <div style={{ marginTop: '2.5rem', textAlign: 'center' }}>
-              <a href="/#contact" className="btn btn-primary">Book Appointment</a>
-            </div>
           </div>
         </div>
       </div>

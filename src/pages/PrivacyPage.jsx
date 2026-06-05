@@ -34,7 +34,7 @@ export default function PrivacyPage() {
             
             <h3>4. Contact Us</h3>
             <p style={{ lineHeight: '1.8', marginBottom: '1.5rem' }}>
-              If you have any questions about this Privacy Policy, please contact us at hello@ReShine.in.
+              If you have any questions about this Privacy Policy, please contact us at support@reshineservices.in.
             </p>
           </div>
         </div>

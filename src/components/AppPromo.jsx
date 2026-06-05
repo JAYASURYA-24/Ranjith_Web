@@ -18,7 +18,7 @@ export default function AppPromo() {
           <h2 className="section-title">Book Services <span className="text-gradient">Instantly</span><br />with Our App</h2>
           <p className="section-subtitle">
             All bookings are conveniently handled through our mobile app. Download now to access
-            doorstep car wash, bike wash, and more — all at your fingertips.
+            doorstep car wash, bike wash, and more - all at your fingertips.
           </p>
 
           <div className="app-features">

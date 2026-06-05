@@ -54,11 +54,8 @@ export default function CarWashPage() {
               Why Choose Our Car Wash
             </h3>
             <p style={{ lineHeight: '1.8' }}>
-              Our professionally trained detailing experts come equipped with everything needed—including water and power if necessary. We don't just wash your car; we carefully detail every surface to ensure there are no swirl marks, protecting your clear coat and restoring its natural shine.
+              Our professionally trained detailing experts come equipped with everything needed-including water and power if necessary. We don't just wash your car; we carefully detail every surface to ensure there are no swirl marks, protecting your clear coat and restoring its natural shine.
             </p>
-            <div style={{ marginTop: '2.5rem', textAlign: 'center' }}>
-              <a href="/#contact" className="btn btn-primary">Book Appointment</a>
-            </div>
           </div>
         </div>
       </div>

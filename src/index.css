@@ -1,5 +1,5 @@
 /* ============================================
-   ReShine — Premium Doorstep Vehicle Services
+   ReShine - Premium Doorstep Vehicle Services
    Design System & Global Styles
    ============================================ */
 
@@ -594,6 +594,8 @@ ol {
   .mobile-dropdown-open .nav-dropdown {
     display: flex !important;
     padding: 10px 0 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
   }
 
   .nav-dropdown-trigger {

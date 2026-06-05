@@ -22,7 +22,7 @@ export default function Hero() {
           </h1>
 
           <p className="hero-description">
-            Experience premium vehicle cleaning at your doorstep. We bring the wash to you — saving your time,
+            Experience premium vehicle cleaning at your doorstep. We bring the wash to you - saving your time,
             water, and effort with eco-friendly products and trained professionals.
           </p>
 

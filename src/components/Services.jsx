@@ -8,7 +8,7 @@ import homeImg from '../assets/images/services/home-wash.webp';
 const services = [
   {
     title: 'Doorstep Car Wash',
-    description: 'Premium foam wash, interior vacuuming, dashboard polish, and tyre shine — all at your doorstep with eco-friendly products.',
+    description: 'Premium foam wash, interior vacuuming, dashboard polish, and tyre shine - all at your doorstep with eco-friendly products.',
     image: carWashImg,
     status: 'active',
     statusLabel: 'Available Now',
@@ -24,7 +24,7 @@ const services = [
   },
   {
     title: 'Vehicle PUC Service',
-    description: 'Get your Pollution Under Control certificate renewed at your doorstep. No queues, no hassle — fully compliant testing.',
+    description: 'Get your Pollution Under Control certificate renewed at your doorstep. No queues, no hassle - fully compliant testing.',
     image: pucImg,
     status: 'coming-soon',
     statusLabel: 'Coming Soon',
@@ -32,7 +32,7 @@ const services = [
   },
   {
     title: 'Home Cleaning',
-    description: 'Professional deep cleaning for your home — living rooms, kitchens, bathrooms, and more with trained cleaning experts.',
+    description: 'Professional deep cleaning for your home - living rooms, kitchens, bathrooms, and more with trained cleaning experts.',
     image: homeImg,
     status: 'coming-soon',
     statusLabel: 'Coming Soon',
@@ -54,7 +54,7 @@ export default function Services() {
           </span>
           <h2 className="section-title">What We <span className="text-gradient">Offer</span></h2>
           <p className="section-subtitle">
-            From sparkling car washes to comprehensive bike care — all delivered to your doorstep with professional-grade equipment and eco-friendly products.
+            From sparkling car washes to comprehensive bike care - all delivered to your doorstep with professional-grade equipment and eco-friendly products.
           </p>
         </div>
 

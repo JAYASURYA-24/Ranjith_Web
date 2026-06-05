@@ -16,10 +16,18 @@ export default function Header() {
 
   const handleNavClick = () => {
     setMenuOpen(false);
+    const dropdown = document.querySelector('.nav-dropdown-wrapper');
+    if (dropdown) {
+      dropdown.classList.remove('mobile-dropdown-open');
+    }
   };
 
   const handleTopClick = () => {
     setMenuOpen(false);
+    const dropdown = document.querySelector('.nav-dropdown-wrapper');
+    if (dropdown) {
+      dropdown.classList.remove('mobile-dropdown-open');
+    }
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 

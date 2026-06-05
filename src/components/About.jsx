@@ -9,7 +9,7 @@ export default function About() {
   return (
     <section className="about" id="about" aria-label="About Us">
       <div className="container">
-        
+
         {/* Header centered */}
         <div className="about-header text-center animate-on-scroll" style={{ textAlign: 'center', marginBottom: '40px' }}>
           <span className="section-badge" style={{ margin: '0 auto 12px auto' }}>
@@ -32,7 +32,7 @@ export default function About() {
 
           <div className="about-content animate-on-scroll" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
             <p className="about-text">
-              ReShine was born from a simple idea — what if professional car care came to you?
+              ReShine was born from a simple idea - what if professional car care came to you?
               Founded by a team of automotive enthusiasts, we set out to eliminate the hassle of
               traditional car washes and bring premium, eco-friendly cleaning right to your driveway.
             </p>

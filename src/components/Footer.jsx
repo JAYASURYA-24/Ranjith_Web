@@ -11,11 +11,10 @@ export default function Footer() {
         <div className="footer-grid">
           <div className="footer-brand">
             <Link to="/" className="logo" aria-label="ReShine Home" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-
               <span>Re<span className="logo-highlight">Shine</span></span>
             </Link>
             <p>
-              Premium doorstep vehicle cleaning services. We bring the wash to your doorstep — saving your time, water, and effort with trained professionals.
+              RESHINE SERVICES PRIVATE LIMITED<br />Plot No. 25, Door No. 2/931A (2nd Floor), Rose Avenue, Ambedkar Salai, S.Kolathur, Kovilambakkam, Chennai - 600117.
             </p>
             <div className="footer-social">
               <a href="#" className="social-link" aria-label="Follow us on Facebook" id="social-facebook">
@@ -23,7 +22,7 @@ export default function Footer() {
                   <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
                 </svg>
               </a>
-              <a href="#" className="social-link" aria-label="Follow us on Instagram" id="social-instagram">
+              <a href="https://instagram.com/reshineservice.in" className="social-link" aria-label="Follow us on Instagram" id="social-instagram">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
                   <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" />
@@ -67,9 +66,9 @@ export default function Footer() {
           <div className="footer-col">
             <h4>Contact Info</h4>
             <ul>
-              <li><a href="tel:+919876543210">+91 98765 43210</a></li>
-              <li><a href="mailto:hello@ReShine.in">hello@ReShine.in</a></li>
-              <li><a href="#contact">All Major Cities, India</a></li>
+              <li><a href="tel:+919445469407">+91 9445469407</a></li>
+              <li><a href="mailto:support@reshineservices.in">support@reshineservices.in</a></li>
+              <li><a href="#contact">Velachery, Chennai</a></li>
               <li><a href="#contact">Mon–Sun: 7AM – 8PM</a></li>
             </ul>
           </div>
