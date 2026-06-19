@@ -84,9 +84,11 @@ export default function Services() {
                     </span>
                   </div>
                 )}
-                <span className={`service-card-badge ${service.status}`}>
-                  {service.statusLabel}
-                </span>
+                {service.status !== 'active' && (
+                  <span className={`service-card-badge ${service.status}`}>
+                    {service.statusLabel}
+                  </span>
+                )}
               </div>
               <div className="service-card-body">
 

@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { handleAppDownload } from '../utils/appLinks';
+import logoImg from '../assets/images/logo/Reshine_Logo.webp';
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,12 +33,13 @@ export default function Header() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const isInternalPage = location.pathname !== '/';
+
   return (
-    <header className={`header ${scrolled ? 'scrolled' : ''}`} id="header">
+    <header className={`header ${(scrolled || isInternalPage) ? 'scrolled' : ''}`} id="header">
       <div className="header-container header-inner">
         <Link to="/" className="logo" aria-label="ReShine Home" onClick={handleTopClick}>
-
-          <span>Re<span className="logo-highlight">Shine</span></span>
+          <img src={logoImg} alt="ReShine Logo" className="logo-img" />
         </Link>
 
         <nav className={`nav-links ${menuOpen ? 'open' : ''}`} id="nav-main" role="navigation" aria-label="Main navigation">

@@ -5,12 +5,11 @@ import { handleAppDownload } from '../utils/appLinks';
 export default function Hero() {
   return (
     <section className="hero" id="hero" aria-label="Hero section">
-      <div className="hero-bg">
-        <img src={heroBg} alt="Professional doorstep car washing service" loading="eager" />
-      </div>
       <div className="hero-overlay"></div>
 
-      <div className="container hero-content">
+      <div className="header-container hero-content">
+
+        {/* LEFT: Text */}
         <div className="hero-text">
           <div className="hero-badge">
             <span className="hero-badge-dot"></span>
@@ -18,7 +17,7 @@ export default function Hero() {
           </div>
 
           <h1>
-            Professional <span className="highlight">Doorstep</span> Car & Bike Wash
+            Professional <span className="highlight">Doorstep</span> Car &amp; Bike Wash
           </h1>
 
           <p className="hero-description">
@@ -60,8 +59,15 @@ export default function Hero() {
           </div>
         </div>
 
+        {/* RIGHT: Image */}
+        <div className="hero-visual">
+          <div className="hero-image-wrapper">
+            <img src={heroBg} alt="Professional doorstep car washing service" loading="eager" />
+          </div>
+        </div>
 
       </div>
     </section>
+
   );
 }

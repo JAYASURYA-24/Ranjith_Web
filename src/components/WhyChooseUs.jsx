@@ -14,29 +14,21 @@ const reasons = [
   },
   {
     icon: trust2,
-    title: 'Water-Efficient Cleaning',
-    description: 'Our methods save up to 80% more water compared to traditional car washes. Eco-friendly & sustainable.',
+    title: 'Eco-Friendly & Water-Efficient',
+    description: 'Experience a smarter way to clean your vehicle with eco-conscious products and water-efficient methods.',
   },
   {
     icon: trust3,
     title: 'Trusted Professionals',
     description: 'All our technicians are background-verified, trained, and equipped with the best tools and products.',
   },
-  {
-    icon: trust4,
-    title: 'Affordable Pricing',
-    description: 'Premium service without the premium price tag. Transparent pricing with absolutely no hidden charges.',
-  },
+
   {
     icon: trust5,
     title: 'Easy App Booking',
     description: 'Book in under 60 seconds through our intuitive mobile app. Track your service in real-time.',
   },
-  {
-    icon: trust6,
-    title: '100% Satisfaction',
-    description: 'Not happy with the service? We offer a re-clean guarantee. Your satisfaction is our top priority.',
-  },
+
 ];
 
 export default function WhyChooseUs() {
@@ -46,8 +38,8 @@ export default function WhyChooseUs() {
         <div className="section-header animate-on-scroll">
           <span className="section-badge">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
-              <polyline points="22 4 12 14.01 9 11.01"/>
+              <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+              <polyline points="22 4 12 14.01 9 11.01" />
             </svg>
             Why ReShine
           </span>

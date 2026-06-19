@@ -4,7 +4,6 @@ import Hero from '../components/Hero';
 import Services from '../components/Services';
 import HowItWorks from '../components/HowItWorks';
 import WhyChooseUs from '../components/WhyChooseUs';
-import AppPromo from '../components/AppPromo';
 import Testimonials from '../components/Testimonials';
 import PartnerBanner from '../components/PartnerBanner';
 
@@ -33,7 +32,6 @@ export default function HomePage() {
       <Services />
       <HowItWorks />
       <WhyChooseUs />
-      <AppPromo />
       <Testimonials />
       <PartnerBanner />
     </>
