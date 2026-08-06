@@ -318,11 +318,25 @@ ol {
 }
 
 /* Staggered Delay Utilities */
-.delay-100 { transition-delay: 0.1s; }
-.delay-200 { transition-delay: 0.2s; }
-.delay-300 { transition-delay: 0.3s; }
-.delay-400 { transition-delay: 0.4s; }
-.delay-500 { transition-delay: 0.5s; }
+.delay-100 {
+  transition-delay: 0.1s;
+}
+
+.delay-200 {
+  transition-delay: 0.2s;
+}
+
+.delay-300 {
+  transition-delay: 0.3s;
+}
+
+.delay-400 {
+  transition-delay: 0.4s;
+}
+
+.delay-500 {
+  transition-delay: 0.5s;
+}
 
 /* Button Shimmer Sweep Effect */
 .btn-primary {
@@ -347,14 +361,20 @@ ol {
 }
 
 @keyframes shimmerSweep {
-  0% { left: -120%; }
-  100% { left: 180%; }
+  0% {
+    left: -120%;
+  }
+
+  100% {
+    left: 180%;
+  }
 }
 
 @keyframes shimmerSweepContinuous {
   0% {
     left: -120%;
   }
+
   100% {
     left: 180%;
   }
@@ -370,6 +390,7 @@ ol {
 
 /* Reduced Motion Accessibility */
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {
@@ -822,9 +843,17 @@ ol {
    ============================================ */
 
 @keyframes waterGradientShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .hero {
@@ -875,30 +904,75 @@ ol {
   pointer-events: none;
 }
 
-.bubble-1 { left: 8%; width: 32px; height: 32px; animation-duration: 12s; animation-delay: 0s; }
-.bubble-2 { left: 24%; width: 20px; height: 20px; animation-duration: 15s; animation-delay: 3s; }
-.bubble-3 { left: 48%; width: 38px; height: 38px; animation-duration: 13s; animation-delay: 1s; }
-.bubble-4 { left: 68%; width: 24px; height: 24px; animation-duration: 14s; animation-delay: 4s; }
-.bubble-5 { left: 82%; width: 30px; height: 30px; animation-duration: 16s; animation-delay: 2s; }
-.bubble-6 { left: 94%; width: 18px; height: 18px; animation-duration: 11s; animation-delay: 5s; }
+.bubble-1 {
+  left: 8%;
+  width: 32px;
+  height: 32px;
+  animation-duration: 12s;
+  animation-delay: 0s;
+}
+
+.bubble-2 {
+  left: 24%;
+  width: 20px;
+  height: 20px;
+  animation-duration: 15s;
+  animation-delay: 3s;
+}
+
+.bubble-3 {
+  left: 48%;
+  width: 38px;
+  height: 38px;
+  animation-duration: 13s;
+  animation-delay: 1s;
+}
+
+.bubble-4 {
+  left: 68%;
+  width: 24px;
+  height: 24px;
+  animation-duration: 14s;
+  animation-delay: 4s;
+}
+
+.bubble-5 {
+  left: 82%;
+  width: 30px;
+  height: 30px;
+  animation-duration: 16s;
+  animation-delay: 2s;
+}
+
+.bubble-6 {
+  left: 94%;
+  width: 18px;
+  height: 18px;
+  animation-duration: 11s;
+  animation-delay: 5s;
+}
 
 @keyframes float3DBubble {
   0% {
     transform: translate3d(0, 0, 0) scale(0.82) rotate(0deg);
     opacity: 0;
   }
+
   20% {
     transform: translate3d(14px, -70px, 0) scale(1) rotate(5deg);
     opacity: 0.88;
   }
+
   50% {
     transform: translate3d(-16px, -160px, 0) scale(1.1) rotate(-8deg);
     opacity: 0.92;
   }
+
   80% {
     transform: translate3d(12px, -240px, 0) scale(1.05) rotate(4deg);
     opacity: 0.85;
   }
+
   100% {
     transform: translate3d(-10px, -320px, 0) scale(1.2) rotate(0deg);
     opacity: 0;
@@ -913,15 +987,27 @@ ol {
 }
 
 @media (max-width: 640px) {
+
   .bubble-4,
   .bubble-5,
   .bubble-6 {
     display: none !important;
   }
 
-  .bubble-1 { width: 22px; height: 22px; }
-  .bubble-2 { width: 16px; height: 16px; }
-  .bubble-3 { width: 28px; height: 28px; }
+  .bubble-1 {
+    width: 22px;
+    height: 22px;
+  }
+
+  .bubble-2 {
+    width: 16px;
+    height: 16px;
+  }
+
+  .bubble-3 {
+    width: 28px;
+    height: 28px;
+  }
 }
 
 /* Multi-Layered Flowing Liquid Wave System */
@@ -957,13 +1043,23 @@ ol {
 }
 
 @keyframes waveFlowLeft {
-  0% { transform: translate3d(0, 0, 0); }
-  100% { transform: translate3d(-50%, 0, 0); }
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
 }
 
 @keyframes waveFlowRight {
-  0% { transform: translate3d(-50%, 0, 0); }
-  100% { transform: translate3d(0, 0, 0); }
+  0% {
+    transform: translate3d(-50%, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
 }
 
 @media (max-width: 768px) {
@@ -1139,9 +1235,8 @@ ol {
   width: 100%;
   max-height: 550px;
   max-width: 600px;
-
   overflow: hidden;
-  border-radius: 50% 24px 24px 50%;
+  border-radius: 10px 25% 10px 25%;
 }
 
 .hero-image-wrapper img {
@@ -1366,13 +1461,25 @@ ol {
 }
 
 @keyframes cardShineSweep {
-  0% { left: -120%; }
-  100% { left: 180%; }
+  0% {
+    left: -120%;
+  }
+
+  100% {
+    left: 180%;
+  }
 }
 
 @keyframes vehicleBounce {
-  0%, 100% { transform: translateY(0) scale(1); }
-  50% { transform: translateY(-4px) scale(1.03); }
+
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+
+  50% {
+    transform: translateY(-4px) scale(1.03);
+  }
 }
 
 .service-card:hover {
@@ -2040,9 +2147,20 @@ ol {
 }
 
 @keyframes playPulse {
-  0% { transform: scale(0.95); opacity: 0.8; }
-  50% { transform: scale(1.25); opacity: 0; }
-  100% { transform: scale(0.95); opacity: 0; }
+  0% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+
+  50% {
+    transform: scale(1.25);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(0.95);
+    opacity: 0;
+  }
 }
 
 .video-card-body {
@@ -2296,13 +2414,25 @@ ol {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes slideUp {
-  from { opacity: 0; transform: translateY(20px) scale(0.96); }
-  to { opacity: 1; transform: translateY(0) scale(1); }
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 /* --- Responsive Media Queries for Video Testimonials --- */
@@ -2310,9 +2440,11 @@ ol {
   .testimonial-carousel-wrapper {
     padding: 10px 6px 20px;
   }
+
   .carousel-arrow-left {
     left: -10px;
   }
+
   .carousel-arrow-right {
     right: -10px;
   }
@@ -2324,16 +2456,20 @@ ol {
     height: 40px;
     top: 40%;
   }
+
   .carousel-arrow-left {
     left: -2px;
   }
+
   .carousel-arrow-right {
     right: -2px;
   }
+
   .video-modal-content {
     max-width: 95%;
     border-radius: var(--radius-xl);
   }
+
   .modal-video-element {
     max-height: 360px;
   }
@@ -2343,79 +2479,100 @@ ol {
   .testimonials {
     padding: 50px 0;
   }
+
   .testimonial-carousel-wrapper {
     padding: 0;
   }
+
   .testimonial-carousel-track-container {
     padding: 6px 0 16px;
   }
+
   .testimonial-slide {
     padding: 0 4px;
   }
+
   .video-testimonial-card {
     border-radius: var(--radius-xl);
   }
+
   .video-thumb-wrapper {
     aspect-ratio: 16 / 9;
   }
+
   .video-play-btn {
     width: 48px;
     height: 48px;
   }
+
   .video-service-tag {
     top: 10px;
     left: 10px;
     font-size: 0.7rem;
     padding: 3px 10px;
   }
+
   .video-duration-badge {
     bottom: 10px;
     right: 10px;
     font-size: 0.7rem;
     padding: 3px 8px;
   }
+
   .video-card-body {
     padding: 18px 16px;
   }
+
   .video-testimonial-text {
     font-size: 0.9rem;
     line-height: 1.55;
     margin-bottom: 16px;
   }
+
   .carousel-arrow {
     display: none;
   }
+
   .carousel-dots-container {
     margin-top: 16px;
     gap: 6px;
   }
+
   .carousel-dot {
     width: 8px;
     height: 8px;
   }
+
   .carousel-dot.active {
     width: 22px;
   }
+
   .video-modal-backdrop {
     padding: 12px;
   }
+
   .video-modal-content {
     max-height: 90vh;
     overflow-y: auto;
   }
+
   .video-modal-info {
     padding: 16px;
   }
+
   .modal-header-row {
     flex-direction: column;
     gap: 8px;
   }
+
   .modal-author-name {
     font-size: 1.05rem;
   }
+
   .modal-author-role {
     font-size: 0.8rem;
   }
+
   .modal-testimonial-text {
     font-size: 0.88rem;
   }
@@ -2787,6 +2944,7 @@ ol {
 .social-link.social-facebook {
   background: #1877F2;
 }
+
 .social-link.social-facebook:hover {
   background: #0d65d9;
   transform: translateY(-3px);
@@ -2796,6 +2954,7 @@ ol {
 .social-link.social-instagram {
   background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
 }
+
 .social-link.social-instagram:hover {
   transform: translateY(-3px);
   box-shadow: 0 6px 16px rgba(214, 36, 159, 0.45);
@@ -2806,6 +2965,7 @@ ol {
   background: #000000;
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
+
 .social-link.social-twitter:hover {
   background: #14171a;
   transform: translateY(-3px);
@@ -2816,6 +2976,7 @@ ol {
 .social-link.social-youtube {
   background: #FF0000;
 }
+
 .social-link.social-youtube:hover {
   background: #d90000;
   transform: translateY(-3px);
@@ -4547,12 +4708,14 @@ body,
 }
 
 @media (max-width: 1024px) {
+
   .packages-grid,
   .bike-packages-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
     max-width: 100%;
   }
+
   .addons-grid,
   .bike-addons-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -4562,19 +4725,23 @@ body,
 }
 
 @media (max-width: 640px) {
+
   .packages-grid,
   .bike-packages-grid {
     grid-template-columns: 1fr;
     gap: 20px;
   }
+
   .addons-grid,
   .bike-addons-grid {
     grid-template-columns: 1fr;
     gap: 14px;
   }
+
   .package-card {
     padding: 24px 20px;
   }
+
   .addon-card {
     padding: 18px 20px;
   }
@@ -5160,6 +5327,7 @@ body,
 
 /* Hide Mobile Drawer elements on Desktop (> 1024px) */
 @media (min-width: 1025px) {
+
   .mobile-drawer-backdrop,
   .mobile-drawer {
     display: none !important;
@@ -5450,14 +5618,17 @@ body,
     transform: translate(0, 0) scale(1);
     border-radius: 50% 50% 50% 50%;
   }
+
   33% {
     transform: translate(30px, -50px) scale(1.1);
     border-radius: 40% 60% 70% 30%;
   }
+
   66% {
     transform: translate(-20px, 40px) scale(0.95);
     border-radius: 60% 40% 30% 70%;
   }
+
   100% {
     transform: translate(0, 0) scale(1);
     border-radius: 50% 50% 50% 50%;
@@ -5491,15 +5662,19 @@ body,
     transform: translateY(0) translateX(0) scale(0.8);
     opacity: 0;
   }
+
   10% {
     opacity: 0.6;
   }
+
   50% {
     transform: translateY(-50vh) translateX(24px) scale(1.05);
   }
+
   85% {
     opacity: 0.5;
   }
+
   100% {
     transform: translateY(-115vh) translateX(-20px) scale(1.15);
     opacity: 0;
@@ -5532,4 +5707,44 @@ body,
 .contact-section .container {
   position: relative;
   z-index: 2;
+}
+
+/* === Wash Plan Header Card Smoke & Blend Effects === */
+@keyframes mistPulse {
+  0% {
+    opacity: 0.65;
+    transform: translateX(0) scaleY(1);
+  }
+
+  50% {
+    opacity: 0.95;
+    transform: translateX(10px) scaleY(1.05);
+  }
+
+  100% {
+    opacity: 0.65;
+    transform: translateX(0) scaleY(1);
+  }
+}
+
+.smoke-blend-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0) 55%, rgba(255, 255, 255, 0.4) 80%, rgba(255, 255, 255, 0.9) 95%, #ffffff 100%);
+  pointer-events: none;
+}
+
+.smoke-mist-effect {
+  position: absolute;
+  right: -10px;
+  top: -5%;
+  height: 110%;
+  width: 60px;
+  background: radial-gradient(circle at right center, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0) 100%);
+  filter: blur(8px);
+  animation: mistPulse 5s ease-in-out infinite;
+  pointer-events: none;
 }

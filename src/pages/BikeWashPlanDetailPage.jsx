@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { bikeWashPlansData } from '../data/bikeWashPlans.jsx';
 import WashBackgroundAnimation from '../components/WashBackgroundAnimation';
+import bikeWashImg from '../assets/images/services/bike-wash.webp';
 import { handleAppDownload } from '../utils/appLinks';
 
 export default function BikeWashPlanDetailPage() {
@@ -58,77 +59,113 @@ export default function BikeWashPlanDetailPage() {
               <line x1="19" y1="12" x2="5" y2="12" />
               <polyline points="12 19 5 12 12 5" />
             </svg>
-            Back to Bike Wash Packages
+            Back
           </button>
         </div>
 
         {/* Plan Header Card */}
         <div className={`package-detail-header-card ${plan.cardClass}`} style={{
           background: plan.cardClass === 'popular'
-            ? 'linear-gradient(135deg, rgba(240,249,255,0.9) 0%, #ffffff 100%)'
+            ? 'linear-gradient(135deg, rgba(224, 242, 254, 0.6) 0%, #ffffff 60%)'
             : plan.cardClass === 'elite'
-            ? 'linear-gradient(135deg, rgba(254,252,232,0.8) 0%, #ffffff 100%)'
-            : 'var(--white)',
+            ? 'linear-gradient(135deg, rgba(254, 249, 195, 0.6) 0%, #ffffff 60%)'
+            : 'linear-gradient(135deg, rgba(240, 249, 255, 0.7) 0%, #ffffff 60%)',
           border: plan.cardClass === 'popular'
             ? '2px solid var(--sky-400)'
             : plan.cardClass === 'elite'
             ? '1.5px solid rgba(234, 179, 8, 0.5)'
             : '1px solid rgba(14, 165, 233, 0.2)',
           borderRadius: 'var(--radius-2xl)',
-          padding: '36px 32px',
-          boxShadow: '0 10px 30px rgba(14, 165, 233, 0.1)',
+          overflow: 'hidden',
+          boxShadow: '0 12px 35px rgba(14, 165, 233, 0.12)',
           position: 'relative',
-          marginBottom: '3rem'
+          marginBottom: '3rem',
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+          minHeight: '270px'
         }}>
-          <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: '16px', marginBottom: '16px' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
-              <div className="package-icon-wrapper" style={{ margin: 0, width: '54px', height: '54px' }}>
-                {plan.iconSvg}
+          {/* Left Side: Full Size Image with Smoke & Blend Effect */}
+          <div style={{
+            position: 'relative',
+            minHeight: '270px',
+            height: '100%',
+            width: '100%',
+            overflow: 'hidden'
+          }}>
+            <img
+              src={plan.image || bikeWashImg}
+              alt={plan.title}
+              style={{
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+                objectPosition: 'center',
+                display: 'block'
+              }}
+            />
+
+            {/* Smoke & Mist Blend Overlays on Image Right Edge */}
+            <div className="smoke-blend-overlay" />
+            <div className="smoke-mist-effect" />
+          </div>
+
+          {/* Right Side: Plan Name & Info */}
+          <div style={{
+            padding: '30px 32px',
+            display: 'flex',
+            flexDirection: 'column',
+            justify: 'center',
+            position: 'relative',
+            zIndex: 2
+          }}>
+            <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: '12px', marginBottom: '10px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                <div className="package-icon-wrapper" style={{ margin: 0, width: '42px', height: '42px', minWidth: '42px' }}>
+                  {plan.iconSvg}
+                </div>
+                <span className="section-badge" style={{ display: 'inline-block', margin: 0 }}>{plan.badge}</span>
               </div>
-              <div>
-                <span className="section-badge" style={{ marginBottom: '4px', display: 'inline-block' }}>{plan.badge}</span>
-                <h1 style={{ fontSize: '2rem', fontWeight: '800', color: 'var(--gray-900)', margin: 0 }}>
-                  {plan.title}
-                </h1>
+
+              <div style={{
+                background: 'var(--sky-50)',
+                border: '1px solid var(--sky-200)',
+                padding: '6px 14px',
+                borderRadius: 'var(--radius-lg)',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '6px',
+                color: 'var(--sky-800)',
+                fontWeight: '700',
+                fontSize: '0.85rem'
+              }}>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="12" cy="12" r="10" />
+                  <polyline points="12 6 12 12 16 14" />
+                </svg>
+                <span>Estimated Time: {plan.estimatedTime}</span>
               </div>
             </div>
 
-            <div style={{
-              background: 'var(--sky-50)',
-              border: '1px solid var(--sky-200)',
-              padding: '8px 16px',
-              borderRadius: 'var(--radius-lg)',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '8px',
-              color: 'var(--sky-800)',
-              fontWeight: '700',
-              fontSize: '0.9rem'
-            }}>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <h1 style={{ fontSize: '2rem', fontWeight: '800', color: 'var(--gray-900)', margin: '4px 0 10px 0', lineHeight: '1.25' }}>
+              {plan.title}
+            </h1>
+
+            <p style={{ fontSize: '1.05rem', color: 'var(--gray-700)', fontWeight: '500', marginBottom: '14px', lineHeight: '1.5' }}>
+              {plan.tagline}
+            </p>
+
+            <div className="package-preferred" style={{ fontSize: '0.88rem', padding: '6px 14px', display: 'inline-flex', width: 'fit-content' }}>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <circle cx="12" cy="12" r="10" />
                 <polyline points="12 6 12 12 16 14" />
               </svg>
-              <span>Estimated Time: {plan.estimatedTime}</span>
+              <span>Preferred for: <strong>{plan.preferredFor}</strong></span>
             </div>
-          </div>
-
-          <p style={{ fontSize: '1.1rem', color: 'var(--gray-700)', fontWeight: '500', marginBottom: '16px', lineHeight: '1.6' }}>
-            {plan.tagline}
-          </p>
-
-          <div className="package-preferred" style={{ fontSize: '0.9rem', padding: '6px 14px' }}>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-              <circle cx="12" cy="12" r="10" />
-              <polyline points="12 6 12 12 16 14" />
-            </svg>
-            <span>Preferred for: <strong>{plan.preferredFor}</strong></span>
           </div>
         </div>
 
-        {/* Plan Overview & Full Features Grid */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '30px', marginBottom: '3.5rem' }}>
-          {/* Package Overview */}
+        {/* Package Overview */}
+        <div style={{ marginBottom: '3.5rem' }}>
           <div className="glass-card" style={{ padding: '32px' }}>
             <h3 style={{ fontSize: '1.3rem', fontWeight: '800', color: 'var(--gray-900)', marginBottom: '14px', display: 'flex', alignItems: 'center', gap: '10px' }}>
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--sky-600)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -138,28 +175,9 @@ export default function BikeWashPlanDetailPage() {
               </svg>
               Package Overview
             </h3>
-            <p style={{ fontSize: '0.96rem', color: 'var(--gray-600)', lineHeight: '1.7' }}>
+            <p style={{ fontSize: '1rem', color: 'var(--gray-600)', lineHeight: '1.7', margin: 0 }}>
               {plan.overview}
             </p>
-          </div>
-
-          {/* Complete Inclusions Checklist */}
-          <div className="glass-card" style={{ padding: '32px' }}>
-            <h3 style={{ fontSize: '1.3rem', fontWeight: '800', color: 'var(--gray-900)', marginBottom: '16px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--sky-600)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <polyline points="9 11 12 14 22 4" />
-                <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
-              </svg>
-              Everything Included in {plan.title}
-            </h3>
-            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '12px' }}>
-              {plan.includes.map((item, idx) => (
-                <li key={idx} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '0.95rem', color: 'var(--gray-800)', fontWeight: '500', lineHeight: '1.5' }}>
-                  <span className="package-check-circle" style={{ width: '22px', height: '22px', minWidth: '22px', fontSize: '0.8rem' }}>✓</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
           </div>
         </div>
 
@@ -264,7 +282,7 @@ export default function BikeWashPlanDetailPage() {
                 padding: '14px 32px'
               }}
             >
-              Book {plan.title} Now
+              Book Now
             </a>
             <Link
               to="/bike-wash"
