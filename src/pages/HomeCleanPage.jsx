@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import BeforeAfterSlider from '../components/BeforeAfterSlider';
 import homeBefore from '../assets/images/services/before_home.webp';
 import homeAfter from '../assets/images/services/after_home.webp';

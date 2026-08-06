@@ -1,8 +1,8 @@
 import React from 'react';
 import step1 from '../assets/images/how-it-works/step1.webp';
 import step2 from '../assets/images/how-it-works/step2.webp';
-import step3 from '../assets/images/how-it-works/step3_light.png';
-import step4 from '../assets/images/trust/hero_car_light.png';
+import step3 from '../assets/images/how-it-works/step3.webp';
+import step4 from '../assets/images/how-it-works/step4.webp';
 import { PLAYSTORE_LINK, APPSTORE_LINK } from '../utils/appLinks';
 import playstoreIcon from '../assets/images/app-promo/playstore.webp';
 

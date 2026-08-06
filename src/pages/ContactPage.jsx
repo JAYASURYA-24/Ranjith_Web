@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import Contact from '../components/Contact';
 
 export default function ContactPage() {
@@ -7,7 +7,7 @@ export default function ContactPage() {
   }, []);
 
   return (
-    <div style={{ paddingTop: '80px' }}>
+    <div style={{ paddingTop: '50px' }}>
       <Contact />
     </div>
   );

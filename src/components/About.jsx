@@ -1,9 +1,12 @@
-import React from 'react';
 import dirtyCarWash from '../assets/images/about/dirty-car-wash.webp';
 import missionIcon from '../assets/images/about/mission.webp';
 import visionIcon from '../assets/images/about/vission.webp';
 import ecoIcon from '../assets/images/about/eco-frndly.webp';
 import qualityIcon from '../assets/images/about/quality.webp';
+import rishikeshImg from '../assets/images/about/rishikesh.png';
+import pavanImg from '../assets/images/about/pavan.png';
+import aravindImg from '../assets/images/about/aravind.png';
+import teamPhoto from '../assets/images/about/team_members.png';
 
 export default function About() {
   return (
@@ -44,7 +47,7 @@ export default function About() {
         </div>
 
         {/* 2x2 grid for cards */}
-        <div className="about-values-new animate-on-scroll">
+        <div className="about-values-new animate-on-scroll" style={{ marginBottom: '80px' }}>
           <div className="about-value">
             <div className="about-value-icon" style={{ backgroundImage: `url(${missionIcon})` }}></div>
             <div>
@@ -74,6 +77,94 @@ export default function About() {
             </div>
           </div>
         </div>
+
+        {/* Meet Our Founders Section */}
+        <div className="founders-section animate-on-scroll">
+          <div className="founders-header text-center" style={{ textAlign: 'center', marginBottom: '44px' }}>
+            <span className="section-badge" style={{ margin: '0 auto 12px auto' }}>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+              Leadership Team
+            </span>
+            <h2 className="section-title text-center" style={{ margin: '0 auto 12px auto' }}>
+              Meet Our <span className="text-gradient">Founders</span>
+            </h2>
+            <p style={{ color: 'var(--gray-600)', maxWidth: '600px', margin: '0 auto', fontSize: '1rem', lineHeight: '1.6' }}>
+              The visionaries driving innovation, convenience, and eco-friendly vehicle care across India.
+            </p>
+          </div>
+
+          <div className="founders-grid">
+            {/* Founder 1 */}
+            <div className="founder-card">
+              <div className="founder-avatar-wrapper">
+                <div className="founder-blue-accent"></div>
+                <img src={rishikeshImg} alt="Rishikesh S R - Founder" className="founder-photo" />
+              </div>
+              <h3 className="founder-name">Rishikesh S R</h3>
+              <p className="founder-role">Founder</p>
+              <p className="founder-bio">
+                Leading strategic vision and technology at ReShine to revolutionize doorstep automotive care across major urban hubs.
+              </p>
+            </div>
+
+            {/* Founder 2 */}
+            <div className="founder-card">
+              <div className="founder-avatar-wrapper">
+                <div className="founder-blue-accent"></div>
+                <img src={pavanImg} alt="Pavan Guntupalli - Founder" className="founder-photo" />
+              </div>
+              <h3 className="founder-name">Pavan Guntupalli</h3>
+              <p className="founder-role">Founder</p>
+              <p className="founder-bio">
+                Spearheading operations, partner networks, and customer excellence to deliver flawless doorstep washing experiences.
+              </p>
+            </div>
+
+            {/* Founder 3 */}
+            <div className="founder-card">
+              <div className="founder-avatar-wrapper">
+                <div className="founder-blue-accent"></div>
+                <img src={aravindImg} alt="Aravind Sanka - Founder" className="founder-photo" />
+              </div>
+              <h3 className="founder-name">Aravind Sanka</h3>
+              <p className="founder-role">Founder</p>
+              <p className="founder-bio">
+                Driving growth, eco-friendly product innovation, and expanding mobile detailing services to new cities.
+              </p>
+            </div>
+          </div>
+
+          {/* Team Members Photo Section */}
+          <div className="team-photo-section animate-on-scroll">
+            <div className="team-photo-header text-center" style={{ textAlign: 'center', marginBottom: '28px' }}>
+              <span className="section-badge" style={{ margin: '0 auto 10px auto' }}>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+                Our Passionate Team
+              </span>
+              <h3 className="section-title text-center" style={{ fontSize: '1.6rem', margin: '0 auto 8px auto' }}>
+                The People Behind <span className="text-gradient">ReShine</span>
+              </h3>
+              <p style={{ color: 'var(--gray-600)', maxWidth: '580px', margin: '0 auto', fontSize: '0.95rem', lineHeight: '1.6' }}>
+                Dedicated professionals working together to bring doorstep convenience, quality, and eco-friendly car care to your home.
+              </p>
+            </div>
+
+            <div className="team-photo-card">
+              <img src={teamPhoto} alt="ReShine Team Members" className="team-photo-img" />
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
   );

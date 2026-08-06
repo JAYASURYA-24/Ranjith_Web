@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import partnerImg from '../assets/images/partner-with-us/partner-banner.webp';
 

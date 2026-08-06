@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import About from '../components/About';
 
 export default function AboutPage() {
@@ -7,7 +7,7 @@ export default function AboutPage() {
   }, []);
 
   return (
-    <div style={{ paddingTop: '80px' }}>
+    <div style={{ paddingTop: '50px' }}>
       <About />
     </div>
   );

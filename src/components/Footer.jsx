@@ -1,7 +1,5 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { handleAppDownload, PLAYSTORE_LINK, APPSTORE_LINK } from '../utils/appLinks';
-import logoImg from '../assets/images/logo/Reshine_Logo.webp';
 import playstoreIcon from '../assets/images/app-promo/playstore.webp';
 
 export default function Footer() {
@@ -56,8 +54,7 @@ export default function Footer() {
             <ul>
               <li><Link to="/car-wash">Car Wash</Link></li>
               <li><Link to="/bike-wash">Bike Wash</Link></li>
-              <li><Link to="/puc-service">Vehicle PUC</Link></li>
-              <li><Link to="/home-cleaning">Home Cleaning</Link></li>              <li><a href="#download" onClick={handleAppDownload}>Download App</a></li>
+              <li><a href="#download" onClick={handleAppDownload}>Download App</a></li>
             </ul>
           </div>
 
@@ -69,25 +66,25 @@ export default function Footer() {
 
             </ul>
             <div className="footer-social" style={{ marginTop: '20px' }}>
-              <a href="#" className="social-link" aria-label="Follow us on Facebook" id="social-facebook">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
+              <a href="#" className="social-link social-facebook" aria-label="Follow us on Facebook" id="social-facebook">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
                 </svg>
               </a>
-              <a href="https://instagram.com/reshineservice.in" className="social-link" aria-label="Follow us on Instagram" id="social-instagram">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <a href="https://instagram.com/reshineservice.in" className="social-link social-instagram" aria-label="Follow us on Instagram" id="social-instagram" target="_blank" rel="noopener noreferrer">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
                   <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" />
                   <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
                 </svg>
               </a>
-              <a href="#" className="social-link" aria-label="Follow us on Twitter" id="social-twitter">
+              <a href="#" className="social-link social-twitter" aria-label="Follow us on X (Twitter)" id="social-twitter">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
                 </svg>
               </a>
-              <a href="#" className="social-link" aria-label="Follow us on YouTube" id="social-youtube">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <a href="#" className="social-link social-youtube" aria-label="Follow us on YouTube" id="social-youtube">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
                 </svg>
               </a>

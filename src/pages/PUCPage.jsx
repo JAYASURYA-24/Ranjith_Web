@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import BeforeAfterSlider from '../components/BeforeAfterSlider';
 import pucBefore from '../assets/images/services/before_puc.webp';
 import pucAfter from '../assets/images/services/after_puc.webp';

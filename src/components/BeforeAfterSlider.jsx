@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import { useState, useRef } from 'react';
 
 export default function BeforeAfterSlider({ beforeImage, afterImage, beforeLabel = "Before", afterLabel = "After" }) {
   const [sliderPosition, setSliderPosition] = useState(50);
@@ -35,7 +35,7 @@ export default function BeforeAfterSlider({ beforeImage, afterImage, beforeLabel
     document.removeEventListener('mouseup', handleMouseUp);
   };
 
-  const handleTouchStart = (e) => {
+  const handleTouchStart = () => {
     document.addEventListener('touchmove', handleMove, { passive: false });
     document.addEventListener('touchend', handleTouchEnd);
   };

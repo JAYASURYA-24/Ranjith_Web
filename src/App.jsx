@@ -1,10 +1,12 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 import CarWashPage from './pages/CarWashPage';
+import CarWashPlanDetailPage from './pages/CarWashPlanDetailPage';
 import BikeWashPage from './pages/BikeWashPage';
+import BikeWashPlanDetailPage from './pages/BikeWashPlanDetailPage';
 import PUCPage from './pages/PUCPage';
 import HomeCleanPage from './pages/HomeCleanPage';
 import TermsPage from './pages/TermsPage';
@@ -54,7 +56,9 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/car-wash" element={<CarWashPage />} />
+          <Route path="/car-wash/:planId" element={<CarWashPlanDetailPage />} />
           <Route path="/bike-wash" element={<BikeWashPage />} />
+          <Route path="/bike-wash/:planId" element={<BikeWashPlanDetailPage />} />
           <Route path="/puc-service" element={<PUCPage />} />
           <Route path="/home-cleaning" element={<HomeCleanPage />} />
           <Route path="/terms" element={<TermsPage />} />

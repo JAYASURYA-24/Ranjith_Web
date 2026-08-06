@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import PartnerWithUs from '../components/PartnerWithUs';
 
 export default function PartnerPage() {
@@ -7,7 +7,7 @@ export default function PartnerPage() {
   }, []);
 
   return (
-    <div style={{ paddingTop: '80px' }}>
+    <div style={{ paddingTop: '50px' }}>
       <PartnerWithUs />
     </div>
   );

@@ -1,4 +1,3 @@
-import React from 'react';
 import trust1 from '../assets/images/trust/Trust_1.webp';
 import trust2 from '../assets/images/trust/Trust_2.webp';
 import trust3 from '../assets/images/trust/Trust_3.webp';
@@ -9,26 +8,34 @@ import trust6 from '../assets/images/trust/Trust_6.webp';
 const reasons = [
   {
     icon: trust1,
-    title: 'Doorstep Convenience',
-    description: 'No more driving to car washes. We bring professional-grade cleaning to your home or office.',
+    title: '24/7 Service Support',
+    description: 'Round-the-clock customer assistance and flexible booking slots whenever you need us.',
   },
   {
     icon: trust2,
+    title: 'Doorstep Convenience',
+    description: 'No more driving to car washes. We bring professional-grade cleaning right to your home or office.',
+  },
+  {
+    icon: trust3,
     title: 'Eco-Friendly & Water-Efficient',
     description: 'Experience a smarter way to clean your vehicle with eco-conscious products and water-efficient methods.',
   },
   {
-    icon: trust3,
-    title: 'Trusted Professionals',
-    description: 'All our technicians are background-verified, trained, and equipped with the best tools and products.',
+    icon: trust4,
+    title: 'Trusted & Verified Professionals',
+    description: 'All our technicians are background-verified, trained, and equipped with top-grade tools and products.',
   },
-
   {
     icon: trust5,
-    title: 'Easy App Booking',
-    description: 'Book in under 60 seconds through our intuitive mobile app. Track your service in real-time.',
+    title: 'Insured Services',
+    description: 'Complete peace of mind. Every service is backed by comprehensive protection and care for your vehicle.',
   },
-
+  {
+    icon: trust6,
+    title: 'Transparent Pricing',
+    description: 'Clear, upfront costs with zero hidden charges. Pay only for the services you select.',
+  },
 ];
 
 export default function WhyChooseUs() {
@@ -51,13 +58,12 @@ export default function WhyChooseUs() {
 
         <div className="why-grid">
           {reasons.map((reason, index) => (
-            <div className="why-card animate-on-scroll" key={index} style={{ animationDelay: `${index * 0.1}s` }}>
+            <div className={`why-card animate-on-scroll delay-${(index + 1) * 100}`} key={index}>
               <div className="why-card-icon" style={{ background: 'transparent', boxShadow: 'none' }}>
                 <img src={reason.icon} alt={reason.title} style={{ width: '100%', height: '100%', objectFit: 'contain' }} loading="lazy" />
               </div>
               <div className="why-card-text" style={{ textAlign: 'left' }}>
                 <h3>{reason.title}</h3>
-                <p>{reason.description}</p>
               </div>
             </div>
           ))}

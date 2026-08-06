@@ -1,9 +1,7 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
+import WashBackgroundAnimation from './WashBackgroundAnimation';
 import carWashImg from '../assets/images/services/car-wash.webp';
 import bikeWashImg from '../assets/images/services/bike-wash.webp';
-import pucImg from '../assets/images/services/puc-verify.webp';
-import homeImg from '../assets/images/services/home-wash.webp';
 
 const services = [
   {
@@ -11,7 +9,15 @@ const services = [
     description: 'Premium foam wash, interior vacuuming, dashboard polish, and tyre shine - all at your doorstep with eco-friendly products.',
     image: carWashImg,
     status: 'active',
-    statusLabel: 'Available Now',
+    statusLabel: 'Car Wash Service',
+    icon: (
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H7c-.7 0-1.3.3-1.8.7C4.3 8.6 3 10 3 10s-2.7.6-4.5 1.1C-2.3 11.3-3 12.1-3 13v3c0 .6.4 1 1 1h2" />
+        <path d="M5 11l1.5-4.5h11L19 11" />
+        <circle cx="7.5" cy="16.5" r="1.5" />
+        <circle cx="16.5" cy="16.5" r="1.5" />
+      </svg>
+    ),
     route: '/car-wash'
   },
   {
@@ -19,30 +25,23 @@ const services = [
     description: 'Complete bike cleaning with foam wash, chain lubrication, alloy cleaning, and polish to keep your ride looking brand new.',
     image: bikeWashImg,
     status: 'active',
-    statusLabel: 'Available Now',
+    statusLabel: 'Bike Wash Service',
+    icon: (
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="5.5" cy="17.5" r="3.5" />
+        <circle cx="18.5" cy="17.5" r="3.5" />
+        <path d="M15 6h4l-3 5.5h-5.5L8 17.5" />
+        <path d="M5.5 17.5L10 11.5l3.5 1.5 3-5.5" />
+      </svg>
+    ),
     route: '/bike-wash'
-  },
-  {
-    title: 'Vehicle PUC Service',
-    description: 'Get your Pollution Under Control certificate renewed at your doorstep. No queues, no hassle - fully compliant testing.',
-    image: pucImg,
-    status: 'coming-soon',
-    statusLabel: 'Coming Soon',
-    route: '/puc-service'
-  },
-  {
-    title: 'Home Cleaning',
-    description: 'Professional deep cleaning for your home - living rooms, kitchens, bathrooms, and more with trained cleaning experts.',
-    image: homeImg,
-    status: 'coming-soon',
-    statusLabel: 'Coming Soon',
-    route: '/home-cleaning'
-  },
+  }
 ];
 
 export default function Services() {
   return (
     <section className="services" id="services" aria-label="Our Services">
+      <WashBackgroundAnimation />
       <div className="container">
         <div className="section-header animate-on-scroll">
           <span className="section-badge">
@@ -54,7 +53,7 @@ export default function Services() {
           </span>
           <h2 className="section-title">What We <span className="text-gradient">Offer</span></h2>
           <p className="section-subtitle">
-            From sparkling car washes to comprehensive bike care - all delivered to your doorstep with professional-grade equipment and eco-friendly products.
+            We bring convenient and hassle-free car wash, bike wash, and helmet cleaning services right to your doorstep with transparent pricing and professional care.
           </p>
         </div>
 
@@ -62,9 +61,9 @@ export default function Services() {
           {services.map((service, index) => (
             <Link
               to={service.route}
-              className={`service-card animate-on-scroll ${service.status === 'coming-soon' ? 'coming-soon-card' : ''}`}
+              className={`service-card animate-on-scroll delay-${(index + 1) * 100} ${service.status === 'coming-soon' ? 'coming-soon-card' : ''}`}
               key={index}
-              style={{ animationDelay: `${index * 0.1}s`, textDecoration: 'none', color: 'inherit' }}
+              style={{ textDecoration: 'none', color: 'inherit' }}
             >
               <div className="service-card-image">
                 {service.image ? (
@@ -83,11 +82,6 @@ export default function Services() {
                       {service.title}
                     </span>
                   </div>
-                )}
-                {service.status !== 'active' && (
-                  <span className={`service-card-badge ${service.status}`}>
-                    {service.statusLabel}
-                  </span>
                 )}
               </div>
               <div className="service-card-body">

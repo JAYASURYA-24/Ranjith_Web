@@ -1,4 +1,3 @@
-import React from 'react';
 import { PLAYSTORE_LINK, APPSTORE_LINK } from '../utils/appLinks';
 import mobileApp from '../assets/images/app-promo/MMU.webp';
 import playstoreIcon from '../assets/images/app-promo/playstore.webp';
