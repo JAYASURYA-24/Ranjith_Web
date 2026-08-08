@@ -6,7 +6,7 @@ export const carWashPlansData = {
     cardClass: '',
     preferredFor: 'Regular maintenance • Low-dust vehicles • Budget-friendly cleaning',
     estimatedTime: '30-40 mins',
-    tagline: '💡 Perfect for regular cleaning. Service is performed manually without a pressure pump.',
+    tagline: 'Perfect for regular cleaning. Service is performed manually without a pressure pump.',
     overview: 'Our Basic Manual Wash is ideal for regular maintenance. Performed completely manually without needing an electrical outlet or pressure pump, our team uses specialized Shine-Up cleaning liquids and microfiber tools to restore your car to pristine condition at your doorstep.',
     customerRequirements: [
       '2 buckets of water required',
@@ -38,54 +38,24 @@ export const carWashPlansData = {
     ],
     detailedSteps: [
       {
-        title: 'Step 1: Floor Mat Removal & Washing',
-        desc: 'Removal of all floor mats and manual water cleaning to clear trapped dirt.'
-      },
-      {
-        title: 'Step 2: Interior Brush Dry Cleaning',
-        desc: 'Interior dry cleaning using brushes for effective dust, mud, and debris removal.'
-      },
-      {
-        title: 'Step 3: Basic Seat Solution Cleaning',
-        desc: 'Basic seat cleaning using specialized Shine-Up cleaning solution.'
-      },
-      {
-        title: 'Step 4: Microfiber Interior Dusting',
-        desc: 'Interior dusting using gentle Shine-Up microfiber duster.'
-      },
-      {
-        title: 'Step 5: Full Exterior Hand Wash',
+        title: 'Step 1: Full Exterior Hand Wash',
         desc: 'Full exterior hand wash using premium Shine-Up liquid.'
       },
       {
-        title: 'Step 6: Premium Microfiber Drying',
+        title: 'Step 2: Premium Microfiber Drying',
         desc: 'Complete exterior drying using absorbent premium microfiber cloth.'
       },
       {
-        title: 'Step 7: Tyre Polishing',
+        title: 'Step 3: Tyre Polishing',
         desc: 'Tyre polishing with dedicated Shine-Up solution.'
       },
       {
-        title: 'Step 8: Hand Wax Polish',
-        desc: 'Wax polish using Shine-Up hand polisher for a protective shine.'
+        title: 'Step 4: Glass Polishing',
+        desc: 'Glass polishing with dedicated Shine-Up solution.'
       },
-      {
-        title: 'Step 9: Dashboard Polish & Fragrance Spray',
-        desc: 'Dashboard polish and fresh interior fragrance spray.'
-      },
-      {
-        title: 'Step 10: Floor Mat Paper Placement',
-        desc: 'Complimentary floor mat paper placement to protect clean carpets.'
-      },
-      {
-        title: 'Step 11: Final Quality Check & Handover',
-        desc: 'Final quality inspection & smooth handover to owner.'
-      }
+
     ],
-    recommendedAddOns: [
-      'Rain Repellent Glass Coating',
-      'AC Vent Sanitization Spray'
-    ]
+
   },
 
   'pressure-foam-wash': {
@@ -95,7 +65,7 @@ export const carWashPlansData = {
     cardClass: '',
     preferredFor: 'High mud • Road tar • Glossy exterior shine',
     estimatedTime: '35-40 mins',
-    tagline: '💡 High-pressure water jet & thick snow foam bath for deep mud and grime removal.',
+    tagline: 'High-pressure water jet & thick snow foam bath for deep mud and grime removal.',
     overview: 'Our Pressure Foam Wash is specifically engineered for cars exposed to tough road mud, sticky dust, and highway grime. Powered by professional high-pressure water pumps and thick snow foam, it encapsulates surface contaminants for a scratch-free, high-gloss clean at your doorstep.',
     customerRequirements: [
       'Electricity access point within 15 meters (Consumes only ~0.4 units ≈ ₹7–₹8)',
@@ -130,46 +100,35 @@ export const carWashPlansData = {
     ],
     detailedSteps: [
       {
-        title: 'Step 1: Floor Mat Pressure Wash',
-        desc: 'Removal of floor mats and high-pressure jet cleaning.'
+        title: 'Step 1: Pressure Pre-Wash Rinse',
+        desc: 'Exterior pre-wash rinse using high-pressure pump jet.'
       },
       {
-        title: 'Step 2: Underbody & Body Jet Blast',
-        desc: 'High-pressure water pre-rinse to clear heavy mud from wheel arches and body panels.'
+        title: 'Step 2: Shine-Up Protective Snow Foam',
+        desc: 'Application of rich Shine-Up foam providing a paint protection layer.'
       },
       {
-        title: 'Step 3: Thick Snow Foam Bath',
-        desc: 'Covering the entire car in dense Shine-Up foam that encapsulates and dissolves dirt.'
+        title: 'Step 3: Hand Wash with Premium Wash Mitts',
+        desc: 'Gentle manual hand wash using premium soft wash gloves.'
       },
       {
-        title: 'Step 4: Badge & Grill Brushing',
-        desc: 'Precision detailing brush cleaning around grills, emblems, badges, and door seals.'
+        title: 'Step 4: Full Pressure Jet Rinse',
+        desc: 'Complete exterior pressure rinse to dislodge all dirt & foam.'
       },
       {
-        title: 'Step 5: Microfiber Glove Agitation',
-        desc: 'Gentle contact hand wash using soft plush microfiber wash mitts.'
+        title: 'Step 5: Microfiber Cloth Drying',
+        desc: 'Thorough drying using ultra-absorbent microfiber towels.'
       },
       {
-        title: 'Step 6: High-Pressure Clean Rinse',
-        desc: 'Complete high-pressure jet rinse ensuring zero foam or grime residue remains.'
+        title: 'Step 6: Tyre Polishing',
+        desc: 'Tyre polishing using Shine-Up long-lasting gloss solution.'
       },
       {
-        title: 'Step 7: Streak-Free Microfiber Drying',
-        desc: 'Thorough hand drying with absorbent microfiber towels.'
+        title: 'Step 7: Glass Polishing',
+        desc: 'Glass polishing with dedicated Shine-Up solution.'
       },
-      {
-        title: 'Step 8: Tyre Shine & Window Polish',
-        desc: 'Applying Shine-Up tyre gloss polish and cleaning exterior glass mirrors.'
-      },
-      {
-        title: 'Step 9: Quality Check & Handover',
-        desc: 'Final visual inspection & smooth handover to owner.'
-      }
     ],
-    recommendedAddOns: [
-      'Wax Coating Polish',
-      'Engine Bay Steam Cleaning'
-    ]
+
   },
 
   'premium-wash': {
@@ -248,18 +207,12 @@ export const carWashPlansData = {
         desc: 'Tyre polishing using Shine-Up long-lasting gloss solution.'
       },
       {
-        title: 'Step 10: Hand Wax Polish',
-        desc: 'Wax polish application using Shine-Up specialized polisher.'
+        title: 'Step 10: Glass Polishing',
+        desc: 'Glass polishing with dedicated Shine-Up solution.'
       },
-      {
-        title: 'Step 11: Dashboard Polish & Fragrance Spray',
-        desc: 'Dashboard polish and fresh interior fragrance spray finish.'
-      }
+
     ],
-    recommendedAddOns: [
-      'AC Vent Cleaning',
-      'Rat Repellent Treatment'
-    ]
+
   },
 
   'elite-deep-cleaning': {
@@ -296,10 +249,10 @@ export const carWashPlansData = {
       'Applying of premium foam (paint protection layer)',
       'Manual wash using specialized wash gloves',
       'Complete pressure rinse & streak-free microfiber drying',
-      '🧼 Steam cleaning (interior sanitization - kills germs, bacteria & insects)',
-      '✨ Tyre polishing with Shine-Up solution',
-      '✨ Wax polish & plastic parts restoration',
-      '✨ Dashboard polish & premium fragrance spray'
+      'Steam cleaning (interior sanitization - kills germs, bacteria & insects)',
+      'Tyre polishing with Shine-Up solution',
+      'Wax polish & plastic parts restoration',
+      'Dashboard polish & premium fragrance spray'
     ],
     detailedSteps: [
       {
@@ -330,23 +283,17 @@ export const carWashPlansData = {
         title: 'Step 7: Streak-Free Microfiber Drying',
         desc: 'Complete exterior drying using high-absorbency microfiber towels.'
       },
+
       {
-        title: 'Step 8: Interior Steam Sanitization 🧼',
-        desc: 'Deep steam cleaning for interior sanitization to eliminate germs, bacteria, and insects.'
+        title: 'Step 8: Tyre Polish',
+        desc: 'Tyre polishing with Shine-Up solution.'
       },
       {
-        title: 'Step 9: Tyre & Plastic Restoration ✨',
-        desc: 'Tyre polishing with Shine-Up solution & plastic trim gloss restoration.'
+        title: 'Step 9: Glass Polishing',
+        desc: 'Glass polishing with dedicated Shine-Up solution.'
       },
-      {
-        title: 'Step 10: Wax Polish & Fragrance Finish ✨',
-        desc: 'Body wax polish, dashboard polish & premium interior fragrance spray application.'
-      }
+
     ],
-    recommendedAddOns: [
-      'Roof Cleaning',
-      'Engine Bay Steam Cleaning',
-      'Rat Repellent Treatment'
-    ]
+
   }
 };

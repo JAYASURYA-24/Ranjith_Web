@@ -133,7 +133,7 @@ ol {
   width: 100%;
   max-width: var(--container-max);
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 0px;
 }
 
 @media (max-width: 1024px) {
@@ -433,7 +433,7 @@ ol {
   left: 0;
   right: 0;
   z-index: 1000;
-  padding: 6px 0;
+  padding: 20px 0;
   transition: all var(--transition-base);
   background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(16px);
@@ -447,7 +447,7 @@ ol {
   -webkit-backdrop-filter: blur(20px);
   border-bottom: none !important;
   box-shadow: 0 4px 24px rgba(14, 165, 233, 0.08);
-  padding: 4px 0;
+  padding: 12px 0;
 }
 
 .header-inner {
@@ -469,7 +469,7 @@ ol {
 }
 
 .logo-img {
-  height: 18px;
+  height: 25px;
   width: auto;
   object-fit: contain;
   position: relative;
@@ -567,8 +567,8 @@ ol {
 .nav-cta {
   position: relative;
   overflow: hidden;
-  padding: 6px 16px !important;
-  font-size: 0.85rem !important;
+  padding: 8px 16px !important;
+  font-size: 0.9rem !important;
   background: linear-gradient(135deg, var(--sky-500), var(--sky-600));
   color: var(--white) !important;
   border-radius: 14px 14px 2px 14px;
@@ -1101,7 +1101,7 @@ ol {
   grid-template-columns: 1fr 1fr;
   gap: 60px;
   align-items: center;
-  padding: 55px 80px 60px;
+  padding: 55px 0px 60px;
 }
 
 .hero-text {

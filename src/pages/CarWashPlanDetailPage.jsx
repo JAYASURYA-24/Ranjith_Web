@@ -68,13 +68,13 @@ export default function CarWashPlanDetailPage() {
           background: plan.cardClass === 'popular'
             ? 'linear-gradient(135deg, rgba(224, 242, 254, 0.6) 0%, #ffffff 60%)'
             : plan.cardClass === 'elite'
-            ? 'linear-gradient(135deg, rgba(254, 249, 195, 0.6) 0%, #ffffff 60%)'
-            : 'linear-gradient(135deg, rgba(240, 249, 255, 0.7) 0%, #ffffff 60%)',
+              ? 'linear-gradient(135deg, rgba(254, 249, 195, 0.6) 0%, #ffffff 60%)'
+              : 'linear-gradient(135deg, rgba(240, 249, 255, 0.7) 0%, #ffffff 60%)',
           border: plan.cardClass === 'popular'
             ? '2px solid var(--sky-400)'
             : plan.cardClass === 'elite'
-            ? '1.5px solid rgba(234, 179, 8, 0.5)'
-            : '1px solid rgba(14, 165, 233, 0.2)',
+              ? '1.5px solid rgba(234, 179, 8, 0.5)'
+              : '1px solid rgba(14, 165, 233, 0.2)',
           borderRadius: 'var(--radius-2xl)',
           overflow: 'hidden',
           boxShadow: '0 12px 35px rgba(14, 165, 233, 0.12)',
@@ -302,35 +302,7 @@ export default function CarWashPlanDetailPage() {
           </div>
         </div>
 
-        {/* Recommended Add-ons for this plan */}
-        <div style={{ marginBottom: '4rem' }}>
-          <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
-            <span className="section-badge">Popular Extras</span>
-            <h3 style={{ fontSize: '1.6rem', fontWeight: '800', color: 'var(--gray-900)', marginTop: '0.5rem' }}>
-              Recommended Add-Ons for this Wash
-            </h3>
-          </div>
-          <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '14px' }}>
-            {plan.recommendedAddOns.map((addon, idx) => (
-              <div key={idx} style={{
-                background: 'var(--white)',
-                border: '1px solid var(--sky-200)',
-                padding: '12px 20px',
-                borderRadius: 'var(--radius-full)',
-                fontWeight: '700',
-                color: 'var(--sky-800)',
-                fontSize: '0.9rem',
-                boxShadow: '0 2px 8px rgba(14, 165, 233, 0.08)',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '8px'
-              }}>
-                <span style={{ color: 'var(--sky-500)', fontWeight: 'bold' }}>+</span>
-                <span>{addon}</span>
-              </div>
-            ))}
-          </div>
-        </div>
+
 
         {/* Bottom CTA Banner */}
         <div style={{
