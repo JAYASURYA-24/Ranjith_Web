@@ -1,9 +1,15 @@
+import basicManualWashImg from '../assets/images/services/basic_manual_wash.png';
+import pressureFoamWashImg from '../assets/images/services/pressure_foam_wash.png';
+import premiumPressurePumpWashImg from '../assets/images/services/premium_pressur_pump_wash.png';
+import eliteWashImg from '../assets/images/services/elite_wash.png';
+
 export const carWashPlansData = {
   'basic-manual-wash': {
     id: 'basic-manual-wash',
     title: 'Basic Manual Wash (No Electricity Required)',
     badge: 'No Electricity Required',
     cardClass: '',
+    image: basicManualWashImg,
     preferredFor: 'Regular maintenance • Low-dust vehicles • Budget-friendly cleaning',
     estimatedTime: '30-40 mins',
     tagline: 'Perfect for regular cleaning. Service is performed manually without a pressure pump.',
@@ -53,9 +59,7 @@ export const carWashPlansData = {
         title: 'Step 4: Glass Polishing',
         desc: 'Glass polishing with dedicated Shine-Up solution.'
       },
-
     ],
-
   },
 
   'pressure-foam-wash': {
@@ -63,6 +67,7 @@ export const carWashPlansData = {
     title: 'Pressure Foam Wash',
     badge: 'Gloss Finish',
     cardClass: '',
+    image: pressureFoamWashImg,
     preferredFor: 'High mud • Road tar • Glossy exterior shine',
     estimatedTime: '35-40 mins',
     tagline: 'High-pressure water jet & thick snow foam bath for deep mud and grime removal.',
@@ -128,7 +133,6 @@ export const carWashPlansData = {
         desc: 'Glass polishing with dedicated Shine-Up solution.'
       },
     ],
-
   },
 
   'premium-wash': {
@@ -136,6 +140,7 @@ export const carWashPlansData = {
     title: 'Premium Pressure Pump Wash',
     badge: 'Most Popular',
     cardClass: 'popular',
+    image: premiumPressurePumpWashImg,
     preferredFor: 'Weekly cleaning • Moderately dusty vehicles • Premium finish',
     estimatedTime: '45-50 mins',
     tagline: '💡 High-quality deep cleaning using a pressure washer and vacuum cleaner.',
@@ -210,9 +215,7 @@ export const carWashPlansData = {
         title: 'Step 10: Glass Polishing',
         desc: 'Glass polishing with dedicated Shine-Up solution.'
       },
-
     ],
-
   },
 
   'elite-deep-cleaning': {
@@ -220,6 +223,7 @@ export const carWashPlansData = {
     title: 'Elite Pressure Pump Wash (Deep Cleaning Service)',
     badge: 'Ultimate Care',
     cardClass: 'elite',
+    image: eliteWashImg,
     preferredFor: 'Monthly deep cleaning • Family or heavily used vehicles • Luxury service',
     estimatedTime: '75-90 mins',
     tagline: '💡 Ultimate interior and exterior detailing experience.',
@@ -283,7 +287,6 @@ export const carWashPlansData = {
         title: 'Step 7: Streak-Free Microfiber Drying',
         desc: 'Complete exterior drying using high-absorbency microfiber towels.'
       },
-
       {
         title: 'Step 8: Tyre Polish',
         desc: 'Tyre polishing with Shine-Up solution.'
@@ -292,8 +295,6 @@ export const carWashPlansData = {
         title: 'Step 9: Glass Polishing',
         desc: 'Glass polishing with dedicated Shine-Up solution.'
       },
-
     ],
-
   }
 };

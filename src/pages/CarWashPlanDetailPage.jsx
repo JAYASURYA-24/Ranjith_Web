@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
-import { carWashPlansData } from '../data/carWashPlans.jsx';
+import { carWashPlansData } from "../data/carWashPlans.jsx";
 import WashBackgroundAnimation from '../components/WashBackgroundAnimation';
 import carWashImg from '../assets/images/services/car-wash.webp';
 import { handleAppDownload } from '../utils/appLinks';

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import thumb1 from '../assets/images/testimonials/thumb1.png';
 import thumb2 from '../assets/images/testimonials/thumb2.png';
 import thumb3 from '../assets/images/testimonials/thumb3.png';
@@ -74,13 +74,225 @@ const extendedTestimonials = [
   ...videoTestimonials.map(item => ({ ...item, uniqueKey: `set3-${item.id}` })),
 ];
 
+function VideoTestimonialCardItem({ item, activePlayingId, setActivePlayingId, isMutedGlobal, setIsMutedGlobal, onSlideNext }) {
+  const isPlayingThis = activePlayingId === item.uniqueKey;
+  const videoRef = useRef(null);
+  const [isPlaying, setIsPlaying] = useState(true);
+  const [progress, setProgress] = useState(0);
+
+  useEffect(() => {
+    if (isPlayingThis && videoRef.current) {
+      if (isPlaying) {
+        videoRef.current.play().catch(() => {});
+      } else {
+        videoRef.current.pause();
+      }
+    }
+  }, [isPlayingThis, isPlaying]);
+
+  const handleStartPlay = (e) => {
+    e.stopPropagation();
+    setActivePlayingId(item.uniqueKey);
+    setIsPlaying(true);
+    setProgress(0);
+  };
+
+  const handleTogglePlayPause = (e) => {
+    e.stopPropagation();
+    if (!videoRef.current) return;
+    if (isPlaying) {
+      // Pause/Stop video, reset active player, and immediately slide to the next testimonial video
+      videoRef.current.pause();
+      setIsPlaying(false);
+      setActivePlayingId(null);
+      setProgress(0);
+      if (onSlideNext) {
+        onSlideNext();
+      }
+    } else {
+      videoRef.current.play().catch(() => {});
+      setIsPlaying(true);
+    }
+  };
+
+  const handleToggleMute = (e) => {
+    e.stopPropagation();
+    if (!videoRef.current) return;
+    const nextMuted = !videoRef.current.muted;
+    videoRef.current.muted = nextMuted;
+    setIsMutedGlobal(nextMuted);
+  };
+
+  const handleTimeUpdate = () => {
+    if (videoRef.current && videoRef.current.duration) {
+      const p = (videoRef.current.currentTime / videoRef.current.duration) * 100;
+      setProgress(p);
+    }
+  };
+
+  return (
+    <div className="video-testimonial-card">
+      {/* Video Thumbnail / Inline Player Area */}
+      <div
+        className={`video-thumb-wrapper ${isPlayingThis ? 'is-playing' : ''}`}
+        onClick={!isPlayingThis ? handleStartPlay : undefined}
+        role={!isPlayingThis ? 'button' : undefined}
+        tabIndex={!isPlayingThis ? 0 : undefined}
+        aria-label={!isPlayingThis ? `Play video testimonial from ${item.name}` : undefined}
+        onKeyDown={(e) => {
+          if (!isPlayingThis && (e.key === 'Enter' || e.key === ' ')) {
+            handleStartPlay(e);
+          }
+        }}
+      >
+        {isPlayingThis ? (
+          <div
+            className="inline-video-container"
+            onClick={handleTogglePlayPause}
+            role="button"
+            tabIndex={0}
+            aria-label="Pause and next video"
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                handleTogglePlayPause(e);
+              }
+            }}
+          >
+            <video
+              ref={videoRef}
+              src={item.videoUrl}
+              poster={item.thumbnail}
+              autoPlay
+              playsInline
+              muted={isMutedGlobal}
+              className="inline-card-video"
+              onTimeUpdate={handleTimeUpdate}
+              onEnded={() => {
+                setActivePlayingId(null);
+                setIsPlaying(false);
+                setProgress(0);
+                if (onSlideNext) {
+                  onSlideNext();
+                }
+              }}
+            />
+
+            {/* Top Live Playing Badge */}
+            <div className="video-live-badge">
+              <span className={`live-dot ${isPlaying ? 'is-active' : 'is-paused'}`}></span>
+              <span>{isPlaying ? 'Playing' : 'Paused'}</span>
+            </div>
+
+            {/* Center Play Indicator when paused */}
+            {!isPlaying && (
+              <div className="inline-video-center-overlay" aria-hidden="true">
+                <div className="center-pause-icon-btn">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                    <polygon points="5 3 19 12 5 21 5 3" />
+                  </svg>
+                </div>
+              </div>
+            )}
+
+            {/* Bottom Controls Bar: Mute */}
+            <div className="inline-video-controls-bar" onClick={(e) => e.stopPropagation()}>
+              <button
+                className={`inline-video-btn ${isMutedGlobal ? 'btn-active' : ''}`}
+                onClick={handleToggleMute}
+                aria-label={isMutedGlobal ? 'Unmute sound' : 'Mute sound'}
+                title={isMutedGlobal ? 'Unmute' : 'Mute'}
+                type="button"
+              >
+                {isMutedGlobal ? (
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="1" y1="1" x2="23" y2="23" />
+                    <path d="M9 9v3a3 3 0 0 0 5.12 2.12M15 9.34V4a2 2 0 0 0-3.54-1.28L7.5 6H4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h2.5l2.25 1.8" />
+                  </svg>
+                ) : (
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+                    <path d="M15.54 8.46a5 5 0 0 1 0 7.07" />
+                    <path d="M19.07 4.93a10 10 0 0 1 0 14.14" />
+                  </svg>
+                )}
+              </button>
+            </div>
+
+            {/* Real-time Progress Bar */}
+            <div className="inline-video-progress-bar">
+              <div className="inline-video-progress-fill" style={{ width: `${progress}%` }}></div>
+            </div>
+          </div>
+        ) : (
+          <>
+            <img src={item.thumbnail} alt={`${item.name} testimonial`} loading="lazy" className="video-thumb-img" />
+            
+            <div className="video-thumb-overlay">
+              {/* Service Tag */}
+              <span className="video-service-tag">{item.service}</span>
+
+              {/* Play Button */}
+              <button className="video-play-btn" aria-label="Play video" type="button">
+                <span className="play-pulse-ring"></span>
+                <span className="play-pulse-ring-outer"></span>
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                  <polygon points="5 3 19 12 5 21 5 3" />
+                </svg>
+              </button>
+
+              {/* Video Duration Badge */}
+              <span className="video-duration-badge">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <circle cx="12" cy="12" r="10" />
+                  <polyline points="12 6 12 12 16 14" />
+                </svg>
+                {item.duration}
+              </span>
+            </div>
+          </>
+        )}
+      </div>
+
+      {/* Card Content */}
+      <div className="video-card-body">
+        {/* Rating Stars & Quote Icon */}
+        <div className="video-card-header-row">
+          <div className="testimonial-stars" aria-label={`Rating: ${item.rating} out of 5 stars`}>
+            {[...Array(item.rating)].map((_, i) => (
+              <span className="star-icon" key={i}>★</span>
+            ))}
+          </div>
+          <span className="quote-mark-icon" aria-hidden="true">“</span>
+        </div>
+
+        {/* Testimonial Text */}
+        <p className="video-testimonial-text">{item.text}</p>
+
+        {/* Customer Info Footer */}
+        <div className="video-card-footer">
+          <div className="author-avatar">{item.initials}</div>
+          <div className="author-details">
+            <h4 className="author-name">
+              {item.name}
+              <svg className="verified-badge" width="15" height="15" viewBox="0 0 24 24" fill="#0ea5e9" title="Verified Customer">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+              </svg>
+            </h4>
+            <p className="author-role">{item.role}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function Testimonials() {
   const totalOriginal = videoTestimonials.length;
   const [currentIndex, setCurrentIndex] = useState(totalOriginal); // Start in the middle set
   const [withTransition, setWithTransition] = useState(true);
-  const [isPaused, setIsPaused] = useState(false);
   const [cardsToShow, setCardsToShow] = useState(3);
-  const [selectedVideo, setSelectedVideo] = useState(null);
+  const [activePlayingId, setActivePlayingId] = useState(null);
+  const [isMutedGlobal, setIsMutedGlobal] = useState(false);
   const [touchStart, setTouchStart] = useState(null);
   const [touchEnd, setTouchEnd] = useState(null);
 
@@ -102,44 +314,32 @@ export default function Testimonials() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // Lock background body scroll when video modal is open
+  // Continuous auto-slide interval (advances automatically every 3.2s unless a video is actively playing)
   useEffect(() => {
-    if (selectedVideo !== null) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
-    return () => {
-      document.body.style.overflow = '';
-    };
-  }, [selectedVideo]);
-
-  // Continuous auto-slide interval (moves forward endlessly every 2.5s)
-  useEffect(() => {
-    if (isPaused || selectedVideo !== null) return;
+    if (activePlayingId !== null) return;
 
     const timer = setInterval(() => {
       setWithTransition(true);
       setCurrentIndex((prevIndex) => prevIndex + 1);
-    }, 2500);
+    }, 3200);
 
     return () => clearInterval(timer);
-  }, [isPaused, selectedVideo]);
+  }, [activePlayingId, currentIndex]);
 
-  // Seamless infinite loop reset handler (resets position without animation jump)
+  // Seamless infinite loop reset handler (resets position without visual animation jump)
   useEffect(() => {
     if (currentIndex >= totalOriginal * 2) {
       const timer = setTimeout(() => {
         setWithTransition(false);
         setCurrentIndex(totalOriginal);
-      }, 600);
+      }, 650);
       return () => clearTimeout(timer);
     }
     if (currentIndex < totalOriginal) {
       const timer = setTimeout(() => {
         setWithTransition(false);
         setCurrentIndex(currentIndex + totalOriginal);
-      }, 600);
+      }, 650);
       return () => clearTimeout(timer);
     }
   }, [currentIndex, totalOriginal]);
@@ -153,17 +353,6 @@ export default function Testimonials() {
       return () => clearTimeout(timer);
     }
   }, [withTransition]);
-
-  // Keyboard accessibility for modal (ESC to close)
-  useEffect(() => {
-    const handleKeyDown = (e) => {
-      if (e.key === 'Escape' && selectedVideo) {
-        setSelectedVideo(null);
-      }
-    };
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [selectedVideo]);
 
   const handlePrev = () => {
     setWithTransition(true);
@@ -223,36 +412,10 @@ export default function Testimonials() {
         {/* Carousel Container */}
         <div
           className="testimonial-carousel-wrapper"
-          onMouseEnter={() => setIsPaused(true)}
-          onMouseLeave={() => setIsPaused(false)}
           onTouchStart={onTouchStart}
           onTouchMove={onTouchMove}
           onTouchEnd={onTouchEnd}
         >
-          {/* Navigation Arrow Left */}
-          <button
-            className="carousel-arrow carousel-arrow-left"
-            onClick={handlePrev}
-            aria-label="Previous testimonial"
-            type="button"
-          >
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-              <polyline points="15 18 9 12 15 6" />
-            </svg>
-          </button>
-
-          {/* Navigation Arrow Right */}
-          <button
-            className="carousel-arrow carousel-arrow-right"
-            onClick={handleNext}
-            aria-label="Next testimonial"
-            type="button"
-          >
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-              <polyline points="9 18 15 12 9 6" />
-            </svg>
-          </button>
-
           {/* Cards Track */}
           <div className="testimonial-carousel-track-container">
             <div
@@ -268,72 +431,14 @@ export default function Testimonials() {
                   key={item.uniqueKey}
                   style={{ flex: `0 0 ${100 / cardsToShow}%`, maxWidth: `${100 / cardsToShow}%` }}
                 >
-                  <div className="video-testimonial-card">
-                    {/* Video Thumbnail Area */}
-                    <div
-                      className="video-thumb-wrapper"
-                      onClick={() => setSelectedVideo(item)}
-                      role="button"
-                      tabIndex={0}
-                      aria-label={`Play video testimonial from ${item.name}`}
-                      onKeyDown={(e) => {
-                        if (e.key === 'Enter' || e.key === ' ') {
-                          setSelectedVideo(item);
-                        }
-                      }}
-                    >
-                      <img src={item.thumbnail} alt={`${item.name} testimonial`} loading="lazy" className="video-thumb-img" />
-                      
-                      <div className="video-thumb-overlay">
-                        {/* Service Tag */}
-                        <span className="video-service-tag">{item.service}</span>
-
-                        {/* Play Button */}
-                        <button className="video-play-btn" aria-label="Play video" type="button">
-                          <span className="play-pulse-ring"></span>
-                          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <polygon points="5 3 19 12 5 21 5 3" />
-                          </svg>
-                        </button>
-
-                        {/* Video Duration Badge */}
-                        <span className="video-duration-badge">
-                          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                            <circle cx="12" cy="12" r="10" />
-                            <polyline points="12 6 12 12 16 14" />
-                          </svg>
-                          {item.duration}
-                        </span>
-                      </div>
-                    </div>
-
-                    {/* Card Content */}
-                    <div className="video-card-body">
-                      {/* Rating Stars */}
-                      <div className="testimonial-stars" aria-label={`Rating: ${item.rating} out of 5 stars`}>
-                        {[...Array(item.rating)].map((_, i) => (
-                          <span className="star-icon" key={i}>★</span>
-                        ))}
-                      </div>
-
-                      {/* Short Testimonial Text */}
-                      <p className="video-testimonial-text">{item.text}</p>
-
-                      {/* Customer Info Footer */}
-                      <div className="video-card-footer">
-                        <div className="author-avatar">{item.initials}</div>
-                        <div className="author-details">
-                          <h4 className="author-name">
-                            {item.name}
-                            <svg className="verified-badge" width="14" height="14" viewBox="0 0 24 24" fill="#0ea5e9">
-                              <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
-                            </svg>
-                          </h4>
-                          <p className="author-role">{item.role}</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  <VideoTestimonialCardItem
+                    item={item}
+                    activePlayingId={activePlayingId}
+                    setActivePlayingId={setActivePlayingId}
+                    isMutedGlobal={isMutedGlobal}
+                    setIsMutedGlobal={setIsMutedGlobal}
+                    onSlideNext={handleNext}
+                  />
                 </div>
               ))}
             </div>
@@ -356,50 +461,7 @@ export default function Testimonials() {
           </div>
         </div>
       </div>
-
-      {/* Video Modal Lightbox */}
-      {selectedVideo && (
-        <div className="video-modal-backdrop" onClick={() => setSelectedVideo(null)}>
-          <div className="video-modal-content" onClick={(e) => e.stopPropagation()}>
-            <button
-              className="video-modal-close"
-              onClick={() => setSelectedVideo(null)}
-              aria-label="Close video modal"
-              type="button"
-            >
-              ✕
-            </button>
-
-            <div className="video-player-container">
-              <video
-                src={selectedVideo.videoUrl}
-                poster={selectedVideo.thumbnail}
-                controls
-                autoPlay
-                playsInline
-                className="modal-video-element"
-              >
-                Your browser does not support HTML5 video.
-              </video>
-            </div>
-
-            <div className="video-modal-info">
-              <div className="modal-header-row">
-                <div>
-                  <h3 className="modal-author-name">{selectedVideo.name}</h3>
-                  <p className="modal-author-role">{selectedVideo.role} • {selectedVideo.service}</p>
-                </div>
-                <div className="testimonial-stars">
-                  {[...Array(selectedVideo.rating)].map((_, i) => (
-                    <span className="star-icon" key={i}>★</span>
-                  ))}
-                </div>
-              </div>
-              <p className="modal-testimonial-text">{selectedVideo.text}</p>
-            </div>
-          </div>
-        </div>
-      )}
     </section>
   );
 }
+
