@@ -24,7 +24,7 @@ export default function HomeCleanPage() {
         </div>
 
         <div className="service-demo animate-on-scroll">
-          <h2 className="text-center section-title" style={{ fontSize: '2rem', marginBottom: '3rem' }}>See the Transformation</h2>
+          <h2 className="section-title text-center" style={{ marginBottom: '2rem' }}>See the Transformation</h2>
           <BeforeAfterSlider
             beforeImage={homeBefore}
             afterImage={homeAfter}

@@ -75,8 +75,8 @@ const partnerSteps = [
       </svg>
     ),
     image: step3Img,
-    title: 'DONE WORK',
-    description: 'Navigate to the customer, provide top-notch washing service, and mark it complete.',
+    title: 'COMPLETE THE JOB',
+    description: 'Travel to the customer, deliver great cleaning service, and mark the job complete.',
   },
   {
     number: '04',
@@ -92,8 +92,8 @@ const partnerSteps = [
       </>
     ),
     image: step4Img,
-    title: 'ENJOY PAYMENT',
-    description: 'Get paid securely and instantly after every completed job straight to your bank.',
+    title: 'GET PAID INSTANTLY',
+    description: 'Receive secure, instant payments straight to your bank account after every wash.',
   },
 ];
 

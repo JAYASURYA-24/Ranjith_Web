@@ -1,7 +1,7 @@
-import basicManualWashImg from '../assets/images/services/basic_manual_wash.png';
-import pressureFoamWashImg from '../assets/images/services/pressure_foam_wash.png';
-import premiumPressurePumpWashImg from '../assets/images/services/premium_pressur_pump_wash.png';
-import eliteWashImg from '../assets/images/services/elite_wash.png';
+import basicManualWashImg from '../assets/images/services/basic_manual_wash.webp';
+import pressureFoamWashImg from '../assets/images/services/pressure_foam_wash.webp';
+import premiumWashImg from '../assets/images/services/premium_pressur_pump_wash.webp';
+import eliteDeepCleaningImg from '../assets/images/services/elite-pressure-pump-wash.webp';
 
 export const carWashPlansData = {
   'basic-manual-wash': {
@@ -10,19 +10,19 @@ export const carWashPlansData = {
     badge: 'No Electricity Required',
     cardClass: '',
     image: basicManualWashImg,
-    preferredFor: 'Regular maintenance • Low-dust vehicles • Budget-friendly cleaning',
+    preferredFor: 'Daily maintenance • Light dust • Pocket-friendly cleaning',
     estimatedTime: '30-40 mins',
-    tagline: 'Perfect for regular cleaning. Service is performed manually without a pressure pump.',
-    overview: 'Our Basic Manual Wash is ideal for regular maintenance. Performed completely manually without needing an electrical outlet or pressure pump, our team uses specialized Shine-Up cleaning liquids and microfiber tools to restore your car to pristine condition at your doorstep.',
+    tagline: 'Simple, effective hand wash at your doorstep without needing power.',
+    overview: 'Our Basic Manual Wash is great for regular upkeep. Done completely by hand without needing power or a pressure machine, our team uses gentle cleaning liquids and soft microfiber cloths to make your car look fresh and clean.',
     customerRequirements: [
-      '2 buckets of water required',
-      'Our service provider will collect water from your location. Please provide access to the water source',
+      '2 buckets of clean water',
+      'Access to water tap or source',
       'No electricity required'
     ],
     bestFor: [
-      'Regular maintenance',
-      'Low-dust vehicles',
-      'Budget-friendly cleaning'
+      'Regular weekly cleaning',
+      'Light dust & daily use cars',
+      'Budget-friendly wash'
     ],
     iconSvg: (
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -30,36 +30,35 @@ export const carWashPlansData = {
       </svg>
     ),
     includes: [
-      'Removal of all floor mats and manual water cleaning',
-      'Interior dry cleaning using brushes (dust, mud, debris removal)',
-      'Basic seat cleaning using Shine-Up cleaning solution',
-      'Interior dusting using Shine-Up microfiber duster',
-      'Full exterior hand wash using Shine-Up liquid',
-      'Complete drying using premium microfiber cloth',
-      'Tyre polishing with Shine-Up solution',
-      'Wax polish using Shine-Up hand polisher',
-      'Dashboard polish & interior fragrance spray',
-      'Complimentary floor mat paper placement',
-      'Final quality check & smooth handover'
+      'Floor mats removal & water wash',
+      'Interior brush dusting & dirt removal',
+      'Seat wipe down with cleaning liquid',
+      'Full exterior gentle hand wash',
+      'Streak-free microfiber towel dry',
+      'Tyre cleaning & shine polish',
+      'Hand wax polish for smooth shine',
+      'Dashboard wipe & fresh car scent',
+      'Fresh paper floor mats placed',
+      'Final quality check & handover'
     ],
     detailedSteps: [
       {
-        title: 'Step 1: Full Exterior Hand Wash',
-        desc: 'Full exterior hand wash using premium Shine-Up liquid.'
+        title: 'Step 1: Exterior Hand Wash',
+        desc: 'Gentle hand wash with premium car shampoo to lift dirt.'
       },
       {
-        title: 'Step 2: Premium Microfiber Drying',
-        desc: 'Complete exterior drying using absorbent premium microfiber cloth.'
+        title: 'Step 2: Microfiber Towel Dry',
+        desc: 'Complete drying with soft microfiber towels to prevent water marks.'
       },
       {
-        title: 'Step 3: Tyre Polishing',
-        desc: 'Tyre polishing with dedicated Shine-Up solution.'
+        title: 'Step 3: Tyre Shine Polish',
+        desc: 'Long-lasting tyre shine polish applied for a clean look.'
       },
       {
-        title: 'Step 4: Glass Polishing',
-        desc: 'Glass polishing with dedicated Shine-Up solution.'
-      },
-    ],
+        title: 'Step 4: Glass Polish',
+        desc: 'Clear, streak-free polish on all mirrors and windows.'
+      }
+    ]
   },
 
   'pressure-foam-wash': {
@@ -68,20 +67,20 @@ export const carWashPlansData = {
     badge: 'Gloss Finish',
     cardClass: '',
     image: pressureFoamWashImg,
-    preferredFor: 'High mud • Road tar • Glossy exterior shine',
+    preferredFor: 'Tough mud • Road dirt • High-gloss exterior shine',
     estimatedTime: '35-40 mins',
-    tagline: 'High-pressure water jet & thick snow foam bath for deep mud and grime removal.',
-    overview: 'Our Pressure Foam Wash is specifically engineered for cars exposed to tough road mud, sticky dust, and highway grime. Powered by professional high-pressure water pumps and thick snow foam, it encapsulates surface contaminants for a scratch-free, high-gloss clean at your doorstep.',
+    tagline: 'High-pressure jet wash with thick snow foam for stubborn road dirt.',
+    overview: 'Our Pressure Foam Wash is built for cars with road grime, sticky dirt, and mud. We use high-pressure water pumps and thick snow foam to lift dirt safely without scratching your car paint.',
     customerRequirements: [
-      'Electricity access point within 15 meters (Consumes only ~0.4 units ≈ ₹7–₹8)',
-      '2 buckets of water required',
-      'Our service provider will collect water from your location. Please provide access to the water source'
+      'Standard power socket within 15 meters (~₹7 electricity used)',
+      '2 buckets of clean water',
+      'Access to water tap or source'
     ],
-    complimentary: '1 Surprise complementary product will be provided',
+    complimentary: '1 Free surprise car care gift included',
     bestFor: [
-      'High mud & road grime vehicles',
-      'Highway-driven cars',
-      'Customers wanting high-gloss snow foam wash'
+      'Muddy & highway-driven cars',
+      'Heavy road dust & grime',
+      'High-gloss snow foam wash'
     ],
     iconSvg: (
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -92,47 +91,47 @@ export const carWashPlansData = {
       </svg>
     ),
     includes: [
-      'Removal of floor mats and pressure water cleaning',
-      'Exterior pre-wash jet rinse using high-pressure pump',
-      'Thick Shine-Up snow foam bath application',
-      'Detailing brush cleaning around grills, badges & door seals',
-      'Gentle hand wash using soft microfiber wash gloves',
-      'High-pressure clean water body & wheel arch rinse',
-      'Complete drying using premium microfiber cloth',
-      'Tyre polishing with Shine-Up gloss solution',
-      'Exterior glass & mirror streak-free wiping',
-      'Final quality check & smooth handover'
+      'Floor mats removal & pressure wash',
+      'Exterior high-pressure water rinse',
+      'Thick snow foam bath application',
+      'Detail brush cleaning on grills & badges',
+      'Soft microfiber mitt hand wash',
+      'Full pressure water rinse & wheel arch wash',
+      'Streak-free microfiber towel dry',
+      'Tyre cleaning & gloss polish',
+      'Glass & mirror streak-free wipe',
+      'Final quality check & handover'
     ],
     detailedSteps: [
       {
-        title: 'Step 1: Pressure Pre-Wash Rinse',
-        desc: 'Exterior pre-wash rinse using high-pressure pump jet.'
+        title: 'Step 1: Pressure Pre-Rinse',
+        desc: 'High-pressure water rinse to knock off loose mud and dirt.'
       },
       {
-        title: 'Step 2: Shine-Up Protective Snow Foam',
-        desc: 'Application of rich Shine-Up foam providing a paint protection layer.'
+        title: 'Step 2: Thick Snow Foam Bath',
+        desc: 'Rich snow foam blanket to break down stubborn grime safely.'
       },
       {
-        title: 'Step 3: Hand Wash with Premium Wash Mitts',
-        desc: 'Gentle manual hand wash using premium soft wash gloves.'
+        title: 'Step 3: Soft Mitt Hand Wash',
+        desc: 'Gentle hand wash with soft microfiber mitts.'
       },
       {
-        title: 'Step 4: Full Pressure Jet Rinse',
-        desc: 'Complete exterior pressure rinse to dislodge all dirt & foam.'
+        title: 'Step 4: Full Pressure Rinse',
+        desc: 'Complete rinse to wash away all foam and dirt particles.'
       },
       {
-        title: 'Step 5: Microfiber Cloth Drying',
-        desc: 'Thorough drying using ultra-absorbent microfiber towels.'
+        title: 'Step 5: Microfiber Towel Dry',
+        desc: 'Thorough drying with ultra-absorbent microfiber towels.'
       },
       {
-        title: 'Step 6: Tyre Polishing',
-        desc: 'Tyre polishing using Shine-Up long-lasting gloss solution.'
+        title: 'Step 6: Tyre Shine Polish',
+        desc: 'Deep black tyre gloss polish for a showroom look.'
       },
       {
-        title: 'Step 7: Glass Polishing',
-        desc: 'Glass polishing with dedicated Shine-Up solution.'
-      },
-    ],
+        title: 'Step 7: Glass & Mirror Polish',
+        desc: 'Streak-free window and mirror cleaning for clear vision.'
+      }
+    ]
   },
 
   'premium-wash': {
@@ -140,21 +139,21 @@ export const carWashPlansData = {
     title: 'Premium Pressure Pump Wash',
     badge: 'Most Popular',
     cardClass: 'popular',
-    image: premiumPressurePumpWashImg,
-    preferredFor: 'Weekly cleaning • Moderately dusty vehicles • Premium finish',
+    image: premiumWashImg,
+    preferredFor: 'Weekly maintenance • Dusty vehicles • Complete interior & exterior care',
     estimatedTime: '45-50 mins',
-    tagline: '💡 High-quality deep cleaning using a pressure washer and vacuum cleaner.',
-    overview: 'Our Premium Pressure Pump Wash delivers high-quality deep cleaning for your vehicle using professional-grade pressure washer and high-power vacuum equipment right at your doorstep.',
+    tagline: 'Deep cleaning using a high-pressure washer and powerful interior vacuum.',
+    overview: 'Our Premium Pressure Pump Wash delivers complete inside-and-out deep cleaning. Combines pressure washing, snow foam, and full interior vacuuming right at your doorstep.',
     customerRequirements: [
-      'Electricity access point within 15 meters (Consumes only ~0.4 units ≈ ₹7–₹8)',
-      '2 buckets of water required',
-      'Our service provider will collect water from your location. Please provide access to the water source'
+      'Standard power socket within 15 meters (~₹7 electricity used)',
+      '2 buckets of clean water',
+      'Access to water tap or source'
     ],
-    complimentary: '3 Surprise complementary products will be provided',
+    complimentary: '3 Free surprise car care gifts included',
     bestFor: [
-      'Weekly cleaning',
-      'Moderately dusty vehicles',
-      'Customers looking for a premium finish'
+      'Weekly & bi-weekly cleaning',
+      'Dusty interiors and exteriors',
+      'Complete inside-and-out shine'
     ],
     iconSvg: (
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -162,60 +161,60 @@ export const carWashPlansData = {
       </svg>
     ),
     includes: [
-      'Removal of all floor mats and pressure wash cleaning',
-      'Interior vacuum cleaning (dust, dirt, debris removal)',
-      'Seat cleaning using Shine-Up solution with vacuum finish',
-      'Exterior pre-wash using pressure pump',
-      'Applying of Shine-Up foam (paint protection layer)',
-      'Manual hand wash using premium wash gloves',
-      'Complete exterior pressure rinse',
-      'Drying using microfiber cloth',
-      'Tyre polishing with Shine-Up solution',
-      'Wax polish using Shine-Up polisher',
-      'Dashboard polish & interior fragrance spray'
+      'Floor mats removal & pressure wash',
+      'Interior vacuuming (seats, floors & boot)',
+      'Seat spot cleaning & vacuum finish',
+      'Exterior high-pressure pre-rinse',
+      'Protective snow foam bath',
+      'Gentle hand wash with microfiber gloves',
+      'Full exterior pressure rinse',
+      'Microfiber towel drying',
+      'Tyre cleaning & shine polish',
+      'Hand wax polish for paint protection',
+      'Dashboard polish & fresh fragrance spray'
     ],
     detailedSteps: [
       {
         title: 'Step 1: Floor Mat Pressure Wash',
-        desc: 'Removal of all floor mats and high-pressure water cleaning.'
+        desc: 'Removing mats and washing them with high-pressure water.'
       },
       {
-        title: 'Step 2: Interior Cabin Vacuuming',
-        desc: 'Deep interior vacuum cleaning for complete dust, dirt, and debris removal.'
+        title: 'Step 2: Cabin Vacuum Cleaning',
+        desc: 'Deep vacuuming of seats, floor carpet, and boot space.'
       },
       {
-        title: 'Step 3: Seat Solution Cleaning & Vacuum',
-        desc: 'Seat cleaning using Shine-Up specialized solution with vacuum finish.'
+        title: 'Step 3: Seat Wipe & Clean',
+        desc: 'Seat surface cleaning with specialized solution and vacuum dry.'
       },
       {
-        title: 'Step 4: Pressure Pre-Wash Rinse',
-        desc: 'Exterior pre-wash rinse using high-pressure pump jet.'
+        title: 'Step 4: Pressure Pre-Rinse',
+        desc: 'High-pressure body rinse to remove loose mud.'
       },
       {
-        title: 'Step 5: Shine-Up Protective Snow Foam',
-        desc: 'Application of rich Shine-Up foam providing a paint protection layer.'
+        title: 'Step 5: Snow Foam Application',
+        desc: 'Applying thick protective snow foam.'
       },
       {
-        title: 'Step 6: Hand Wash with Premium Wash Mitts',
-        desc: 'Gentle manual hand wash using premium soft wash gloves.'
+        title: 'Step 6: Soft Hand Scrub',
+        desc: 'Gentle hand wash using soft microfiber wash gloves.'
       },
       {
-        title: 'Step 7: Full Pressure Jet Rinse',
-        desc: 'Complete exterior pressure rinse to dislodge all dirt & foam.'
+        title: 'Step 7: Full Pressure Rinse',
+        desc: 'Thorough clean water rinse over the entire car.'
       },
       {
-        title: 'Step 8: Microfiber Cloth Drying',
-        desc: 'Thorough drying using ultra-absorbent microfiber towels.'
+        title: 'Step 8: Microfiber Drying',
+        desc: 'Drying with plush microfiber towels.'
       },
       {
-        title: 'Step 9: Tyre Polishing',
-        desc: 'Tyre polishing using Shine-Up long-lasting gloss solution.'
+        title: 'Step 9: Tyre Shine Polish',
+        desc: 'Applying long-lasting tyre gloss polish.'
       },
       {
-        title: 'Step 10: Glass Polishing',
-        desc: 'Glass polishing with dedicated Shine-Up solution.'
-      },
-    ],
+        title: 'Step 10: Glass Polish & Shine',
+        desc: 'Cleaning glass and mirrors for crystal-clear clarity.'
+      }
+    ]
   },
 
   'elite-deep-cleaning': {
@@ -223,21 +222,21 @@ export const carWashPlansData = {
     title: 'Elite Pressure Pump Wash (Deep Cleaning Service)',
     badge: 'Ultimate Care',
     cardClass: 'elite',
-    image: eliteWashImg,
-    preferredFor: 'Monthly deep cleaning • Family or heavily used vehicles • Luxury service',
+    image: eliteDeepCleaningImg,
+    preferredFor: 'Monthly deep cleaning • Family vehicles • Full interior restoration',
     estimatedTime: '75-90 mins',
-    tagline: '💡 Ultimate interior and exterior detailing experience.',
-    overview: 'Our Elite Pressure Pump Wash is the ultimate luxury car care and deep cleaning experience. Combines full pressure washing, deep interior vacuuming and precision brushing, vacuum extraction seat cleaning, high-temperature steam sanitization, and premium wax & plastic trim restoration.',
+    tagline: 'The ultimate deep cleaning with steam sanitization and wax restoration.',
+    overview: 'Our Elite Deep Cleaning is the complete luxury spa package for your car. Includes high-pressure foam wash, deep vacuuming, steam sanitization to kill germs, and wax polish to restore shine.',
     customerRequirements: [
-      'Electricity access point within 15 meters (Consumes only ~0.4 units ≈ ₹7–₹8)',
-      '2 buckets of water required',
-      'Our service provider will collect water from your location. Please provide access to the water source'
+      'Standard power socket within 15 meters (~₹7 electricity used)',
+      '2 buckets of clean water',
+      'Access to water tap or source'
     ],
-    complimentary: '5 Surprise complementary products will be provided',
+    complimentary: '5 Free surprise car care gifts included',
     bestFor: [
       'Monthly deep cleaning',
-      'Family or heavily used vehicles',
-      'Customers looking for luxury-level service'
+      'Family cars & heavy use vehicles',
+      'Germ sanitization & full restoration'
     ],
     iconSvg: (
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -245,56 +244,59 @@ export const carWashPlansData = {
       </svg>
     ),
     includes: [
-      'Removal of all floor mats and pressure wash cleaning',
-      'Full interior vacuum cleaning (deep dust removal)',
-      'Detailed interior brushing (AC vents, Dashboard, Corners & hard-to-reach areas)',
-      'Deep seat cleaning using Shine-Up solution with vacuum extraction',
-      'Exterior pre-wash using pressure pump',
-      'Applying of premium foam (paint protection layer)',
-      'Manual wash using specialized wash gloves',
-      'Complete pressure rinse & streak-free microfiber drying',
-      'Steam cleaning (interior sanitization - kills germs, bacteria & insects)',
-      'Tyre polishing with Shine-Up solution',
-      'Wax polish & plastic parts restoration',
+      'Floor mats removal & pressure wash',
+      'Deep interior vacuuming (carpets, seats, boot)',
+      'Detail brush dusting on AC vents & dashboard',
+      'Deep seat cleaning with solution & extraction',
+      'High-pressure pre-wash & snow foam bath',
+      'Microfiber hand wash & pressure rinse',
+      'Streak-free microfiber drying',
+      'Steam sanitization (kills 99.9% germs & bacteria)',
+      'Tyre cleaning & rich gloss polish',
+      'Wax polish & plastic trim restoration',
       'Dashboard polish & premium fragrance spray'
     ],
     detailedSteps: [
       {
-        title: 'Step 1: Floor Mat Pressure Cleaning',
-        desc: 'Removal of all floor mats followed by thorough pressure wash cleaning.'
+        title: 'Step 1: Floor Mat Pressure Wash',
+        desc: 'Removing mats and deep washing with pressure jet.'
       },
       {
-        title: 'Step 2: Deep Interior Vacuuming',
-        desc: 'Full interior vacuum cleaning for deep dust, sand, and dirt removal.'
+        title: 'Step 2: Deep Interior Vacuum',
+        desc: 'Thorough vacuuming of all dust, sand, and food crumbs.'
       },
       {
-        title: 'Step 3: Precision Brushing & Detailing',
-        desc: 'Detailed interior brushing of AC vents, dashboard, crevices, and hard-to-reach corners.'
+        title: 'Step 3: AC Vents & Crevice Brushing',
+        desc: 'Cleaning AC vents, console buttons, and tight corners.'
       },
       {
-        title: 'Step 4: Deep Seat Solution Extraction',
-        desc: 'Deep seat cleaning using specialized Shine-Up solution with vacuum extraction finish.'
+        title: 'Step 4: Deep Seat Extraction',
+        desc: 'Seat fabric/leather cleaning with cleaning liquid and vacuum dry.'
       },
       {
-        title: 'Step 5: Pressure Pre-Wash & Premium Foam',
-        desc: 'Exterior pre-wash using pressure pump and application of rich protective snow foam.'
+        title: 'Step 5: Pressure Rinse & Snow Foam',
+        desc: 'Exterior pressure blast and thick protective snow foam coat.'
       },
       {
-        title: 'Step 6: Specialized Hand Wash & Rinse',
-        desc: 'Manual wash using premium wash gloves followed by complete high-pressure rinse.'
+        title: 'Step 6: Soft Hand Wash & Rinse',
+        desc: 'Gentle hand wash followed by a complete clean water rinse.'
       },
       {
-        title: 'Step 7: Streak-Free Microfiber Drying',
-        desc: 'Complete exterior drying using high-absorbency microfiber towels.'
+        title: 'Step 7: Microfiber Towel Dry',
+        desc: 'Complete drying with ultra-absorbent microfiber towels.'
       },
       {
-        title: 'Step 8: Tyre Polish',
-        desc: 'Tyre polishing with Shine-Up solution.'
+        title: 'Step 8: Steam Sanitization',
+        desc: 'Hot steam sanitization to kill germs, bacteria, and odors.'
       },
       {
-        title: 'Step 9: Glass Polishing',
-        desc: 'Glass polishing with dedicated Shine-Up solution.'
+        title: 'Step 9: Tyre & Trim Polish',
+        desc: 'Polishing tyres and restoring dark color on plastic trims.'
       },
-    ],
+      {
+        title: 'Step 10: Glass Polish & Fresh Scent',
+        desc: 'Streak-free window polish and premium interior scent spray.'
+      }
+    ]
   }
 };

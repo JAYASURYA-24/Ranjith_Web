@@ -24,7 +24,7 @@ export default function PUCPage() {
         </div>
 
         <div className="service-demo animate-on-scroll">
-          <h2 className="text-center section-title" style={{ fontSize: '2rem', marginBottom: '3rem' }}>Cleaner Emissions, Greener Earth</h2>
+          <h2 className="section-title text-center" style={{ marginBottom: '2rem' }}>Cleaner Emissions, Greener Earth</h2>
           <BeforeAfterSlider
             beforeImage={pucBefore}
             afterImage={pucAfter}

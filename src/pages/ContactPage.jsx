@@ -7,7 +7,7 @@ export default function ContactPage() {
   }, []);
 
   return (
-    <div style={{ paddingTop: '50px' }}>
+    <div style={{ paddingTop: '100px' }}>
       <Contact />
     </div>
   );

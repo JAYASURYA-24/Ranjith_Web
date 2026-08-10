@@ -11,15 +11,17 @@ const carWashPackages = [
     id: 'basic-manual-wash',
     title: '1. Basic Manual Wash',
     badge: 'Daily Care',
-    preferredFor: 'Low mud and daily care',
+    preferredFor: 'Light dust & daily care',
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z" />
       </svg>
     ),
     includes: [
-      'Outer body wash',
-      'Tyre polish'
+      'Outer body gentle hand wash',
+      'Tyre cleaning & shine polish',
+      'Interior brush dusting & floor mats wash',
+      'Streak-free microfiber towel dry'
     ],
     cardClass: ''
   },
@@ -27,7 +29,7 @@ const carWashPackages = [
     id: 'pressure-foam-wash',
     title: '2. Pressure Foam Wash',
     badge: 'Gloss Finish',
-    preferredFor: 'High mud, glossy finish',
+    preferredFor: 'Muddy roads & high-gloss shine',
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H7c-.7 0-1.3.3-1.8.7C4.3 8.6 3 10 3 10s-2.7.6-4.5 1.1C-2.3 11.3-3 12.1-3 13v3c0 .6.4 1 1 1h2" />
@@ -37,29 +39,30 @@ const carWashPackages = [
       </svg>
     ),
     includes: [
-      'Pressure pump wash',
-      'High quality foam wash',
-      'Tyre polish'
+      'High-pressure water rinse',
+      'Thick snow foam bath',
+      'Wheel arch & tyre shine polish',
+      'Streak-free glass & mirror wipe'
     ],
     cardClass: ''
   },
   {
     id: 'premium-wash',
     title: '3. Premium Wash',
-    subtitleTag: 'Basic Interior & Exterior',
+    subtitleTag: 'Inside & Out',
     badge: 'Most Popular',
-    preferredFor: 'Basic interior and exterior care',
+    preferredFor: 'Complete interior & exterior care',
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
       </svg>
     ),
     includes: [
-      'Pressure pump wash',
-      'Outer foam wash',
-      'Tyre polish',
-      'Basic vacuum cleaning',
-      'Dashboard polish'
+      'Pressure pump & snow foam wash',
+      'Full interior vacuum cleaning',
+      'Seat surface cleaning & wipe',
+      'Dashboard polish & fresh fragrance',
+      'Hand wax shine & tyre polish'
     ],
     cardClass: 'popular'
   },
@@ -67,20 +70,18 @@ const carWashPackages = [
     id: 'elite-deep-cleaning',
     title: '4. Elite Deep Cleaning',
     badge: 'Ultimate Care',
-    preferredFor: 'Complete deep interior & exterior restoration',
+    preferredFor: 'Full interior & exterior restoration',
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
       </svg>
     ),
     includes: [
-      'Outer foam wash & tyre polish',
-      'Outer body shine polish',
-      'Interior dashboard & door polish',
-      'Seat, door & boot space floor mat foam wash & polish',
-      'Rubber & plastic trim polish',
-      'Exterior & interior glass polish',
-      'Complete interior steam cleaning'
+      'Pressure foam wash & tyre gloss',
+      'Deep interior vacuuming & AC vent brushing',
+      'Seat deep cleaning & vacuum extraction',
+      'Hot steam sanitization (kills 99.9% germs)',
+      'Hand wax coat & plastic trim restoration'
     ],
     cardClass: 'elite'
   }
@@ -171,7 +172,7 @@ export default function CarWashPage() {
 
         {/* Visual Transformation */}
         <div className="service-demo animate-on-scroll">
-          <h2 className="text-center section-title" style={{ fontSize: '2rem', marginBottom: '3rem' }}>
+          <h2 className="section-title text-center" style={{ marginBottom: '2rem' }}>
             See the Transformation
           </h2>
           <BeforeAfterSlider
@@ -183,10 +184,10 @@ export default function CarWashPage() {
         </div>
 
         {/* Car Wash Packages Section */}
-        <div style={{ marginTop: '5rem' }} className="animate-on-scroll">
-          <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+        <div className="service-section-spacing animate-on-scroll">
+          <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
             <span className="section-badge">Car Wash Packages</span>
-            <h2 className="section-title" style={{ fontSize: '2.2rem', marginTop: '0.5rem' }}>
+            <h2 className="section-title" style={{ marginTop: '0.5rem' }}>
               Choose Your <span className="text-gradient">Car Wash Plan</span>
             </h2>
             <p className="section-subtitle">
@@ -247,10 +248,10 @@ export default function CarWashPage() {
         </div>
 
         {/* Add-ons Section */}
-        <div style={{ marginTop: '5rem' }} className="animate-on-scroll">
+        <div className="service-section-spacing animate-on-scroll">
           <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
             <span className="section-badge">Add-Ons</span>
-            <h2 className="section-title" style={{ fontSize: '2.2rem', marginTop: '0.5rem' }}>
+            <h2 className="section-title" style={{ marginTop: '0.5rem' }}>
               Custom <span className="text-gradient">Add-Ons</span>
             </h2>
             <p className="section-subtitle">
@@ -274,34 +275,17 @@ export default function CarWashPage() {
         </div>
 
         {/* CTA Banner */}
-        <div style={{
-          marginTop: '5rem',
-          maxWidth: '860px',
-          marginLeft: 'auto',
-          marginRight: 'auto',
-          textAlign: 'center',
-          background: 'linear-gradient(135deg, var(--sky-500), var(--sky-700))',
-          padding: '40px 24px',
-          borderRadius: 'var(--radius-2xl)',
-          color: 'var(--white)',
-          boxShadow: '0 12px 36px rgba(14, 165, 233, 0.3)'
-        }} className="animate-on-scroll">
-          <h2 style={{ fontSize: '1.8rem', fontWeight: '800', marginBottom: '12px' }}>
+        <div className="service-cta-card animate-on-scroll">
+          <h2 className="service-cta-title">
             Ready to Give Your Car a Showroom Polish?
           </h2>
-          <p style={{ fontSize: '1rem', opacity: 0.9, maxWidth: '600px', margin: '0 auto 24px' }}>
+          <p className="service-cta-desc">
             Book your doorstep wash in under 60 seconds through our mobile app or get in touch today!
           </p>
           <a
             href="#download"
-            className="btn-primary"
+            className="btn-primary service-cta-btn"
             onClick={(e) => handleAppDownload(e)}
-            style={{
-              background: 'var(--white)',
-              color: 'var(--sky-700)',
-              boxShadow: '0 4px 15px rgba(0,0,0,0.15)',
-              display: 'inline-flex'
-            }}
           >
             Book a Wash Now
           </a>

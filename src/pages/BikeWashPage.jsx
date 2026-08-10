@@ -11,7 +11,7 @@ const bikeWashPackages = [
     id: 'manual-basic-wash',
     title: '1. Manual Basic Wash',
     badge: 'Daily Care',
-    preferredFor: 'Daily care and light dust removal',
+    preferredFor: 'Daily commute & light dust',
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="5.5" cy="17.5" r="3.5" />
@@ -21,8 +21,10 @@ const bikeWashPackages = [
       </svg>
     ),
     includes: [
-      'Bike wash with brand shampoo',
-      'Tyre polish'
+      'Full bike wash with brand shampoo',
+      'Tyre sidewall shine polish',
+      'Mirror & visor wipe down',
+      'Microfiber towel dry'
     ],
     cardClass: ''
   },
@@ -30,7 +32,7 @@ const bikeWashPackages = [
     id: 'pressure-foam-wash',
     title: '2. Pressure Foam Wash',
     badge: 'Gloss Finish',
-    preferredFor: 'Muddy roads, engine grime & glossy finish',
+    preferredFor: 'Muddy roads & deep engine shine',
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H7c-.7 0-1.3.3-1.8.7C4.3 8.6 3 10 3 10s-2.7.6-4.5 1.1C-2.3 11.3-3 12.1-3 13v3c0 .6.4 1 1 1h2" />
@@ -39,9 +41,10 @@ const bikeWashPackages = [
       </svg>
     ),
     includes: [
-      'Pressure pump wash with foam',
-      'Tyre polish',
-      'Silicon glaze spray polish'
+      'High-pressure water & foam wash',
+      'Engine & wheel area cleaning',
+      'Tyre & alloy rim polish',
+      'Silicone glaze shine spray'
     ],
     cardClass: 'popular'
   },
@@ -57,8 +60,10 @@ const bikeWashPackages = [
       </svg>
     ),
     includes: [
-      'High quality foam wash (both outer and inner)',
-      'High-temperature steam wash'
+      'Antibacterial foam wash (in & out)',
+      'Hot steam sanitization (kills 99.9% germs)',
+      'Visor cleaning & anti-fog polish',
+      'Fresh scent spray treatment'
     ],
     cardClass: 'elite'
   }
@@ -113,7 +118,7 @@ export default function BikeWashPage() {
 
         {/* Visual Transformation */}
         <div className="service-demo animate-on-scroll">
-          <h2 className="text-center section-title" style={{ fontSize: '2rem', marginBottom: '3rem' }}>
+          <h2 className="section-title text-center" style={{ marginBottom: '2rem' }}>
             See the Transformation
           </h2>
           <BeforeAfterSlider
@@ -125,10 +130,10 @@ export default function BikeWashPage() {
         </div>
 
         {/* Bike Wash Packages Section */}
-        <div style={{ marginTop: '5rem' }} className="animate-on-scroll">
-          <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+        <div className="service-section-spacing animate-on-scroll">
+          <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
             <span className="section-badge">Bike Wash Packages</span>
-            <h2 className="section-title" style={{ fontSize: '2.2rem', marginTop: '0.5rem' }}>
+            <h2 className="section-title" style={{ marginTop: '0.5rem' }}>
               Choose Your <span className="text-gradient">Bike Wash Plan</span>
             </h2>
             <p className="section-subtitle">
@@ -186,10 +191,10 @@ export default function BikeWashPage() {
         </div>
 
         {/* Add-ons Section */}
-        <div style={{ marginTop: '5rem' }} className="animate-on-scroll">
+        <div className="service-section-spacing animate-on-scroll">
           <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
             <span className="section-badge">Add-Ons</span>
-            <h2 className="section-title" style={{ fontSize: '2.2rem', marginTop: '0.5rem' }}>
+            <h2 className="section-title" style={{ marginTop: '0.5rem' }}>
               Custom <span className="text-gradient">Add-Ons</span>
             </h2>
             <p className="section-subtitle">
@@ -216,34 +221,17 @@ export default function BikeWashPage() {
         </div>
 
         {/* CTA Banner */}
-        <div style={{
-          marginTop: '5rem',
-          maxWidth: '860px',
-          marginLeft: 'auto',
-          marginRight: 'auto',
-          textAlign: 'center',
-          background: 'linear-gradient(135deg, var(--sky-500), var(--sky-700))',
-          padding: '40px 24px',
-          borderRadius: 'var(--radius-2xl)',
-          color: 'var(--white)',
-          boxShadow: '0 12px 36px rgba(14, 165, 233, 0.3)'
-        }} className="animate-on-scroll">
-          <h2 style={{ fontSize: '1.8rem', fontWeight: '800', marginBottom: '12px' }}>
+        <div className="service-cta-card animate-on-scroll">
+          <h2 className="service-cta-title">
             Ready to Give Your Bike a Showroom Polish?
           </h2>
-          <p style={{ fontSize: '1rem', opacity: 0.9, maxWidth: '600px', margin: '0 auto 24px' }}>
+          <p className="service-cta-desc">
             Book your doorstep bike wash in under 60 seconds through our mobile app!
           </p>
           <a
             href="#download"
-            className="btn-primary"
+            className="btn-primary service-cta-btn"
             onClick={(e) => handleAppDownload(e)}
-            style={{
-              background: 'var(--white)',
-              color: 'var(--sky-700)',
-              boxShadow: '0 4px 15px rgba(0,0,0,0.15)',
-              display: 'inline-flex'
-            }}
           >
             Book a Wash Now
           </a>

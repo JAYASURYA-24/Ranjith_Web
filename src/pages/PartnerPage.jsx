@@ -7,7 +7,7 @@ export default function PartnerPage() {
   }, []);
 
   return (
-    <div style={{ paddingTop: '50px' }}>
+    <div style={{ paddingTop: '100px' }}>
       <PartnerWithUs />
     </div>
   );

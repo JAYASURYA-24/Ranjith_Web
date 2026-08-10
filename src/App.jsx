@@ -14,6 +14,7 @@ import PrivacyPage from './pages/PrivacyPage';
 import PartnerPage from './pages/PartnerPage';
 import ContactPage from './pages/ContactPage';
 import AboutPage from './pages/AboutPage';
+import WhatsAppButton from './components/WhatsAppButton';
 
 function App() {
   // Theme logic removed - dark mode is now default
@@ -69,6 +70,7 @@ function App() {
         </Routes>
       </main>
       <Footer />
+      <WhatsAppButton />
     </BrowserRouter>
   );
 }

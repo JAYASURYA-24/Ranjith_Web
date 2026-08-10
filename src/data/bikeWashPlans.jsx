@@ -1,13 +1,18 @@
+import manualBasicWashImg from '../assets/images/services/Manual_basic_wash.png';
+import pressureFoamWashImg from '../assets/images/services/Pressure_foam_wash.png';
+import helmetCleaningImg from '../assets/images/services/Helmet_cleaning.png';
+
 export const bikeWashPlansData = {
   'manual-basic-wash': {
     id: 'manual-basic-wash',
     title: 'Manual Basic Wash',
     badge: 'Daily Care',
     cardClass: '',
-    preferredFor: 'Daily care and light dust removal',
+    image: manualBasicWashImg,
+    preferredFor: 'Daily commute • Light dust • Quick shine',
     estimatedTime: '15-20 mins',
-    tagline: 'Safe, gentle hand wash with brand shampoo for quick daily shine.',
-    overview: 'Our Manual Basic Wash is ideal for daily commuters looking to keep their motorcycle or scooter clean and spotless. We use premium brand shampoo and soft microfiber cloths to gently lift surface dust and dirt without scratching your bike’s paintwork.',
+    tagline: 'Gentle hand wash with premium shampoo for daily care.',
+    overview: 'Our Manual Basic Wash is perfect for daily riders who want a clean, shiny bike. We use soft microfiber cloths and gentle shampoo to remove dust without scratching the paint.',
     iconSvg: (
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="5.5" cy="17.5" r="3.5" />
@@ -17,27 +22,27 @@ export const bikeWashPlansData = {
       </svg>
     ),
     includes: [
-      'Bike wash with premium brand shampoo',
+      'Complete bike wash with premium shampoo',
       'Tyre sidewall cleaning & gloss polish',
-      'Mirror & visor wipe down',
-      'Microfiber streak-free drying'
+      'Mirrors & headlight wipe down',
+      'Streak-free microfiber towel dry'
     ],
     detailedSteps: [
       {
         title: 'Step 1: Water Rinse',
-        desc: 'Pre-rinsing body panels and wheels to loosen loose dust.'
+        desc: 'Pre-rinsing body and wheels to loosen surface dust.'
       },
       {
-        title: 'Step 2: Shampoo Hand Scrub',
-        desc: 'Washing tank, fairings, and seat with soft microfiber mitts and shampoo.'
+        title: 'Step 2: Shampoo Hand Wash',
+        desc: 'Washing tank, panels, and seat with soft microfiber mitts.'
       },
       {
-        title: 'Step 3: Tyre Polish',
-        desc: 'Applying long-lasting tyre sidewall shine polish.'
+        title: 'Step 3: Tyre Shine Polish',
+        desc: 'Applying tyre polish for a fresh, dark shine.'
       },
       {
-        title: 'Step 4: Streak-Free Wipe',
-        desc: 'Drying with plush microfiber towels ensuring zero water spots.'
+        title: 'Step 4: Microfiber Towel Dry',
+        desc: 'Drying with plush towels to prevent water spots.'
       }
     ],
     recommendedAddOns: [
@@ -51,10 +56,11 @@ export const bikeWashPlansData = {
     title: 'Pressure Foam Wash',
     badge: 'Gloss Finish',
     cardClass: 'popular',
-    preferredFor: 'Muddy roads, engine grime & glossy finish',
+    image: pressureFoamWashImg,
+    preferredFor: 'Muddy roads • Engine dirt • Ultra-glossy finish',
     estimatedTime: '25-30 mins',
-    tagline: 'High-pressure snow foam wash with silicone glaze shine polish.',
-    overview: 'Designed for motorcycles exposed to heavy mud, road grime, and oily engine deposits. High-pressure jet blast penetrates tight engine fins and wheel spokes, followed by dense snow foam and a rich silicon glaze spray polish for an ultra-glossy finish.',
+    tagline: 'High-pressure snow foam wash with silicone glaze shine.',
+    overview: 'Built for bikes with heavy road mud, chain grime, and engine dirt. High-pressure water blasts tight corners, followed by thick snow foam and silicone spray for a showroom shine.',
     iconSvg: (
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H7c-.7 0-1.3.3-1.8.7C4.3 8.6 3 10 3 10s-2.7.6-4.5 1.1C-2.3 11.3-3 12.1-3 13v3c0 .6.4 1 1 1h2" />
@@ -63,27 +69,27 @@ export const bikeWashPlansData = {
       </svg>
     ),
     includes: [
-      'Commercial pressure pump water wash (engine block & wheel arches)',
-      'High-density snow foam bath application',
-      'Tyre polish & alloy rim cleaning',
-      'Silicon glaze spray polish for tank, fairings & bodywork'
+      'High-pressure water wash (body, wheels & engine)',
+      'Thick snow foam bath application',
+      'Tyre cleaning & alloy rim shine',
+      'Silicone glaze spray polish for paint & body'
     ],
     detailedSteps: [
       {
-        title: 'Step 1: Underbody & Engine Pressure Blast',
-        desc: 'Blasting away thick mud and grease around engine, chain area & mudguards.'
+        title: 'Step 1: Engine & Body Pressure Rinse',
+        desc: 'Blasting mud and grease away from engine and wheels.'
       },
       {
         title: 'Step 2: Snow Foam Bath',
-        desc: 'Soaking the entire motorcycle in thick foam to lift stubborn road film.'
+        desc: 'Soaking the whole bike in thick foam to lift road grime.'
       },
       {
-        title: 'Step 3: Detail Agitation & Rinse',
-        desc: 'Detailing spokes, chain cover, and exhaust pipes followed by clean water rinse.'
+        title: 'Step 3: Detailed Scrub & Rinse',
+        desc: 'Cleaning rims, chain guard, and panels followed by clean rinse.'
       },
       {
-        title: 'Step 4: Silicon Glaze Spray Polish',
-        desc: 'Buffing tank, fairings, and metal components with silicon glaze for water repellency and high gloss.'
+        title: 'Step 4: Silicone Glaze Polish',
+        desc: 'Buffing tank and fairings for water resistance and deep shine.'
       }
     ],
     recommendedAddOns: [
@@ -98,10 +104,11 @@ export const bikeWashPlansData = {
     title: 'Helmet Cleaning',
     badge: 'Hygiene Special',
     cardClass: 'elite',
-    preferredFor: 'Sweat odor removal & visor clarity',
+    image: helmetCleaningImg,
+    preferredFor: 'Sweat odor removal • Visor clarity • 99.9% germ sanitization',
     estimatedTime: '15-20 mins',
-    tagline: 'Deep antibacterial foam & high-temperature steam sanitization.',
-    overview: 'Helmets accumulate sweat, bacteria, and road dust over time. Our helmet cleaning service uses specialized antibacterial foam wash for both the outer shell and inner padding, followed by high-temperature steam sanitization for maximum hygiene.',
+    tagline: 'Antibacterial foam cleaning with high-temperature steam sanitization.',
+    overview: 'Helmets trap sweat, bacteria, and dust. Our service cleans the outer shell and inner cushions with antibacterial foam, followed by hot steam to kill germs and remove odors.',
     iconSvg: (
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
@@ -109,27 +116,27 @@ export const bikeWashPlansData = {
       </svg>
     ),
     includes: [
-      'High quality foam wash for both outer shell & inner padding',
-      'High-temperature steam wash & 99.9% antibacterial sanitization',
-      'Visor bug & road film removal with anti-fog polish',
-      'Fresh odor-neutralizer spray treatment'
+      'Antibacterial foam wash (outer shell & inner padding)',
+      'Hot steam sanitization (kills 99.9% bacteria & odors)',
+      'Visor cleaning & anti-fog polish',
+      'Fresh fragrance spray treatment'
     ],
     detailedSteps: [
       {
-        title: 'Step 1: Outer Shell Foam Wash',
-        desc: 'Removing dead bugs, grease, and dust from outer shell and vents.'
+        title: 'Step 1: Outer Shell Cleaning',
+        desc: 'Removing bugs, road grease, and dust from shell and vents.'
       },
       {
-        title: 'Step 2: Inner Liner Antibacterial Foam',
-        desc: 'Deep cleaning cheek pads and inner mesh lining with hygiene foam.'
+        title: 'Step 2: Inner Liner Foam Wash',
+        desc: 'Deep cleaning cheek pads and inner foam lining.'
       },
       {
-        title: 'Step 3: High-Temp Steam Blast',
-        desc: 'Sanitizing inner lining with dry steam to kill bacteria and eliminate odor.'
+        title: 'Step 3: Hot Steam Sanitization',
+        desc: 'Dry steam blast to eliminate sweat odor and kill bacteria.'
       },
       {
-        title: 'Step 4: Visor Polish & Fragrance',
-        desc: 'Polishing visor for distortion-free clarity and applying fresh fragrance spray.'
+        title: 'Step 4: Visor Polish & Fresh Scent',
+        desc: 'Polishing visor for clear vision and applying fresh scent.'
       }
     ],
     recommendedAddOns: [

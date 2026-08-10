@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { bikeWashPlansData } from '../data/bikeWashPlans.jsx';
 import WashBackgroundAnimation from '../components/WashBackgroundAnimation';
+import ServiceProcessMap from '../components/ServiceProcessMap';
 import bikeWashImg from '../assets/images/services/bike-wash.webp';
 import { handleAppDownload } from '../utils/appLinks';
 
@@ -78,20 +79,10 @@ export default function BikeWashPlanDetailPage() {
           borderRadius: 'var(--radius-2xl)',
           overflow: 'hidden',
           boxShadow: '0 12px 35px rgba(14, 165, 233, 0.12)',
-          position: 'relative',
-          marginBottom: '3rem',
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-          minHeight: '270px'
+          position: 'relative'
         }}>
           {/* Left Side: Full Size Image with Smoke & Blend Effect */}
-          <div style={{
-            position: 'relative',
-            minHeight: '270px',
-            height: '100%',
-            width: '100%',
-            overflow: 'hidden'
-          }}>
+          <div className="package-detail-image-box">
             <img
               src={plan.image || bikeWashImg}
               alt={plan.title}
@@ -110,15 +101,8 @@ export default function BikeWashPlanDetailPage() {
           </div>
 
           {/* Right Side: Plan Name & Info */}
-          <div style={{
-            padding: '30px 32px',
-            display: 'flex',
-            flexDirection: 'column',
-            justify: 'center',
-            position: 'relative',
-            zIndex: 2
-          }}>
-            <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: '12px', marginBottom: '10px' }}>
+          <div className="package-detail-info-box">
+            <div className="detail-meta-row">
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                 <div className="package-icon-wrapper" style={{ margin: 0, width: '42px', height: '42px', minWidth: '42px' }}>
                   {plan.iconSvg}
@@ -146,11 +130,11 @@ export default function BikeWashPlanDetailPage() {
               </div>
             </div>
 
-            <h1 style={{ fontSize: '2rem', fontWeight: '800', color: 'var(--gray-900)', margin: '4px 0 10px 0', lineHeight: '1.25' }}>
+            <h1 className="package-detail-title">
               {plan.title}
             </h1>
 
-            <p style={{ fontSize: '1.05rem', color: 'var(--gray-700)', fontWeight: '500', marginBottom: '14px', lineHeight: '1.5' }}>
+            <p style={{ fontSize: '1.02rem', color: 'var(--gray-700)', fontWeight: '500', marginBottom: '14px', lineHeight: '1.5' }}>
               {plan.tagline}
             </p>
 
@@ -166,8 +150,8 @@ export default function BikeWashPlanDetailPage() {
 
         {/* Package Overview */}
         <div style={{ marginBottom: '3.5rem' }}>
-          <div className="glass-card" style={{ padding: '32px' }}>
-            <h3 style={{ fontSize: '1.3rem', fontWeight: '800', color: 'var(--gray-900)', marginBottom: '14px', display: 'flex', alignItems: 'center', gap: '10px' }}>
+          <div className="glass-card" style={{ padding: '30px 24px' }}>
+            <h3 style={{ fontSize: '1.25rem', fontWeight: '800', color: 'var(--gray-900)', marginBottom: '14px', display: 'flex', alignItems: 'center', gap: '10px' }}>
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--sky-600)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <circle cx="12" cy="12" r="10" />
                 <line x1="12" y1="16" x2="12" y2="12" />
@@ -175,69 +159,33 @@ export default function BikeWashPlanDetailPage() {
               </svg>
               Package Overview
             </h3>
-            <p style={{ fontSize: '1rem', color: 'var(--gray-600)', lineHeight: '1.7', margin: 0 }}>
+            <p style={{ fontSize: '0.98rem', color: 'var(--gray-600)', lineHeight: '1.7', margin: 0 }}>
               {plan.overview}
             </p>
           </div>
         </div>
 
-        {/* Step by Step Detailing Process */}
-        <div style={{ marginBottom: '4rem' }}>
-          <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
-            <span className="section-badge">How It Is Done</span>
-            <h2 className="section-title" style={{ fontSize: '2rem', marginTop: '0.5rem' }}>
-              Step-by-Step <span className="text-gradient">Service Process</span>
-            </h2>
-          </div>
-
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '20px' }}>
-            {plan.detailedSteps.map((step, idx) => (
-              <div key={idx} className="glass-card" style={{ padding: '24px', position: 'relative' }}>
-                <div style={{
-                  width: '36px',
-                  height: '36px',
-                  borderRadius: '10px',
-                  background: 'linear-gradient(135deg, var(--sky-500), var(--sky-600))',
-                  color: 'var(--white)',
-                  fontWeight: '800',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  fontSize: '0.95rem',
-                  marginBottom: '14px',
-                  boxShadow: '0 4px 12px rgba(14, 165, 233, 0.3)'
-                }}>
-                  {idx + 1}
-                </div>
-                <h4 style={{ fontSize: '1.05rem', fontWeight: '800', color: 'var(--gray-900)', marginBottom: '8px' }}>
-                  {step.title}
-                </h4>
-                <p style={{ fontSize: '0.88rem', color: 'var(--gray-600)', lineHeight: '1.5', margin: 0 }}>
-                  {step.desc}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
+        {/* Step by Step Detailing Process Map */}
+        <ServiceProcessMap steps={plan.detailedSteps} />
 
         {/* Recommended Add-ons for this plan */}
         <div style={{ marginBottom: '4rem' }}>
-          <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
+          <div style={{ textAlign: 'center', marginBottom: '1.8rem' }}>
             <span className="section-badge">Popular Extras</span>
-            <h3 style={{ fontSize: '1.6rem', fontWeight: '800', color: 'var(--gray-900)', marginTop: '0.5rem' }}>
+            <h3 style={{ fontSize: 'clamp(1.3rem, 4vw, 1.6rem)', fontWeight: '800', color: 'var(--gray-900)', marginTop: '0.5rem' }}>
               Recommended Add-Ons for this Wash
             </h3>
           </div>
-          <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '14px' }}>
+          <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '12px' }}>
             {plan.recommendedAddOns.map((addon, idx) => (
               <div key={idx} style={{
                 background: 'var(--white)',
                 border: '1px solid var(--sky-200)',
-                padding: '12px 20px',
+                padding: '10px 18px',
                 borderRadius: 'var(--radius-full)',
                 fontWeight: '700',
                 color: 'var(--sky-800)',
-                fontSize: '0.9rem',
+                fontSize: '0.88rem',
                 boxShadow: '0 2px 8px rgba(14, 165, 233, 0.08)',
                 display: 'flex',
                 alignItems: 'center',
@@ -251,49 +199,39 @@ export default function BikeWashPlanDetailPage() {
         </div>
 
         {/* Bottom CTA Banner */}
-        <div style={{
-          maxWidth: '860px',
-          marginLeft: 'auto',
-          marginRight: 'auto',
-          textAlign: 'center',
-          background: 'linear-gradient(135deg, var(--sky-500), var(--sky-700))',
-          padding: '44px 28px',
-          borderRadius: 'var(--radius-2xl)',
-          color: 'var(--white)',
-          boxShadow: '0 14px 40px rgba(14, 165, 233, 0.35)'
-        }}>
-          <h2 style={{ fontSize: '2rem', fontWeight: '800', marginBottom: '12px' }}>
+        <div className="detail-cta-card">
+          <h2 className="detail-cta-title">
             Ready to Book {plan.title}?
           </h2>
-          <p style={{ fontSize: '1.05rem', opacity: 0.92, maxWidth: '600px', margin: '0 auto 26px' }}>
-            Download our Reshine App or click below to schedule your doorstep wash in under 60 seconds!
+          <p style={{ fontSize: '1.02rem', opacity: 0.92, maxWidth: '600px', margin: '0 auto 24px', lineHeight: '1.6' }}>
+            Book your doorstep wash in seconds through our app or click below to get started!
           </p>
-          <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '16px' }}>
+          <div className="detail-cta-actions">
             <a
               href="#download"
-              className="btn-primary"
+              className="btn-primary detail-cta-btn"
               onClick={(e) => handleAppDownload(e)}
               style={{
                 background: 'var(--white)',
                 color: 'var(--sky-700)',
                 boxShadow: '0 4px 18px rgba(0,0,0,0.15)',
                 display: 'inline-flex',
-                fontSize: '1rem',
-                padding: '14px 32px'
+                fontSize: '0.98rem',
+                padding: '13px 28px'
               }}
             >
               Book Now
             </a>
             <Link
               to="/bike-wash"
-              className="btn-secondary"
+              className="btn-secondary detail-cta-btn"
               style={{
                 background: 'rgba(255, 255, 255, 0.15)',
                 color: 'var(--white)',
                 border: '1px solid rgba(255, 255, 255, 0.4)',
                 display: 'inline-flex',
-                fontSize: '1rem',
-                padding: '14px 28px'
+                fontSize: '0.98rem',
+                padding: '13px 24px'
               }}
             >
               Compare Other Plans
