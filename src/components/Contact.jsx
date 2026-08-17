@@ -29,7 +29,7 @@ export default function Contact() {
             </div>
           </a>
 
-          <a href="mailto:support@reshineservices.in" className="contact-card" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <a href="mailto:support@reshineservice.in" className="contact-card" style={{ textDecoration: 'none', color: 'inherit' }}>
             <div className="contact-card-icon">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
@@ -38,7 +38,7 @@ export default function Contact() {
             </div>
             <div className="contact-card-content">
               <h4>Email</h4>
-              <p>support@reshineservices.in</p>
+              <p>support@reshineservice.in</p>
             </div>
           </a>
 

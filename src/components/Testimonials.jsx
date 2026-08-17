@@ -3,6 +3,7 @@ import thumb1 from '../assets/images/testimonials/thumb1.png';
 import thumb2 from '../assets/images/testimonials/thumb2.png';
 import thumb3 from '../assets/images/testimonials/thumb3.png';
 import thumb4 from '../assets/images/testimonials/thumb4.png';
+import sampleVideo from '../assets/Videos/TestimonialsVideo/sample_video.mp4 (240p).mp4';
 
 const videoTestimonials = [
   {
@@ -14,7 +15,7 @@ const videoTestimonials = [
     duration: '0:42',
     text: '“The foam wash & interior vacuuming were top tier. They arrived on time at my apartment and transformed my SUV to showroom shine!”',
     thumbnail: thumb1,
-    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-car-washing-machine-in-action-41527-large.mp4',
+    videoUrl: sampleVideo,
     initials: 'RS',
   },
   {
@@ -83,7 +84,7 @@ function VideoTestimonialCardItem({ item, activePlayingId, setActivePlayingId, i
   useEffect(() => {
     if (isPlayingThis && videoRef.current) {
       if (isPlaying) {
-        videoRef.current.play().catch(() => {});
+        videoRef.current.play().catch(() => { });
       } else {
         videoRef.current.pause();
       }
@@ -92,6 +93,7 @@ function VideoTestimonialCardItem({ item, activePlayingId, setActivePlayingId, i
 
   const handleStartPlay = (e) => {
     e.stopPropagation();
+    e.preventDefault();
     setActivePlayingId(item.uniqueKey);
     setIsPlaying(true);
     setProgress(0);
@@ -99,18 +101,14 @@ function VideoTestimonialCardItem({ item, activePlayingId, setActivePlayingId, i
 
   const handleTogglePlayPause = (e) => {
     e.stopPropagation();
+    e.preventDefault();
     if (!videoRef.current) return;
     if (isPlaying) {
-      // Pause/Stop video, reset active player, and immediately slide to the next testimonial video
+      // Just pause the video, do not slide away
       videoRef.current.pause();
       setIsPlaying(false);
-      setActivePlayingId(null);
-      setProgress(0);
-      if (onSlideNext) {
-        onSlideNext();
-      }
     } else {
-      videoRef.current.play().catch(() => {});
+      videoRef.current.play().catch(() => { });
       setIsPlaying(true);
     }
   };
@@ -226,7 +224,7 @@ function VideoTestimonialCardItem({ item, activePlayingId, setActivePlayingId, i
         ) : (
           <>
             <img src={item.thumbnail} alt={`${item.name} testimonial`} loading="lazy" className="video-thumb-img" />
-            
+
             <div className="video-thumb-overlay">
               {/* Service Tag */}
               <span className="video-service-tag">{item.service}</span>
@@ -403,7 +401,7 @@ export default function Testimonials() {
             </svg>
             Video Reviews
           </span>
-          <h2 className="section-title">What <span className="text-gradient">Customers Say</span></h2>
+          <h2 className="section-title">What Our <span className="text-gradient">Customers Say</span></h2>
           <p className="section-subtitle">
             See real video reviews from vehicle owners who love our doorstep foam wash, bike care, and detailing services.
           </p>

@@ -1,6 +1,8 @@
 export default function WhatsAppButton() {
-  const phoneNumber = '919159869407';
-  const whatsappUrl = `https://wa.me/${phoneNumber}`;
+  // Insert your REAL, VERIFIED Business WhatsApp Number here (with country code, no + or spaces)
+  const phoneNumber = '919159869407'; 
+  const message = encodeURIComponent('Hi! I would like to test the automatic reply.');
+  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
 
   return (
     <div className="whatsapp-floating-container">

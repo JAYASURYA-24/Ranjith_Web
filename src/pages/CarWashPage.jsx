@@ -20,7 +20,6 @@ const carWashPackages = [
     includes: [
       'Outer body gentle hand wash',
       'Tyre cleaning & shine polish',
-      'Interior brush dusting & floor mats wash',
       'Streak-free microfiber towel dry'
     ],
     cardClass: ''

@@ -163,7 +163,6 @@ export default function PartnerWithUs() {
                     <div className="benefit-icon">{benefit.icon}</div>
                     <div className="benefit-text">
                       <h4>{benefit.title}</h4>
-                      <p>{benefit.desc}</p>
                     </div>
                   </div>
                 ))}
@@ -182,6 +181,46 @@ export default function PartnerWithUs() {
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+
+          <div className="partner-registration-section animate-on-scroll">
+            <div className="partner-form-wrapper centered-form">
+              <div className="partner-form-header text-center">
+                <h3>Join Our Growing Network</h3>
+                <p>Fill out the details below to become a ReShine partner.</p>
+              </div>
+              <form className="partner-registration-form" onSubmit={(e) => { e.preventDefault(); alert('Partner details submitted successfully!'); }}>
+                <div className="form-row-partner">
+                  <div className="form-group-partner">
+                    <label htmlFor="partnerName">Full Name</label>
+                    <input type="text" id="partnerName" placeholder="Enter your full name" required />
+                  </div>
+                  <div className="form-group-partner">
+                    <label htmlFor="partnerMobile">Mobile Number</label>
+                    <input type="tel" id="partnerMobile" placeholder="Enter 10-digit mobile number" pattern="[0-9]{10}" required />
+                  </div>
+                </div>
+
+                <div className="form-row-partner">
+                  <div className="form-group-partner">
+                    <label htmlFor="partnerLocality">Locality Area</label>
+                    <input type="text" id="partnerLocality" placeholder="e.g., Madipakkam" required />
+                  </div>
+                  <div className="form-group-partner">
+                    <label htmlFor="partnerPincode">Pincode</label>
+                    <input type="text" id="partnerPincode" placeholder="e.g., 600091" pattern="[0-9]{6}" required />
+                  </div>
+                </div>
+
+                <button type="submit" className="btn-primary partner-submit-btn">
+                  Submit Details
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </button>
+              </form>
             </div>
           </div>
 

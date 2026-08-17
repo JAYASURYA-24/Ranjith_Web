@@ -72,7 +72,7 @@ export const carWashPlansData = {
     tagline: 'High-pressure jet wash with thick snow foam for stubborn road dirt.',
     overview: 'Our Pressure Foam Wash is built for cars with road grime, sticky dirt, and mud. We use high-pressure water pumps and thick snow foam to lift dirt safely without scratching your car paint.',
     customerRequirements: [
-      'Standard power socket within 15 meters (~₹7 electricity used)',
+      'Standard power socket within 20 meters (~₹7 electricity used)',
       '2 buckets of clean water',
       'Access to water tap or source'
     ],
@@ -145,7 +145,7 @@ export const carWashPlansData = {
     tagline: 'Deep cleaning using a high-pressure washer and powerful interior vacuum.',
     overview: 'Our Premium Pressure Pump Wash delivers complete inside-and-out deep cleaning. Combines pressure washing, snow foam, and full interior vacuuming right at your doorstep.',
     customerRequirements: [
-      'Standard power socket within 15 meters (~₹7 electricity used)',
+      'Standard power socket within 20 meters (~₹7 electricity used)',
       '2 buckets of clean water',
       'Access to water tap or source'
     ],
@@ -228,7 +228,7 @@ export const carWashPlansData = {
     tagline: 'The ultimate deep cleaning with steam sanitization and wax restoration.',
     overview: 'Our Elite Deep Cleaning is the complete luxury spa package for your car. Includes high-pressure foam wash, deep vacuuming, steam sanitization to kill germs, and wax polish to restore shine.',
     customerRequirements: [
-      'Standard power socket within 15 meters (~₹7 electricity used)',
+      'Standard power socket within 20 meters (~₹7 electricity used)',
       '2 buckets of clean water',
       'Access to water tap or source'
     ],

@@ -62,7 +62,7 @@ export default function Footer() {
             <h4>Contact Info</h4>
             <ul>
               <li><a href="tel:+919445469407">+91 9445469407</a></li>
-              <li><a href="mailto:support@reshineservices.in">support@reshineservices.in</a></li>
+              <li><a href="mailto:support@reshineservice.in">support@reshineservice.in</a></li>
 
             </ul>
             <div className="footer-social" style={{ marginTop: '20px' }}>
