@@ -69,25 +69,6 @@ const bikeWashPackages = [
   }
 ];
 
-const addOns = [
-  {
-    name: 'Wax Coating Polish',
-    icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-      </svg>
-    )
-  },
-  {
-    name: 'Plastic Polish',
-    icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-      </svg>
-    )
-  }
-];
-
 export default function BikeWashPage() {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -190,35 +171,7 @@ export default function BikeWashPage() {
           </div>
         </div>
 
-        {/* Add-ons Section */}
-        <div className="service-section-spacing animate-on-scroll">
-          <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
-            <span className="section-badge">Add-Ons</span>
-            <h2 className="section-title" style={{ marginTop: '0.5rem' }}>
-              Custom <span className="text-gradient">Add-Ons</span>
-            </h2>
-            <p className="section-subtitle">
-              Enhance your bike wash package with specialized treatment add-ons.
-            </p>
-          </div>
 
-          <div className="addons-grid bike-addons-grid">
-            {addOns.map((addon, index) => (
-              <div className="addon-card" key={index}>
-                <div className="addon-icon">
-                  {addon.icon}
-                </div>
-                <div>
-                  <h4>{addon.name}</h4>
-                  <span className="addon-tag">
-                    <span className="package-badge-dot" style={{ background: 'var(--sky-500)', display: 'inline-block' }}></span>
-                    Available on Request
-                  </span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
 
         {/* CTA Banner */}
         <div className="service-cta-card animate-on-scroll">

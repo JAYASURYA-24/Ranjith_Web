@@ -85,9 +85,17 @@ export default function Services() {
                 )}
               </div>
               <div className="service-card-body">
-
                 <h3>{service.title}</h3>
                 <p>{service.description}</p>
+                <div className="service-card-action">
+                  <span className="service-view-btn">
+                    View
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </span>
+                </div>
               </div>
               {service.status === 'coming-soon' && (
                 <div className="service-card-overlay">

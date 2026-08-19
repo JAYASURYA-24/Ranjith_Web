@@ -16,7 +16,7 @@ export default function Hero() {
         <span className="bubble bubble-6"></span>
       </div>
 
-      <div className="header-container hero-content">
+      <div className="container hero-content">
 
         {/* LEFT: Text */}
         <div className="hero-text">

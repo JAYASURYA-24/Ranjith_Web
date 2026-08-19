@@ -36,20 +36,20 @@ export default function BikeWashPlanDetailPage() {
       <WashBackgroundAnimation />
       <div className="container">
         {/* Back Link */}
-        <div style={{ marginBottom: '2rem' }}>
+        <div style={{ marginBottom: '1rem' }}>
           <button
             onClick={() => navigate('/bike-wash')}
             style={{
               background: 'none',
               border: 'none',
               color: 'var(--sky-600)',
-              fontSize: '0.95rem',
+              fontSize: '0.92rem',
               fontWeight: '700',
               cursor: 'pointer',
               display: 'inline-flex',
               alignItems: 'center',
-              gap: '8px',
-              padding: '6px 12px',
+              gap: '6px',
+              padding: '4px 8px',
               borderRadius: 'var(--radius-md)',
               transition: 'all 0.2s ease'
             }}
@@ -168,35 +168,7 @@ export default function BikeWashPlanDetailPage() {
         {/* Step by Step Detailing Process Map */}
         <ServiceProcessMap steps={plan.detailedSteps} />
 
-        {/* Recommended Add-ons for this plan */}
-        <div style={{ marginBottom: '4rem' }}>
-          <div style={{ textAlign: 'center', marginBottom: '1.8rem' }}>
-            <span className="section-badge">Popular Extras</span>
-            <h3 style={{ fontSize: 'clamp(1.3rem, 4vw, 1.6rem)', fontWeight: '800', color: 'var(--gray-900)', marginTop: '0.5rem' }}>
-              Recommended Add-Ons for this Wash
-            </h3>
-          </div>
-          <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '12px' }}>
-            {plan.recommendedAddOns.map((addon, idx) => (
-              <div key={idx} style={{
-                background: 'var(--white)',
-                border: '1px solid var(--sky-200)',
-                padding: '10px 18px',
-                borderRadius: 'var(--radius-full)',
-                fontWeight: '700',
-                color: 'var(--sky-800)',
-                fontSize: '0.88rem',
-                boxShadow: '0 2px 8px rgba(14, 165, 233, 0.08)',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '8px'
-              }}>
-                <span style={{ color: 'var(--sky-500)', fontWeight: 'bold' }}>+</span>
-                <span>{addon}</span>
-              </div>
-            ))}
-          </div>
-        </div>
+
 
         {/* Bottom CTA Banner */}
         <div className="detail-cta-card">

@@ -36,20 +36,20 @@ export default function CarWashPlanDetailPage() {
       <WashBackgroundAnimation />
       <div className="container">
         {/* Back Link */}
-        <div style={{ marginBottom: '2rem' }}>
+        <div style={{ marginBottom: '1rem' }}>
           <button
             onClick={() => navigate('/car-wash')}
             style={{
               background: 'none',
               border: 'none',
               color: 'var(--sky-600)',
-              fontSize: '0.95rem',
+              fontSize: '0.92rem',
               fontWeight: '700',
               cursor: 'pointer',
               display: 'inline-flex',
               alignItems: 'center',
-              gap: '8px',
-              padding: '6px 12px',
+              gap: '6px',
+              padding: '4px 8px',
               borderRadius: 'var(--radius-md)',
               transition: 'all 0.2s ease'
             }}

@@ -5,6 +5,7 @@ import step1Img from '../assets/images/partner-with-us/Partner_Step_1.webp';
 import step2Img from '../assets/images/partner-with-us/Partner_Step_2.webp';
 import step3Img from '../assets/images/partner-with-us/Partner_Step_3.webp';
 import step4Img from '../assets/images/partner-with-us/Partner_Step_4.webp';
+import partner3dMan from '../assets/images/partner-with-us/partner_3d_anime_man_sitting.webp';
 
 const partnerBenefits = [
   {
@@ -99,8 +100,9 @@ const partnerSteps = [
 
 const partnerFeatures = [
   {
+    id: 'secure',
     icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <svg className="feature-svg icon-secure" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
         <polyline points="9 12 11 14 15 10"></polyline>
       </svg>
@@ -109,8 +111,9 @@ const partnerFeatures = [
     desc: 'Your data and payments are always protected.',
   },
   {
+    id: 'instant',
     icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <svg className="feature-svg icon-instant" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="12" cy="12" r="10"></circle>
         <polyline points="12 6 12 12 16 14"></polyline>
       </svg>
@@ -119,8 +122,9 @@ const partnerFeatures = [
     desc: 'Quick booking alerts and easy job management.',
   },
   {
+    id: 'payments',
     icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <svg className="feature-svg icon-payments" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
         <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
       </svg>
@@ -129,8 +133,9 @@ const partnerFeatures = [
     desc: 'Get paid instantly after every completed job.',
   },
   {
+    id: 'support',
     icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <svg className="feature-svg icon-support" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M15.05 5A5 5 0 0 1 19 8.95M15.05 1A9 9 0 0 1 23 8.94m-1 7.98v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
       </svg>
     ),
@@ -185,42 +190,65 @@ export default function PartnerWithUs() {
           </div>
 
           <div className="partner-registration-section animate-on-scroll">
-            <div className="partner-form-wrapper centered-form">
-              <div className="partner-form-header text-center">
-                <h3>Join Our Growing Network</h3>
-                <p>Fill out the details below to become a ReShine partner.</p>
+            <div className="partner-registration-container">
+              {/* 3D Anime Character Sitting Above Form */}
+              <div className="partner-3d-character-stage">
+                <div className="character-glow-halo"></div>
+
+                {/* 3D Character Sitting on Card Ledge */}
+                <div className="character-figure-wrapper">
+                  <img
+                    src={partner3dMan}
+                    alt="Happy 3D Partner Counting Earnings"
+                    className="partner-3d-man-img"
+                    loading="eager"
+                  />
+                  <div className="floating-sparkle sp-1">✨</div>
+                  <div className="floating-sparkle sp-2">🪙</div>
+                  <div className="floating-sparkle sp-3">✨</div>
+                  <div className="floating-sparkle sp-4">🪙</div>
+                </div>
               </div>
-              <form className="partner-registration-form" onSubmit={(e) => { e.preventDefault(); alert('Partner details submitted successfully!'); }}>
-                <div className="form-row-partner">
-                  <div className="form-group-partner">
-                    <label htmlFor="partnerName">Full Name</label>
-                    <input type="text" id="partnerName" placeholder="Enter your full name" required />
-                  </div>
-                  <div className="form-group-partner">
-                    <label htmlFor="partnerMobile">Mobile Number</label>
-                    <input type="tel" id="partnerMobile" placeholder="Enter 10-digit mobile number" pattern="[0-9]{10}" required />
-                  </div>
-                </div>
 
-                <div className="form-row-partner">
-                  <div className="form-group-partner">
-                    <label htmlFor="partnerLocality">Locality Area</label>
-                    <input type="text" id="partnerLocality" placeholder="e.g., Madipakkam" required />
-                  </div>
-                  <div className="form-group-partner">
-                    <label htmlFor="partnerPincode">Pincode</label>
-                    <input type="text" id="partnerPincode" placeholder="e.g., 600091" pattern="[0-9]{6}" required />
-                  </div>
+              {/* Form Card */}
+              <div className="partner-form-wrapper centered-form">
+                <div className="partner-form-header text-center">
+                  <span className="form-sub-badge">🚀 Start Earning Today</span>
+                  <h3>Join Our Growing Network</h3>
+                  <p>Fill out the details below to become a ReShine partner.</p>
                 </div>
+                <form className="partner-registration-form" onSubmit={(e) => { e.preventDefault(); alert('Partner details submitted successfully!'); }}>
+                  <div className="form-row-partner">
+                    <div className="form-group-partner">
+                      <label htmlFor="partnerName">Full Name</label>
+                      <input type="text" id="partnerName" placeholder="Enter your full name" required />
+                    </div>
+                    <div className="form-group-partner">
+                      <label htmlFor="partnerMobile">Mobile Number</label>
+                      <input type="tel" id="partnerMobile" placeholder="Enter 10-digit mobile number" pattern="[0-9]{10}" required />
+                    </div>
+                  </div>
 
-                <button type="submit" className="btn-primary partner-submit-btn">
-                  Submit Details
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                    <polyline points="12 5 19 12 12 19"></polyline>
-                  </svg>
-                </button>
-              </form>
+                  <div className="form-row-partner">
+                    <div className="form-group-partner">
+                      <label htmlFor="partnerLocality">Locality Area</label>
+                      <input type="text" id="partnerLocality" placeholder="e.g., Madipakkam" required />
+                    </div>
+                    <div className="form-group-partner">
+                      <label htmlFor="partnerPincode">Pincode</label>
+                      <input type="text" id="partnerPincode" placeholder="e.g., 600091" pattern="[0-9]{6}" required />
+                    </div>
+                  </div>
+
+                  <button type="submit" className="btn-primary partner-submit-btn">
+                    Submit Details
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </button>
+                </form>
+              </div>
             </div>
           </div>
 
@@ -267,8 +295,11 @@ export default function PartnerWithUs() {
 
             <div className="hpw-features-footer">
               {partnerFeatures.map((feature, index) => (
-                <div className="hpw-feature-item" key={index}>
-                  <div className="hpw-feature-icon">{feature.icon}</div>
+                <div className={`hpw-feature-item item-${feature.id}`} key={index}>
+                  <div className="hpw-feature-icon">
+                    <span className="hpw-icon-pulse-aura"></span>
+                    {feature.icon}
+                  </div>
                   <div className="hpw-feature-text">
                     <h4>{feature.title}</h4>
                     <p>{feature.desc}</p>

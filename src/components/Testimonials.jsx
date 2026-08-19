@@ -63,7 +63,7 @@ const videoTestimonials = [
     duration: '0:40',
     text: '“Exceptional doorstep service! Premium eco-friendly products used. The paint gloss and dashboard polish lasted for weeks.”',
     thumbnail: thumb1,
-    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-man-cleaning-a-car-with-a-microfiber-cloth-41528-large.mp4',
+    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-cleaning-a-car-door-with-a-sponge-41525-large.mp4',
     initials: 'VM',
   },
 ];
@@ -78,6 +78,7 @@ const extendedTestimonials = [
 function VideoTestimonialCardItem({ item, activePlayingId, setActivePlayingId, isMutedGlobal, setIsMutedGlobal, onSlideNext }) {
   const isPlayingThis = activePlayingId === item.uniqueKey;
   const videoRef = useRef(null);
+  const previewRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(true);
   const [progress, setProgress] = useState(0);
 
@@ -104,9 +105,14 @@ function VideoTestimonialCardItem({ item, activePlayingId, setActivePlayingId, i
     e.preventDefault();
     if (!videoRef.current) return;
     if (isPlaying) {
-      // Just pause the video, do not slide away
+      // Pause current video, reset active player, and automatically slide to the next review video
       videoRef.current.pause();
+      setActivePlayingId(null);
       setIsPlaying(false);
+      setProgress(0);
+      if (onSlideNext) {
+        onSlideNext();
+      }
     } else {
       videoRef.current.play().catch(() => { });
       setIsPlaying(true);
@@ -136,7 +142,7 @@ function VideoTestimonialCardItem({ item, activePlayingId, setActivePlayingId, i
         onClick={!isPlayingThis ? handleStartPlay : undefined}
         role={!isPlayingThis ? 'button' : undefined}
         tabIndex={!isPlayingThis ? 0 : undefined}
-        aria-label={!isPlayingThis ? `Play video testimonial from ${item.name}` : undefined}
+        aria-label={!isPlayingThis ? `Play review video from ${item.name}` : undefined}
         onKeyDown={(e) => {
           if (!isPlayingThis && (e.key === 'Enter' || e.key === ' ')) {
             handleStartPlay(e);
@@ -149,7 +155,7 @@ function VideoTestimonialCardItem({ item, activePlayingId, setActivePlayingId, i
             onClick={handleTogglePlayPause}
             role="button"
             tabIndex={0}
-            aria-label="Pause and next video"
+            aria-label="Pause and move to next video"
             onKeyDown={(e) => {
               if (e.key === 'Enter' || e.key === ' ') {
                 handleTogglePlayPause(e);
@@ -222,15 +228,24 @@ function VideoTestimonialCardItem({ item, activePlayingId, setActivePlayingId, i
             </div>
           </div>
         ) : (
-          <>
-            <img src={item.thumbnail} alt={`${item.name} testimonial`} loading="lazy" className="video-thumb-img" />
+          <div className="inline-video-preview-wrapper" style={{ width: '100%', height: '100%', position: 'relative' }}>
+            <video
+              ref={previewRef}
+              src={item.videoUrl}
+              poster={item.thumbnail}
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="video-thumb-img"
+            />
 
             <div className="video-thumb-overlay">
               {/* Service Tag */}
               <span className="video-service-tag">{item.service}</span>
 
               {/* Play Button */}
-              <button className="video-play-btn" aria-label="Play video" type="button">
+              <button className="video-play-btn" aria-label="Play review video" type="button">
                 <span className="play-pulse-ring"></span>
                 <span className="play-pulse-ring-outer"></span>
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
@@ -247,7 +262,7 @@ function VideoTestimonialCardItem({ item, activePlayingId, setActivePlayingId, i
                 {item.duration}
               </span>
             </div>
-          </>
+          </div>
         )}
       </div>
 
