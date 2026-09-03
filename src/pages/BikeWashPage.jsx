@@ -4,13 +4,15 @@ import BeforeAfterSlider from '../components/BeforeAfterSlider';
 import WashBackgroundAnimation from '../components/WashBackgroundAnimation';
 import bikeBefore from '../assets/images/services/before_bike.webp';
 import bikeAfter from '../assets/images/services/after_bike.webp';
-import { handleAppDownload } from '../utils/appLinks';
+import { handleAppDownload, PLAYSTORE_LINK } from '../utils/appLinks';
 
 const bikeWashPackages = [
   {
     id: 'manual-basic-wash',
     title: '1. Manual Basic Wash',
     badge: 'Daily Care',
+    powerRequired: false,
+    powerTag: 'Cordless',
     preferredFor: 'Daily commute & light dust',
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -32,6 +34,8 @@ const bikeWashPackages = [
     id: 'pressure-foam-wash',
     title: '2. Pressure Foam Wash',
     badge: 'Gloss Finish',
+    powerRequired: true,
+    powerTag: 'Power Required',
     preferredFor: 'Muddy roads & deep engine shine',
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -52,6 +56,8 @@ const bikeWashPackages = [
     id: 'helmet-cleaning',
     title: '3. Helmet Cleaning',
     badge: 'Hygiene Special',
+    powerRequired: true,
+    powerTag: 'Power Required',
     preferredFor: 'Sweat odor removal & visor clarity',
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -124,16 +130,16 @@ export default function BikeWashPage() {
 
           <div className="packages-grid bike-packages-grid">
             {bikeWashPackages.map((pkg, index) => (
-              <div className={`package-card ${pkg.cardClass}`} key={index}>
-                {pkg.badge && (
-                  <span className={`package-badge ${pkg.cardClass === 'popular' ? 'popular-badge' : pkg.cardClass === 'elite' ? 'elite-badge' : ''}`}>
-                    <span className="package-badge-dot"></span>
-                    {pkg.badge}
-                  </span>
-                )}
-
-                <div className="package-icon-wrapper">
-                  {pkg.icon}
+              <div className={`package-card ${pkg.cardClass} ${!pkg.powerRequired ? 'non-electric-card' : ''}`} key={index}>
+                <div className="package-card-top-row">
+                  <div className="package-icon-wrapper">
+                    {pkg.icon}
+                  </div>
+                  <div className="package-card-badges">
+                    <span className={`category-tag-chip ${!pkg.powerRequired ? 'eco-chip' : 'electric-chip'}`}>
+                      {pkg.powerTag}
+                    </span>
+                  </div>
                 </div>
 
                 <div className="package-header">
@@ -160,7 +166,7 @@ export default function BikeWashPage() {
                 </ul>
 
                 <Link to={`/bike-wash/${pkg.id}`} className="package-footer-btn">
-                  <span>View More</span>
+                  <span>View Details & Book</span>
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                     <line x1="5" y1="12" x2="19" y2="12" />
                     <polyline points="12 5 19 12 12 19" />
@@ -182,7 +188,9 @@ export default function BikeWashPage() {
             Book your doorstep bike wash in under 60 seconds through our mobile app!
           </p>
           <a
-            href="#download"
+            href={PLAYSTORE_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
             className="btn-primary service-cta-btn"
             onClick={(e) => handleAppDownload(e)}
           >

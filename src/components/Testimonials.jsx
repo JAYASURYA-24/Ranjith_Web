@@ -3,68 +3,40 @@ import thumb1 from '../assets/images/testimonials/thumb1.png';
 import thumb2 from '../assets/images/testimonials/thumb2.png';
 import thumb3 from '../assets/images/testimonials/thumb3.png';
 import thumb4 from '../assets/images/testimonials/thumb4.png';
-import sampleVideo from '../assets/Videos/TestimonialsVideo/sample_video.mp4 (240p).mp4';
 
 const videoTestimonials = [
   {
     id: 1,
-    name: 'Rahul Sharma',
-    role: 'Fortuner Owner • Bengaluru',
-    service: 'Premium Doorstep SUV Wash',
+    name: 'Dhandapani',
+    role: 'Chennai',
     rating: 5,
     duration: '0:42',
-    text: '“The foam wash & interior vacuuming were top tier. They arrived on time at my apartment and transformed my SUV to showroom shine!”',
+    text: '“Top-tier doorstep foam wash! The team arrived right on time at my apartment, brought high-pressure equipment, and transformed my car to a showroom shine.”',
     thumbnail: thumb1,
-    videoUrl: sampleVideo,
-    initials: 'RS',
+    videoUrl: 'https://d3k6x0gqg8vsys.cloudfront.net/testimonials/dhandapani.mp4',
+    initials: 'D',
   },
   {
     id: 2,
-    name: 'Priya Nair',
-    role: 'Hatchback Owner • Chennai',
-    service: 'Interior Deep Clean & Foam Wash',
+    name: 'Ganesh',
+    role: 'Chennai',
     rating: 5,
     duration: '0:35',
-    text: '“I scheduled it during office hours and came down to a spotless, fresh-smelling car. Super convenient and professional team!”',
+    text: '“Super convenient service! Booked during office hours and got back a spotless, fresh-smelling car. Professional staff and thorough cleaning.”',
     thumbnail: thumb2,
-    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-man-cleaning-a-car-with-a-microfiber-cloth-41528-large.mp4',
-    initials: 'PN',
+    videoUrl: 'https://d3k6x0gqg8vsys.cloudfront.net/testimonials/ganesh.mp4',
+    initials: 'G',
   },
   {
     id: 3,
-    name: 'Arjun Patel',
-    role: 'Superbike Owner • Hyderabad',
-    service: 'Doorstep Bike Detailing',
+    name: 'Srinivas',
+    role: 'Chennai',
     rating: 5,
     duration: '0:48',
-    text: '“Cleaned every corner of my bike including chain degreasing, alloy polish, and wax. Absolutely worth every rupee!”',
+    text: '“ReShine brought complete car care straight to my doorstep. Cleaned every corner with premium products. Absolutely worth every rupee!”',
     thumbnail: thumb3,
-    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-man-cleaning-a-car-wheel-41529-large.mp4',
-    initials: 'AP',
-  },
-  {
-    id: 4,
-    name: 'Sneha Reddy',
-    role: 'Sedan Owner • Bengaluru',
-    service: 'Exterior Hydrophobic Care',
-    rating: 5,
-    duration: '0:50',
-    text: '“No queues, no waiting at car wash centers. ReShine brought high-pressure foam equipment straight to my driveway. 10/10 service!”',
-    thumbnail: thumb4,
-    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-car-washing-machine-in-action-41527-large.mp4',
-    initials: 'SR',
-  },
-  {
-    id: 5,
-    name: 'Vikram Malhotra',
-    role: 'Luxury Sedan Owner • Mumbai',
-    service: 'Full Car Wash & Polish',
-    rating: 5,
-    duration: '0:40',
-    text: '“Exceptional doorstep service! Premium eco-friendly products used. The paint gloss and dashboard polish lasted for weeks.”',
-    thumbnail: thumb1,
-    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-cleaning-a-car-door-with-a-sponge-41525-large.mp4',
-    initials: 'VM',
+    videoUrl: 'https://d3k6x0gqg8vsys.cloudfront.net/testimonials/srinivas.mp4',
+    initials: 'S',
   },
 ];
 
@@ -241,9 +213,6 @@ function VideoTestimonialCardItem({ item, activePlayingId, setActivePlayingId, i
             />
 
             <div className="video-thumb-overlay">
-              {/* Service Tag */}
-              <span className="video-service-tag">{item.service}</span>
-
               {/* Play Button */}
               <button className="video-play-btn" aria-label="Play review video" type="button">
                 <span className="play-pulse-ring"></span>
@@ -301,6 +270,7 @@ function VideoTestimonialCardItem({ item, activePlayingId, setActivePlayingId, i
 
 export default function Testimonials() {
   const totalOriginal = videoTestimonials.length;
+  const sectionRef = useRef(null);
   const [currentIndex, setCurrentIndex] = useState(totalOriginal); // Start in the middle set
   const [withTransition, setWithTransition] = useState(true);
   const [cardsToShow, setCardsToShow] = useState(3);
@@ -308,6 +278,36 @@ export default function Testimonials() {
   const [isMutedGlobal, setIsMutedGlobal] = useState(false);
   const [touchStart, setTouchStart] = useState(null);
   const [touchEnd, setTouchEnd] = useState(null);
+
+  // Automatically stop playing video whenever the user scrolls the page
+  useEffect(() => {
+    if (activePlayingId === null) return;
+
+    const handleScroll = () => {
+      setActivePlayingId(null);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [activePlayingId]);
+
+  // Stop video when the testimonial section leaves the viewport
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) {
+          setActivePlayingId(null);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   // Dynamic responsive breakpoint handler
   useEffect(() => {
@@ -405,7 +405,7 @@ export default function Testimonials() {
   const activeDotIndex = currentIndex % totalOriginal;
 
   return (
-    <section className="testimonials" id="testimonials" aria-label="Customer Video Testimonials">
+    <section ref={sectionRef} className="testimonials" id="testimonials" aria-label="Customer Video Testimonials">
       <div className="container">
         {/* Section Header */}
         <div className="section-header animate-on-scroll">

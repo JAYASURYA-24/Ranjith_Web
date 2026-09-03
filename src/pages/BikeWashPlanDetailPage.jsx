@@ -4,7 +4,7 @@ import { bikeWashPlansData } from '../data/bikeWashPlans.jsx';
 import WashBackgroundAnimation from '../components/WashBackgroundAnimation';
 import ServiceProcessMap from '../components/ServiceProcessMap';
 import bikeWashImg from '../assets/images/services/bike-wash.webp';
-import { handleAppDownload } from '../utils/appLinks';
+import { handleAppDownload, PLAYSTORE_LINK } from '../utils/appLinks';
 
 export default function BikeWashPlanDetailPage() {
   const { planId } = useParams();
@@ -180,7 +180,9 @@ export default function BikeWashPlanDetailPage() {
           </p>
           <div className="detail-cta-actions">
             <a
-              href="#download"
+              href={PLAYSTORE_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn-primary detail-cta-btn"
               onClick={(e) => handleAppDownload(e)}
               style={{

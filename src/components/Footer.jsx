@@ -54,7 +54,7 @@ export default function Footer() {
             <ul>
               <li><Link to="/car-wash">Car Wash</Link></li>
               <li><Link to="/bike-wash">Bike Wash</Link></li>
-              <li><a href="#download" onClick={handleAppDownload}>Download App</a></li>
+              <li><a href={PLAYSTORE_LINK} target="_blank" rel="noopener noreferrer" onClick={handleAppDownload}>Download App</a></li>
             </ul>
           </div>
 

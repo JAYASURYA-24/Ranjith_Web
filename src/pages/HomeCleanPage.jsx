@@ -1,7 +1,4 @@
 import { useEffect } from 'react';
-import BeforeAfterSlider from '../components/BeforeAfterSlider';
-import homeBefore from '../assets/images/services/before_home.webp';
-import homeAfter from '../assets/images/services/after_home.webp';
 
 export default function HomeCleanPage() {
   useEffect(() => {
@@ -21,16 +18,6 @@ export default function HomeCleanPage() {
           <p className="section-subtitle">
             A clean home is a happy home. We are bringing our expertise in detailing from your driveway to your living room. From deep cleaning sofas to sanitizing kitchens, prepare for spotless living spaces.
           </p>
-        </div>
-
-        <div className="service-demo animate-on-scroll">
-          <h2 className="section-title text-center" style={{ marginBottom: '2rem' }}>See the Transformation</h2>
-          <BeforeAfterSlider
-            beforeImage={homeBefore}
-            afterImage={homeAfter}
-            beforeLabel="Before"
-            afterLabel="After"
-          />
         </div>
       </div>
     </div>

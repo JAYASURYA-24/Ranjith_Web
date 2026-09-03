@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { handleAppDownload } from '../utils/appLinks';
+import { handleAppDownload, PLAYSTORE_LINK } from '../utils/appLinks';
 import logoImg from '../assets/images/logo/Reshine_Logo.webp';
 
 export default function Header() {
@@ -96,7 +96,7 @@ export default function Header() {
 
             <Link to="/partner" onClick={handleNavClick}>PartnerApp</Link>
             <Link to="/contact" onClick={handleNavClick}>Contact</Link>
-            <a href="/#download" className="nav-cta" onClick={(e) => { handleNavClick(); handleAppDownload(e); }}>Download App</a>
+            <a href={PLAYSTORE_LINK} target="_blank" rel="noopener noreferrer" className="nav-cta" onClick={(e) => { handleNavClick(); handleAppDownload(e); }}>Download App</a>
           </nav>
 
           {/* Mobile Menu Toggle Button */}
@@ -242,7 +242,9 @@ export default function Header() {
         {/* Drawer Footer CTA */}
         <div className="mobile-drawer-footer">
           <a
-            href="/#download"
+            href={PLAYSTORE_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
             className="drawer-cta-btn"
             onClick={(e) => {
               handleNavClick();

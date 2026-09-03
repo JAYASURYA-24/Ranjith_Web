@@ -1,12 +1,9 @@
 import dirtyCarWash from '../assets/images/about/dirty-car-wash.webp';
-import missionIcon from '../assets/images/about/mission.webp';
-import visionIcon from '../assets/images/about/vission.webp';
-import ecoIcon from '../assets/images/about/eco-frndly.webp';
-import qualityIcon from '../assets/images/about/quality.webp';
-import rishikeshImg from '../assets/images/about/rishikesh.png';
-import pavanImg from '../assets/images/about/pavan.png';
-import aravindImg from '../assets/images/about/aravind.png';
-import teamPhoto from '../assets/images/about/team_members.png';
+import founder_1 from '../assets/images/founders/founder_1.webp';
+import founder_2 from '../assets/images/founders/founder_3.webp';
+import founder_3 from '../assets/images/founders/founder_2.webp';
+import ranjith from '../assets/images/founders/Ranjith.webp';
+import teamPhoto from '../assets/images/founders/Employee.webp';
 
 export default function About() {
   return (
@@ -21,64 +18,122 @@ export default function About() {
             </svg>
             About ReShine
           </span>
-          <h2 className="section-title text-center" style={{ margin: '0 auto' }}>Redefining <span className="text-gradient">Vehicle Care,</span><br />One Doorstep at a Time</h2>
+          <h2 className="section-title text-center" style={{ margin: '0 auto' }}>
+            A Cleaner Vehicle.<br /><span className="text-gradient">A Better Experience.</span>
+          </h2>
         </div>
 
         {/* Left image right content */}
         <div className="about-grid" style={{ marginBottom: '60px' }}>
           <div className="about-image-wrapper animate-on-scroll">
             <div className="about-image">
-              <img src={dirtyCarWash} alt="A dirty car being professionally washed at a doorstep" />
+              <img src={dirtyCarWash} alt="A professional doorstep vehicle washing experience by ReShine" />
             </div>
             <div className="about-accent"></div>
           </div>
 
           <div className="about-content animate-on-scroll" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-            <p className="about-text">
-              ReShine was born from a simple idea - what if professional car care came to you?
-              Founded by a team of automotive enthusiasts, we set out to eliminate the hassle of
-              traditional car washes and bring premium, eco-friendly cleaning right to your driveway.
+            <p className="about-text" style={{ fontSize: '1.1rem', fontWeight: '500', color: 'var(--gray-900)' }}>
+              Founded in 2026, ReShine was built on a simple vision: to make professional vehicle cleaning convenient, reliable, and accessible right at your doorstep.
             </p>
             <p className="about-text">
-              Today, we serve thousands of satisfied customers across major cities. We strictly use water-efficient techniques,
-              biodegradable products, and highly trained professionals who treat every single vehicle like their own. Experience the ultimate convenience of getting a showroom shine without ever leaving your home.
+              Created by a team that genuinely cares about vehicles, ReShine addresses a problem every vehicle owner knows well — keeping a car or bike clean without losing valuable time at a wash centre or compromising on quality. We bring the entire vehicle-wash experience to you, delivering professional doorstep car and bike washing built around cleanliness, hygiene, safety, and convenience.
             </p>
           </div>
         </div>
 
-        {/* 2x2 grid for cards */}
-        <div className="about-values-new animate-on-scroll" style={{ marginBottom: '80px' }}>
-          <div className="about-value">
-            <div className="about-value-icon" style={{ backgroundImage: `url(${missionIcon})` }}></div>
-            <div>
-              <h4>Our Mission</h4>
-              <p>Make professional vehicle care accessible to every doorstep across India by combining innovative technology with exceptional customer service. We strive to create a seamless, reliable experience that saves our customers valuable time while delivering superior cleaning results.</p>
+        {/* Mission & Vision Grid */}
+        <div className="about-mv-grid animate-on-scroll">
+          {/* Our Mission Box */}
+          <div className="about-mission-box">
+            <div className="about-mission-header">
+              <div className="about-mission-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <path d="M12 16v-4"></path>
+                  <path d="M12 8h.01"></path>
+                </svg>
+              </div>
+              <h3 className="about-mission-title">Our Mission</h3>
             </div>
+            <p className="about-mission-text">
+              To redefine vehicle care by delivering professional, high-quality doorstep cleaning services that save time and ensure complete peace of mind.
+            </p>
           </div>
-          <div className="about-value">
-            <div className="about-value-icon" style={{ backgroundImage: `url(${visionIcon})` }}></div>
-            <div>
-              <h4>Our Vision</h4>
-              <p>Become India's most trusted and widely used doorstep vehicle services platform, setting a new industry standard for quality, convenience, and sustainability. We envision a future where traditional, water-wasting car washes are entirely replaced by eco-friendly mobile solutions.</p>
+
+          {/* Our Vision Box */}
+          <div className="about-mission-box">
+            <div className="about-mission-header">
+              <div className="about-mission-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"></path>
+                  <circle cx="12" cy="12" r="3"></circle>
+                </svg>
+              </div>
+              <h3 className="about-mission-title">Our Vision</h3>
             </div>
-          </div>
-          <div className="about-value">
-            <div className="about-value-icon" style={{ backgroundImage: `url(${ecoIcon})` }}></div>
-            <div>
-              <h4>Eco-Friendly</h4>
-              <p>We actively utilize advanced waterless and low-water techniques that save up to 80% more water per wash compared to traditional methods. Furthermore, all our cleaning solutions and waxes are 100% biodegradable, ensuring zero harmful runoff into the local environment.</p>
-            </div>
-          </div>
-          <div className="about-value">
-            <div className="about-value-icon" style={{ backgroundImage: `url(${qualityIcon})` }}></div>
-            <div>
-              <h4>Quality First</h4>
-              <p>We never compromise on the quality of our service. From utilizing premium microfiber towels to top-tier pH-balanced shampoos, our background-verified professionals are rigorously trained and evaluated to deliver a spotless, swirl-free finish every single time.</p>
-            </div>
+            <p className="about-mission-text">
+              To be India's most trusted doorstep vehicle care brand — setting a new standard for quality, convenience, and eco-friendly cleaning.
+            </p>
           </div>
         </div>
 
-        {/* Meet Our Founders Section */}
+        {/* Our Promise Section */}
+        <div className="about-promise-box animate-on-scroll">
+          <div className="about-promise-ambient-glow"></div>
+          <div className="section-badge-light">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+            </svg>
+            The ReShine Standard
+          </div>
+
+          <h3 className="about-promise-title">Our Uncompromising Promise</h3>
+          <p className="about-promise-subtitle">
+            Impeccable Quality • Total Convenience • 100% Satisfaction
+          </p>
+
+          <p className="about-promise-text">
+            We deliver professional-grade doorstep vehicle care using high-pressure foam technology, eco-friendly products, and trained specialists who treat every car and bike with absolute precision and respect.
+          </p>
+
+          {/* Elegant 3-Pillars Grid */}
+          <div className="about-promise-pillars">
+            <div className="promise-pillar-item">
+              <div className="promise-pillar-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+                </svg>
+              </div>
+              <span>Doorstep Convenience</span>
+            </div>
+
+            <div className="promise-pillar-item">
+              <div className="promise-pillar-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                </svg>
+              </div>
+              <span>Showroom Finish</span>
+            </div>
+
+            <div className="promise-pillar-item">
+              <div className="promise-pillar-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                  <polyline points="22 4 12 14.01 9 11.01" />
+                </svg>
+              </div>
+              <span>Trusted Care</span>
+            </div>
+          </div>
+
+          <div className="about-promise-tagline">
+            ReShine — We Come. We Clean. You Shine.
+          </div>
+        </div>
+
+        {/* Meet Our Founders & Supporters Section */}
         <div className="founders-section animate-on-scroll">
           <div className="founders-header text-center" style={{ textAlign: 'center', marginBottom: '44px' }}>
             <span className="section-badge" style={{ margin: '0 auto 12px auto' }}>
@@ -88,13 +143,13 @@ export default function About() {
                 <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
                 <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
               </svg>
-              Leadership Team
+              Leadership & Strategic Supporters
             </span>
             <h2 className="section-title text-center" style={{ margin: '0 auto 12px auto' }}>
-              Meet Our <span className="text-gradient">Founders</span>
+              Meet Our Founders & <span className="text-gradient">Supporters</span>
             </h2>
-            <p style={{ color: 'var(--gray-600)', maxWidth: '600px', margin: '0 auto', fontSize: '1rem', lineHeight: '1.6' }}>
-              The visionaries driving innovation, convenience, and eco-friendly vehicle care across India.
+            <p style={{ color: 'var(--gray-600)', maxWidth: '640px', margin: '0 auto', fontSize: '1rem', lineHeight: '1.6' }}>
+              The visionaries and strategic growth partners driving innovation, convenience, and hygiene-focused vehicle care across India.
             </p>
           </div>
 
@@ -103,39 +158,49 @@ export default function About() {
             <div className="founder-card">
               <div className="founder-avatar-wrapper">
                 <div className="founder-blue-accent"></div>
-                <img src={rishikeshImg} alt="Rishikesh S R - Founder" className="founder-photo" />
+                <img src={founder_1} alt="Rishikesh S R - Founder" className="founder-photo" />
               </div>
-              <h3 className="founder-name">Rishikesh S R</h3>
+              <h3 className="founder-name">Vaishali</h3>
               <p className="founder-role">Founder</p>
-              <p className="founder-bio">
-                Leading strategic vision and technology at ReShine to revolutionize doorstep automotive care across major urban hubs.
-              </p>
             </div>
 
             {/* Founder 2 */}
             <div className="founder-card">
               <div className="founder-avatar-wrapper">
                 <div className="founder-blue-accent"></div>
-                <img src={pavanImg} alt="Pavan Guntupalli - Founder" className="founder-photo" />
+                <img src={founder_2} alt="Pavan Guntupalli - Founder" className="founder-photo" />
               </div>
-              <h3 className="founder-name">Pavan Guntupalli</h3>
+              <h3 className="founder-name">Suganya</h3>
               <p className="founder-role">Founder</p>
-              <p className="founder-bio">
-                Spearheading operations, partner networks, and customer excellence to deliver flawless doorstep washing experiences.
-              </p>
             </div>
 
             {/* Founder 3 */}
             <div className="founder-card">
               <div className="founder-avatar-wrapper">
                 <div className="founder-blue-accent"></div>
-                <img src={aravindImg} alt="Aravind Sanka - Founder" className="founder-photo" />
+                <img src={founder_3} alt="Aravind Sanka - Founder" className="founder-photo" />
               </div>
-              <h3 className="founder-name">Aravind Sanka</h3>
+              <h3 className="founder-name">Vasuki</h3>
               <p className="founder-role">Founder</p>
-              <p className="founder-bio">
-                Driving growth, eco-friendly product innovation, and expanding mobile detailing services to new cities.
+            </div>
+          </div>
+
+          {/* Business Supporter / Strategic Partner Card Below Founders */}
+          <div className="supporter-card animate-on-scroll">
+            <div className="supporter-content">
+              <span className="supporter-badge">Business Growth Supporter</span>
+              <h3 className="supporter-name">ShineUp Solution</h3>
+              <p className="supporter-bio">
+                Strategic partner empowering and backing ReShine's business growth, market expansion, and operational excellence across India.
               </p>
+            </div>
+
+            <div className="supporter-blob-container">
+              <div className="supporter-blob-accent"></div>
+              <div className="supporter-dot-matrix"></div>
+              <div className="supporter-blob-image">
+                <img src={ranjith} alt="ShineUp Solution - Business Growth Supporter" />
+              </div>
             </div>
           </div>
 
@@ -155,7 +220,7 @@ export default function About() {
                 The People Behind <span className="text-gradient">ReShine</span>
               </h3>
               <p style={{ color: 'var(--gray-600)', maxWidth: '580px', margin: '0 auto', fontSize: '0.95rem', lineHeight: '1.6' }}>
-                Dedicated professionals working together to bring doorstep convenience, quality, and eco-friendly car care to your home.
+                Dedicated professionals working together to bring doorstep convenience, quality, and hygiene-focused car care to your home.
               </p>
             </div>
 
@@ -169,3 +234,4 @@ export default function About() {
     </section>
   );
 }
+

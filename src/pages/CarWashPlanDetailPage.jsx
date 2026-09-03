@@ -4,7 +4,7 @@ import { carWashPlansData } from '../data/carWashPlans.jsx';
 import WashBackgroundAnimation from '../components/WashBackgroundAnimation';
 import ServiceProcessMap from '../components/ServiceProcessMap';
 import carWashImg from '../assets/images/services/car-wash.webp';
-import { handleAppDownload } from '../utils/appLinks';
+import { handleAppDownload, PLAYSTORE_LINK } from '../utils/appLinks';
 
 export default function CarWashPlanDetailPage() {
   const { planId } = useParams();
@@ -204,31 +204,6 @@ export default function CarWashPlanDetailPage() {
           </div>
         )}
 
-        {/* Complimentary Gift Banner */}
-        {plan.complimentary && (
-          <div className="glass-card" style={{
-            padding: '22px 28px',
-            borderLeft: '4px solid #10b981',
-            background: 'linear-gradient(135deg, rgba(209, 250, 229, 0.5) 0%, rgba(255, 255, 255, 0.95) 100%)',
-            marginBottom: '2.5rem',
-            display: 'flex',
-            alignItems: 'center',
-            gap: '16px',
-            borderRadius: 'var(--radius-xl)'
-          }}>
-            <div style={{ fontSize: '1.8rem', background: '#ecfdf5', borderRadius: '12px', padding: '8px 14px', border: '1px solid #a7f3d0', lineHeight: 1 }}>
-              🎁
-            </div>
-            <div>
-              <h3 style={{ fontSize: '1.1rem', fontWeight: '800', color: '#065f46', margin: '0 0 4px 0', textTransform: 'uppercase', letterSpacing: '0.03em' }}>
-                Complimentary Bonus
-              </h3>
-              <p style={{ fontSize: '0.98rem', fontWeight: '600', color: 'var(--gray-800)', margin: 0 }}>
-                {plan.complimentary}
-              </p>
-            </div>
-          </div>
-        )}
 
         {/* Package Overview */}
         <div style={{ marginBottom: '3.5rem' }}>
@@ -262,7 +237,9 @@ export default function CarWashPlanDetailPage() {
           </p>
           <div className="detail-cta-actions">
             <a
-              href="#download"
+              href={PLAYSTORE_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn-primary detail-cta-btn"
               onClick={(e) => handleAppDownload(e)}
               style={{

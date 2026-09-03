@@ -1,5 +1,5 @@
 import heroBg from '../assets/images/hero/hero-bg.webp';
-import { handleAppDownload } from '../utils/appLinks';
+import { handleAppDownload, PLAYSTORE_LINK } from '../utils/appLinks';
 
 export default function Hero() {
   return (
@@ -35,7 +35,7 @@ export default function Hero() {
           </p>
 
           <div className="hero-actions">
-            <a href="#download" className="btn-primary" id="hero-cta-download" onClick={handleAppDownload}>
+            <a href={PLAYSTORE_LINK} target="_blank" rel="noopener noreferrer" className="btn-primary" id="hero-cta-download" onClick={handleAppDownload}>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
                 <line x1="16" y1="2" x2="16" y2="6" />

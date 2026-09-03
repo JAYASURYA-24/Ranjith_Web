@@ -1,33 +1,15 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import BeforeAfterSlider from '../components/BeforeAfterSlider';
 import WashBackgroundAnimation from '../components/WashBackgroundAnimation';
 import carBefore from '../assets/images/services/before_car.webp';
 import carAfter from '../assets/images/services/after_car.webp';
-import { handleAppDownload } from '../utils/appLinks';
+import { handleAppDownload, PLAYSTORE_LINK } from '../utils/appLinks';
 
-const carWashPackages = [
-  {
-    id: 'basic-manual-wash',
-    title: '1. Basic Manual Wash',
-    badge: 'Daily Care',
-    preferredFor: 'Light dust & daily care',
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z" />
-      </svg>
-    ),
-    includes: [
-      'Outer body gentle hand wash',
-      'Tyre cleaning & shine polish',
-      'Streak-free microfiber towel dry'
-    ],
-    cardClass: ''
-  },
+const electricPackages = [
   {
     id: 'pressure-foam-wash',
-    title: '2. Pressure Foam Wash',
-    badge: 'Gloss Finish',
+    title: '1. Machine Foam Wash',
     preferredFor: 'Muddy roads & high-gloss shine',
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -47,10 +29,9 @@ const carWashPackages = [
   },
   {
     id: 'premium-wash',
-    title: '3. Premium Wash',
-    subtitleTag: 'Inside & Out',
-    badge: 'Most Popular',
-    preferredFor: 'Complete interior & exterior care',
+    title: '2. Machine Premium Wash',
+    subtitleTag: 'Inside & Out • Pressure Machine',
+    preferredFor: 'Complete interior & exterior care with pressure pump',
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
@@ -67,9 +48,8 @@ const carWashPackages = [
   },
   {
     id: 'elite-deep-cleaning',
-    title: '4. Elite Deep Cleaning',
-    badge: 'Ultimate Care',
-    preferredFor: 'Full interior & exterior restoration',
+    title: '3. Machine Elite Deep Cleaning',
+    preferredFor: 'Full interior & exterior restoration with steam & jet wash',
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
@@ -80,6 +60,62 @@ const carWashPackages = [
       'Deep interior vacuuming & AC vent brushing',
       'Seat deep cleaning & vacuum extraction',
       'Hot steam sanitization (kills 99.9% germs)',
+      'Hand wax coat & plastic trim restoration'
+    ],
+    cardClass: 'elite'
+  }
+];
+
+const nonElectricPackages = [
+  {
+    id: 'basic-manual-wash',
+    title: '1. Basic Manual Wash',
+    preferredFor: 'Light dust & daily care',
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z" />
+      </svg>
+    ),
+    includes: [
+      'Outer body gentle hand wash',
+      'Tyre cleaning & shine polish',
+      'Streak-free microfiber towel dry'
+    ],
+    cardClass: ''
+  },
+  {
+    id: 'manual-premium-wash',
+    title: '2. Manual Premium Wash',
+    subtitleTag: 'Inside & Out • 100% Hand Wash',
+    preferredFor: 'Deep cleaning inside & out without requiring electricity',
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+      </svg>
+    ),
+    includes: [
+      'Manual foam bath & hand wash',
+      'Cabin interior dust removal & wipe down',
+      'Seat surface cleaning & wipe down',
+      'Dashboard polish & fresh fragrance',
+      'Hand wax shine & tyre polish'
+    ],
+    cardClass: 'popular'
+  },
+  {
+    id: 'manual-elite-cleaning',
+    title: '3. Manual Elite Cleaning',
+    preferredFor: 'Full interior & exterior hand restoration without electricity',
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+      </svg>
+    ),
+    includes: [
+      'Manual foam bath wash & tyre gloss',
+      'Deep interior dust removal & AC vent brushing',
+      'Seat deep cleaning & manual extraction',
+      'Interior sanitization treatment',
       'Hand wax coat & plastic trim restoration'
     ],
     cardClass: 'elite'
@@ -142,9 +178,60 @@ const addOns = [
 ];
 
 export default function CarWashPage() {
+  const [activeCategory, setActiveCategory] = useState('all');
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const renderPackageCard = (pkg, index, categoryType) => (
+    <div className={`package-card ${pkg.cardClass} ${categoryType === 'non-electric' ? 'non-electric-card' : ''}`} key={index}>
+      <div className="package-card-top-row">
+        <div className="package-icon-wrapper">
+          {pkg.icon}
+        </div>
+        <div className="package-card-badges">
+          <span className={`category-tag-chip ${categoryType === 'non-electric' ? 'eco-chip' : 'electric-chip'}`}>
+            {categoryType === 'non-electric' ? 'Cordless' : 'Power Required'}
+          </span>
+        </div>
+      </div>
+
+      <div className="package-header">
+        <h3>
+          {pkg.title}
+          {pkg.subtitleTag && <span className="package-subtitle-tag">{pkg.subtitleTag}</span>}
+        </h3>
+        <div className="package-preferred">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <circle cx="12" cy="12" r="10" />
+            <polyline points="12 6 12 12 16 14" />
+          </svg>
+          <span>Preferred for: <strong>{pkg.preferredFor}</strong></span>
+        </div>
+      </div>
+
+      <div className="package-included-label">
+        What's Included:
+      </div>
+      <ul className="package-features">
+        {pkg.includes.map((item, itemIdx) => (
+          <li key={itemIdx}>
+            <span className="package-check-circle">✓</span>
+            <span>{item}</span>
+          </li>
+        ))}
+      </ul>
+
+      <Link to={`/car-wash/${pkg.id}`} className="package-footer-btn">
+        <span>View Details &amp; Book</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+          <line x1="5" y1="12" x2="19" y2="12" />
+          <polyline points="12 5 19 12 12 19" />
+        </svg>
+      </Link>
+    </div>
+  );
 
   return (
     <div className="service-page">
@@ -184,66 +271,85 @@ export default function CarWashPage() {
 
         {/* Car Wash Packages Section */}
         <div className="service-section-spacing animate-on-scroll">
-          <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
+          <div style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
             <span className="section-badge">Car Wash Packages</span>
             <h2 className="section-title" style={{ marginTop: '0.5rem' }}>
               Choose Your <span className="text-gradient">Car Wash Plan</span>
             </h2>
             <p className="section-subtitle">
-              Select the perfect cleaning package tailored for your car care needs.
+              Browse our Electric Wash (High-Pressure Jet) and Non-Electric Wash (100% Cordless) packages below.
             </p>
           </div>
 
-          <div className="packages-grid">
-            {carWashPackages.map((pkg, index) => (
-              <div className={`package-card ${pkg.cardClass}`} key={index}>
-                {pkg.badge && (
-                  <span className={`package-badge ${pkg.cardClass === 'popular' ? 'popular-badge' : pkg.cardClass === 'elite' ? 'elite-badge' : ''}`}>
-                    <span className="package-badge-dot"></span>
-                    {pkg.badge}
-                  </span>
-                )}
+          {/* Category Filter Tabs Bar */}
+          <div className="category-tab-bar-container">
+            <div className="category-tab-bar" role="tablist" aria-label="Car wash category filter">
+              <button
+                className={`category-tab-btn ${activeCategory === 'all' ? 'active' : ''}`}
+                onClick={() => setActiveCategory('all')}
+                role="tab"
+                aria-selected={activeCategory === 'all'}
+              >
+                <span className="tab-icon">🌐</span> All Plans <span className="category-tab-count">6</span>
+              </button>
+              <button
+                className={`category-tab-btn ${activeCategory === 'electric' ? 'active' : ''}`}
+                onClick={() => setActiveCategory('electric')}
+                role="tab"
+                aria-selected={activeCategory === 'electric'}
+              >
+                <span className="tab-icon">🔌</span> Electric Wash <span className="category-tab-count">3</span>
+              </button>
+              <button
+                className={`category-tab-btn ${activeCategory === 'non-electric' ? 'active' : ''}`}
+                onClick={() => setActiveCategory('non-electric')}
+                role="tab"
+                aria-selected={activeCategory === 'non-electric'}
+              >
+                <span className="tab-icon">🔋</span> Non Electric Wash <span className="category-tab-count">3</span>
+              </button>
+            </div>
+          </div>
 
-                <div className="package-icon-wrapper">
-                  {pkg.icon}
-                </div>
-
-                <div className="package-header">
-                  <h3>
-                    {pkg.title}
-                    {pkg.subtitleTag && <span style={{ display: 'block', fontSize: '0.85rem', color: 'var(--gray-500)', fontWeight: '600', marginTop: '2px' }}>({pkg.subtitleTag})</span>}
-                  </h3>
-                  <div className="package-preferred">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                      <circle cx="12" cy="12" r="10" />
-                      <polyline points="12 6 12 12 16 14" />
-                    </svg>
-                    <span>Preferred for: <strong>{pkg.preferredFor}</strong></span>
+          {/* Electric Wash Category */}
+          {(activeCategory === 'all' || activeCategory === 'electric') && (
+            <div className="category-section category-electric">
+              <div className="category-header-banner">
+                <div className="category-title-group">
+                  <div className="category-icon-badge">🔌</div>
+                  <div>
+                    <h3 className="category-banner-title">Electric Wash Packages</h3>
+                    <p className="category-banner-desc">High-pressure jet &amp; snow foam wash requiring a standard 220V power socket</p>
                   </div>
                 </div>
-
-                <div style={{ fontSize: '0.86rem', fontWeight: '800', color: 'var(--gray-900)', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
-                  What's Included:
-                </div>
-                <ul className="package-features">
-                  {pkg.includes.map((item, itemIdx) => (
-                    <li key={itemIdx}>
-                      <span className="package-check-circle">✓</span>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                <Link to={`/car-wash/${pkg.id}`} className="package-footer-btn">
-                  <span>View More</span>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <line x1="5" y1="12" x2="19" y2="12" />
-                    <polyline points="12 5 19 12 12 19" />
-                  </svg>
-                </Link>
+                <span className="category-badge-pill">Standard Power Socket Needed</span>
               </div>
-            ))}
-          </div>
+
+              <div className="packages-grid-3col">
+                {electricPackages.map((pkg, index) => renderPackageCard(pkg, index, 'electric'))}
+              </div>
+            </div>
+          )}
+
+          {/* Non Electric Wash Category */}
+          {(activeCategory === 'all' || activeCategory === 'non-electric') && (
+            <div className="category-section category-non-electric" style={{ marginTop: activeCategory === 'all' ? '3.5rem' : '0' }}>
+              <div className="category-header-banner non-electric">
+                <div className="category-title-group">
+                  <div className="category-icon-badge">🔋</div>
+                  <div>
+                    <h3 className="category-banner-title">Non Electric Wash Packages</h3>
+                    <p className="category-banner-desc">Eco-friendly hand &amp; cordless machine wash (Zero electricity required at your location)</p>
+                  </div>
+                </div>
+                <span className="category-badge-pill">100% Cordless / Power Free</span>
+              </div>
+
+              <div className="packages-grid-3col">
+                {nonElectricPackages.map((pkg, index) => renderPackageCard(pkg, index, 'non-electric'))}
+              </div>
+            </div>
+          )}
         </div>
 
         {/* Add-ons Section */}
@@ -282,7 +388,9 @@ export default function CarWashPage() {
             Book your doorstep wash in under 60 seconds through our mobile app or get in touch today!
           </p>
           <a
-            href="#download"
+            href={PLAYSTORE_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
             className="btn-primary service-cta-btn"
             onClick={(e) => handleAppDownload(e)}
           >

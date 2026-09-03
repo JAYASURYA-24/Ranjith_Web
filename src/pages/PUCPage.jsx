@@ -1,7 +1,4 @@
 import { useEffect } from 'react';
-import BeforeAfterSlider from '../components/BeforeAfterSlider';
-import pucBefore from '../assets/images/services/before_puc.webp';
-import pucAfter from '../assets/images/services/after_puc.webp';
 
 export default function PUCPage() {
   useEffect(() => {
@@ -21,16 +18,6 @@ export default function PUCPage() {
           <p className="section-subtitle">
             Skip the long queues at petrol pumps. Soon, our certified agents will visit your location to test your vehicle and issue Government-approved Pollution Under Control (PUC) certificates instantly.
           </p>
-        </div>
-
-        <div className="service-demo animate-on-scroll">
-          <h2 className="section-title text-center" style={{ marginBottom: '2rem' }}>Cleaner Emissions, Greener Earth</h2>
-          <BeforeAfterSlider
-            beforeImage={pucBefore}
-            afterImage={pucAfter}
-            beforeLabel="Before"
-            afterLabel="After"
-          />
         </div>
       </div>
     </div>
